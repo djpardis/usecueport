@@ -1,0 +1,41 @@
+{
+  "name": "Cueport",
+  "domain": "usecueport.com",
+  "url": "https://usecueport.com",
+  "subtitle": "A local-first music player for DJs",
+  "scope": "desktop + mobile",
+  "description": "Start on your Mac, where Cueport reads your Serato library. Pair the iPhone to the Mac over your local network, send some crates across, and play them anywhere. The Mac app is the source of truth and the iPhone app pairs to it.",
+  "email": "hello@usecueport.com",
+  "version": "0.2.1",
+  "downloads": {
+    "mac": "#",
+    "ios": "#"
+  },
+  "nav": [
+    { "label": "Features", "href": "/features/", "icon": "features" },
+    { "label": "Download", "href": "/download/", "icon": "download" },
+    { "label": "Support", "href": "/support/", "icon": "support" }
+  ],
+  "shipNotes": {
+    "title": "Cueport: library link, safety copies, browser and playback",
+    "included": [
+      "Browser (Chrome/Edge): pick the folder that contains _Serato_ (e.g. Music). Read-only scan; nothing uploaded",
+      "Desktop: link the _Serato_ folder via the file picker (no automatic path)",
+      "Save the linked path in app settings (survives restart)",
+      "After link: automatic full duplicate of _Serato_ into Application Support (background thread)",
+      "24-hour cooldown: re-linking the same path skips another full copy unless you use \"Make another safety copy now\"",
+      "Manual \"Make another safety copy now\" anytime",
+      "Read-only scan: crate list and per-crate tracks (Subcrates, same idea as Serato's crate panel)",
+      "Crates and tracks browser with full-width player strip; row loads audio into the strip",
+      "Browser: same folder grant covers playback (paths resolved under that tree)",
+      "Refresh scan button; auto-scan when a library path is loaded",
+      "Read-only toward your live Serato folder. No writes to _Serato_ in this version"
+    ],
+    "upNext": [
+      "Waveforms, smart prep, mobile sync, and queue editing",
+      "Wi-Fi or QR transfer to phone",
+      "Write-back into Serato",
+      "Guaranteed support for every future Serato DB version (parser may lag new releases)"
+    ]
+  }
+}

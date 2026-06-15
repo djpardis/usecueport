@@ -1,0 +1,14 @@
+{
+  "name": "usecueport",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Marketing site for Cueport, the DJ desktop and mobile app.",
+  "scripts": {
+    "start": "eleventy --serve --port=8090",
+    "build": "eleventy",
+    "clean": "rm -rf _site"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

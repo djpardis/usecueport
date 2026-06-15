@@ -1,0 +1,44 @@
+---
+layout: layouts/base.njk
+title: "Support"
+description: "Common questions about Cueport."
+permalink: /support/
+viewportMain: true
+---
+
+<div class="container">
+  <div class="page-head">
+    <h1>Support</h1>
+    <p class="lede">Answers about how Cueport handles your Serato library. If yours is not here, email <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+  </div>
+  <div class="faq">
+    <details open>
+      <summary>Will Cueport change my Serato library?</summary>
+      <p>Not in this version. Cueport is read-only toward your live <code>_Serato_</code> folder. It also keeps an automatic safety copy of <code>_Serato_</code> in Application Support after you link the folder.</p>
+    </details>
+    <details>
+      <summary>Which folder do I open?</summary>
+      <p>Pick the folder that <em>contains</em> your <code>_Serato_</code> folder, for example your <code>Music</code> folder or a drive root. Your audio files should live somewhere under that same folder so Cueport can resolve each track from Serato's stored path.</p>
+    </details>
+    <details>
+      <summary>How are hot cues read?</summary>
+      <p>Hot cues are read from MP3 ID3 <code>GEOB</code> frames written by Serato. If those payloads are missing on a file, no cue strip will show for that track.</p>
+    </details>
+    <details>
+      <summary>Can I use the iPhone app on its own?</summary>
+      <p>The iPhone app pairs to the Mac app over your local network to receive crates and tracks, then plays them offline. The Mac app needs to be installed and running on the same network for pairing and for any crates to land on the phone.</p>
+    </details>
+    <details>
+      <summary>How do Mac and iPhone sync?</summary>
+      <p>Pair the iPhone with a QR code shown on the Mac over your local network, and Cueport ships a working set of crates and tracks to the phone for offline playback. Edits made on the phone wait for your approval on the Mac before they are written back.</p>
+    </details>
+    <details>
+      <summary>Does it stream or upload anything?</summary>
+      <p>No. Audio is played from your local files. The library and metadata stay on your devices. Sync between the Mac and iPhone is over your local network.</p>
+    </details>
+    <details>
+      <summary>What is out of scope?</summary>
+      <p>Mixing two decks in the app, beatgrid editing, BPM or waveform analysis, prep notes, play counts, listening history, and multi-DJ shared libraries.</p>
+    </details>
+  </div>
+</div>
