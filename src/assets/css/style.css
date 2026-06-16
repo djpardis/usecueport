@@ -407,7 +407,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   border-color: var(--accent);
   color: var(--accent);
 }
-.download-card .app-btn { align-self: flex-start; }
+.download-card .app-btn { align-self: flex-start; margin-top: auto; }
 .download-card .app-btn svg { width: 24px; height: 24px; }
 .download-meta { font-size: var(--type-small); color: var(--text-tertiary); margin: 0; font-family: var(--font-mono); }
 
