@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 title: "Features"
-description: "What Cueport does on Mac and iPhone, around your Serato library."
+description: "What Cueport does with your Serato library on the Mac."
 permalink: /features/
 viewportMain: true
 ---
@@ -9,32 +9,32 @@ viewportMain: true
 <div class="container">
   <div class="page-head">
     <h1>Features</h1>
-    <p class="lede">Cueport reads your Serato library on the Mac, mirrors a working set onto the iPhone over your local network, and plays from your local files. It does not require an internet connection or an account.</p>
+    <p class="lede">Cueport reads your Serato library, lets you edit on your own terms in a local working layer, and pushes changes back when you ask. The release notes below cover what is in the current build.</p>
   </div>
   <div class="feature-list">
     <article class="feature">
       <h3>Works with your Serato library</h3>
-      <p>Link your <code>_Serato_</code> folder, read crates, subcrates, and tracks, and push your edits back to Serato when you choose to.</p>
+      <p>Link your <code>_Serato_</code> folder and Cueport reads your crates, subcrates, tracks, BPM, key, and color labels straight from Serato's own files on disk.</p>
     </article>
     <article class="feature">
-      <h3>Safety copies, automatically</h3>
-      <p>After linking, Cueport makes a full duplicate of <code>_Serato_</code> into Application Support on a background thread. Re-linking the same path has a 24-hour cooldown.</p>
+      <h3>Reads cue points and notes</h3>
+      <p>Hot cues come from Serato Markers in each MP3, and the track Comment field is read alongside them. What you see in Cueport matches what is in Serato.</p>
     </article>
     <article class="feature">
-      <h3>Cue points from your MP3s</h3>
-      <p>Hot cues are read from Serato Markers in MP3 ID3 frames. The cues you see in Cueport are the cues you set in Serato.</p>
+      <h3>Edit cues, notes, and collections</h3>
+      <p>Add or move cue points, edit track notes inline, and create your own collections. Every edit stages in Cueport's local database with a clear sync status.</p>
     </article>
     <article class="feature">
-      <h3>Local files, local playback</h3>
-      <p>Player strip with audio playback from your local files. Paths resolve under the folder you granted. Nothing is uploaded.</p>
+      <h3>Push back to Serato</h3>
+      <p>When you are ready, publish your staged edits back to the Serato MP3s and crate files. Pushes are per-connection and only happen when you ask.</p>
     </article>
     <article class="feature">
-      <h3>Pick crates, send to iPhone</h3>
-      <p>Choose some crates on the Mac, pair the iPhone with a QR code, and Cueport ships a working set over your local network for offline playback.</p>
+      <h3>Local playback with cues</h3>
+      <p>Play tracks straight from your local files. The player shows the waveform, beatgrid, and your hot cues so you can audition without leaving the library.</p>
     </article>
     <article class="feature">
-      <h3>Prep on the phone, sync back</h3>
-      <p>New crates, moved tracks, and cue point updates made on the phone wait for your approval on the Mac before Cueport writes them back to Serato.</p>
+      <h3>Safety copies and restore points</h3>
+      <p>Cueport duplicates <code>_Serato_</code> into Application Support after you link it and takes a fresh restore point before every push. Roll any publish back if you need to.</p>
     </article>
   </div>
 </div>
