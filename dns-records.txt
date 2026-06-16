@@ -1,7 +1,14 @@
 $ORIGIN usecueport.com.
 $TTL 1
+
+;; A records (GitHub Pages, apex)
 @   IN A     185.199.108.153
 @   IN A     185.199.109.153
 @   IN A     185.199.110.153
 @   IN A     185.199.111.153
+
+;; CNAME (GitHub Pages, www)
 www IN CNAME djpardis.github.io.
+
+;; TXT (Google Search Console verification, keep)
+@   3600 IN TXT "google-site-verification=xVk6rkY4hf0jJ9Z4gRlUnEqhyim6V9xJWlNDvwMnk4A"
