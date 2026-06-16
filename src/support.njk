@@ -9,40 +9,36 @@ viewportMain: true
 <div class="container">
   <div class="page-head">
     <h1>Support</h1>
-    <p class="lede">Answers about how Cueport handles your Serato library. If yours is not here, email <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+    <p class="lede">These are answers about how Cueport handles your Serato library. If yours is not here, please email <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
   </div>
   <div class="faq">
     <details open>
       <summary>Will Cueport change my Serato library?</summary>
-      <p>Only when you push. Edits sit in Cueport's local database as <span class="mono">modified</span> until you review them and push back to a specific Serato connection. Cueport also keeps an automatic safety copy of <code>_Serato_</code> in Application Support after you link the folder.</p>
+      <p>Cueport changes your Serato library only when you choose to publish. Your edits sit in Cueport's local database as <span class="mono">modified</span> until you review them and push back to a specific Serato connection. Before every push, Cueport takes a restore point so that you can roll the change back, and after you first link the folder it keeps an automatic safety copy of <code>_Serato_</code> in Application Support.</p>
     </details>
     <details>
       <summary>Which folder do I open?</summary>
-      <p>Pick the folder that <em>contains</em> your <code>_Serato_</code> folder, for example your <code>Music</code> folder or a drive root. Your audio files should live somewhere under that same folder so Cueport can resolve each track from Serato's stored path.</p>
+      <p>You should open the folder that contains your <code>_Serato_</code> folder, such as your <code>Music</code> folder or a drive root. Your audio files need to live somewhere under that same folder so that Cueport can resolve each track from the path Serato stored.</p>
     </details>
     <details>
       <summary>How are hot cues read?</summary>
-      <p>Hot cues are read from MP3 ID3 <code>GEOB</code> frames written by Serato. If those payloads are missing on a file, no cue strip will show for that track.</p>
-    </details>
-    <details>
-      <summary>Can I use the iPhone app on its own?</summary>
-      <p>The iPhone app pairs to the Mac app over your local network to receive crates and tracks, then plays them offline. The Mac app needs to be installed and running on the same network for pairing and for any crates to land on the phone.</p>
-    </details>
-    <details>
-      <summary>How do Mac and iPhone sync?</summary>
-      <p>Pair the iPhone with a QR code shown on the Mac over your local network, and Cueport ships a working set of crates and tracks to the phone for offline playback. Edits made on the phone wait for your approval on the Mac before they are written back.</p>
+      <p>Cueport reads hot cues from the <code>GEOB</code> frames that Serato writes into each MP3's ID3 tags. If those payloads are missing on a file, Cueport does not show a cue strip for that track.</p>
     </details>
     <details>
       <summary>Can I add notes to tracks?</summary>
-      <p>Yes. Each track has an inline note in the library that you can edit on the spot. Cueport stores it locally as <span class="mono">modified</span> until you push, at which point it writes the note into the Serato Comment field on the MP3 so it shows up in Serato too.</p>
+      <p>You can edit a per-track note inline in the library. Cueport stores the edit locally as <span class="mono">modified</span> until you publish, at which point it writes the note into the Serato Comment field on the MP3 so that it appears in Serato as well.</p>
     </details>
     <details>
-      <summary>Does it stream or upload anything?</summary>
-      <p>No. Audio is played from your local files. The library and metadata stay on your devices. Sync between the Mac and iPhone is over your local network.</p>
+      <summary>Does Cueport stream or upload anything?</summary>
+      <p>Cueport does not stream or upload your music. Audio plays from your local files, and your library and metadata stay on your devices. Sync between the Mac and the iPhone happens over your local network.</p>
+    </details>
+    <details>
+      <summary>Can I use the iPhone app on its own?</summary>
+      <p>The iPhone app pairs to the Mac app over your local network to receive crates and tracks, which it then plays offline. The Mac app needs to be installed and running on the same network for pairing and for any crates to land on the phone.</p>
     </details>
     <details>
       <summary>What is out of scope?</summary>
-      <p>Mixing two decks in the app, beatgrid editing, BPM or waveform analysis, play counts, listening history, and multi-DJ shared libraries.</p>
+      <p>Cueport does not handle mixing two decks, beatgrid editing, BPM or waveform analysis, play counts, listening history, or multi-DJ shared libraries. Those features live in the DJ software you already use.</p>
     </details>
   </div>
 </div>
