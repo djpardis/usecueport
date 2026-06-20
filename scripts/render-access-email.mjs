@@ -23,18 +23,23 @@ const downloadUrl = execFileSync(
   { encoding: "utf8" }
 ).trim();
 
-const expiresAt = new Intl.DateTimeFormat("en-US", {
-  dateStyle: "medium",
-  timeStyle: "short",
-  timeZone: "America/Los_Angeles"
-}).format(new Date(Date.now() + ttlHours * 60 * 60 * 1000));
+const expiresAfter = formatDuration(ttlHours);
 
 const html = readFileSync(join(root, "emails/access-approved.html"), "utf8")
   .replaceAll("{{name}}", escapeHtml(name))
   .replaceAll("{{download_url}}", escapeHtml(downloadUrl))
-  .replaceAll("{{expires_at}}", escapeHtml(expiresAt));
+  .replaceAll("{{expires_after}}", escapeHtml(expiresAfter));
 
 console.log(html);
+
+function formatDuration(hours) {
+  if (hours % 24 === 0) {
+    const days = hours / 24;
+    return `${days} ${days === 1 ? "day" : "days"}`;
+  }
+
+  return `${hours} ${hours === 1 ? "hour" : "hours"}`;
+}
 
 function escapeHtml(value) {
   return String(value)

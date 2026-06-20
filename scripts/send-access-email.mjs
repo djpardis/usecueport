@@ -4,7 +4,6 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const FROM = "Cueport <hello@usecueport.com>";
-const REPLY_TO = "pardis.noorzad@gmail.com";
 const DEFAULT_FILE = "Cueport_0.2.1_aarch64.dmg";
 const DEFAULT_TTL_HOURS = 72;
 
@@ -37,7 +36,6 @@ const response = await fetch("https://api.resend.com/emails", {
   body: JSON.stringify({
     from: FROM,
     to: [to],
-    reply_to: REPLY_TO,
     subject: "Your Cueport access",
     html
   })
