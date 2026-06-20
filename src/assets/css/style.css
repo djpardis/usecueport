@@ -469,13 +469,15 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   border-color: var(--accent);
 }
 .access-form .btn {
-  align-self: flex-start;
+  align-self: flex-end;
 }
 .form-status {
-  min-height: 1.5em;
   margin: 0;
   font-size: var(--type-small);
   color: var(--text-secondary);
+}
+.form-status:empty {
+  display: none;
 }
 .access-note {
   display: flex;
