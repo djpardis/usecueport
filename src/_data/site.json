@@ -8,8 +8,13 @@
   "email": "hello@usecueport.com",
   "version": "0.2.1",
   "downloads": {
-    "mac": "#",
+    "mac": "/download/",
     "ios": "#"
+  },
+  "forms": {
+    "access": {
+      "action": "https://form.usecueport.com/submit/access-request"
+    }
   },
   "nav": [
     { "label": "Features", "href": "/features/", "icon": "features" },

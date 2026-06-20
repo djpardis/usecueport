@@ -6,7 +6,10 @@
   "scripts": {
     "start": "eleventy --serve --port=8090",
     "build": "eleventy",
-    "clean": "rm -rf _site"
+    "clean": "rm -rf _site",
+    "download:link": "node scripts/generate-download-link.mjs",
+    "email:access": "node scripts/render-access-email.mjs",
+    "email:send-access": "node scripts/send-access-email.mjs"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0"
