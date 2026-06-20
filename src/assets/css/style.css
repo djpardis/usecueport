@@ -23,6 +23,8 @@
   --maxw: 1080px;
   --header-h: 70px;
   --footer-h: 64px;
+  --marker-size: 28px;
+  --marker-indent: 44px;
 }
 
 * { box-sizing: border-box; }
@@ -76,7 +78,9 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   height: 100%;
   gap: 24px;
 }
-.logo-lockup { display: flex; align-items: center; gap: 0.55rem; }
+.logo-lockup { display: flex; align-items: center; gap: 0.55rem; color: var(--text); }
+.logo-lockup:hover { color: var(--accent); text-decoration: none; }
+.logo-lockup:hover .brand-title { color: currentColor; }
 .logo-mark { width: 2rem; height: 2rem; flex-shrink: 0; }
 .brand-title {
   font-family: var(--font-sans);
@@ -371,32 +375,30 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   padding: 16px 18px;
   background: #ffffff;
   border: 1px solid var(--border);
-  display: grid;
-  grid-template-columns: 30px minmax(0, 1fr);
-  gap: 8px 10px;
 }
 .feature-head {
-  display: contents;
+  display: flex;
+  align-items: flex-start;
+  gap: calc(var(--marker-indent) - var(--marker-size));
+  margin-bottom: 6px;
 }
 .feature-icon {
   display: inline-flex;
-  width: 30px;
-  height: 30px;
+  width: var(--marker-size);
+  height: var(--marker-size);
   align-items: center;
   justify-content: center;
   flex: 0 0 auto;
   color: var(--accent);
   background: var(--bg);
   border: 1px solid var(--border-strong);
-  grid-column: 1;
-  grid-row: 1;
 }
 .feature-icon svg {
-  width: 19px;
-  height: 19px;
+  width: 18px;
+  height: 18px;
 }
-.feature h3 { margin: 0; font-size: var(--type-body); font-weight: 600; font-family: var(--font-sans); line-height: 1.25; grid-column: 2; align-self: start; padding-top: 1px; }
-.feature p { margin: 0; font-size: 1rem; line-height: 1.45; color: var(--text-secondary); grid-column: 2; }
+.feature h3 { margin: 0; font-size: var(--type-body); font-weight: 600; font-family: var(--font-sans); line-height: 1.25; padding-top: 1px; }
+.feature p { margin: 0 0 0 var(--marker-indent); font-size: 1rem; line-height: 1.45; color: var(--text-secondary); }
 
 @media (max-width: 920px) { .feature-list { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 640px) { .feature-list { grid-template-columns: 1fr; } }
@@ -445,8 +447,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   gap: 18px;
   align-items: start;
 }
-.access-form,
-.access-note {
+.access-form {
   background: #ffffff;
   border: 1px solid var(--border);
   padding: 24px 26px;
@@ -503,9 +504,9 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   display: none;
 }
 .access-note {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  padding: 24px 26px;
 }
 .setup-steps {
   list-style: none;
@@ -519,7 +520,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
 .setup-steps li {
   counter-increment: setup-step;
   position: relative;
-  padding-left: 44px;
+  padding-left: var(--marker-indent);
 }
 .setup-steps li::before {
   content: counter(setup-step);
@@ -529,8 +530,8 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  width: var(--marker-size);
+  height: var(--marker-size);
   border: 1px solid var(--border-strong);
   background: var(--bg);
   color: var(--accent);
@@ -539,13 +540,14 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   font-weight: 500;
 }
 .access-note h2 {
-  margin: 0;
-  font-size: 1.05rem;
+  margin: 0 0 6px;
+  font-size: var(--type-body);
+  line-height: 1.25;
 }
 .access-note p {
-  margin: 0 0 8px;
+  margin: 0;
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 @media (max-width: 820px) {
@@ -553,7 +555,9 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   .form-grid {
     grid-template-columns: 1fr;
   }
-  .access-form,
+  .access-form {
+    padding: 16px;
+  }
   .access-note {
     padding: 16px;
   }
