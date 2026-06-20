@@ -1,0 +1,11 @@
+name = "cueport-downloads"
+main = "workers/downloads/src/index.ts"
+compatibility_date = "2026-06-19"
+workers_dev = true
+routes = [
+  { pattern = "download.usecueport.com", custom_domain = true }
+]
+
+[[r2_buckets]]
+binding = "CUEPORT_DOWNLOADS"
+bucket_name = "cueport-downloads"
