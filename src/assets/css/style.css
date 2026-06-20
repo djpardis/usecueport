@@ -372,6 +372,21 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   background: var(--bg-elevated);
   border: 1px solid var(--brand-border-strong, var(--border-strong));
 }
+.feature-icon {
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  color: var(--accent);
+  background: var(--bg);
+  border: 1px solid var(--border-strong);
+}
+.feature-icon svg {
+  width: 22px;
+  height: 22px;
+}
 .feature h3 { margin-bottom: 6px; font-size: var(--type-body); font-weight: 600; font-family: var(--font-sans); }
 .feature p { margin: 0; font-size: 1rem; line-height: 1.45; color: var(--text-secondary); }
 
