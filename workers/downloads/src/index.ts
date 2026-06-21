@@ -1,9 +1,9 @@
 type Env = {
   CUEPORT_DOWNLOADS: R2Bucket;
   DOWNLOAD_SECRET: string;
+  /** Filename of the current release DMG, e.g. "Cueport_0.3.0_aarch64.dmg". Set via wrangler var. */
+  CURRENT_DMG: string;
 };
-
-const DEFAULT_FILENAME = "Cueport_0.2.1_aarch64.dmg";
 
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
@@ -12,7 +12,7 @@ export default {
     }
 
     const url = new URL(request.url);
-    const file = url.searchParams.get("file") || DEFAULT_FILENAME;
+    const file = url.searchParams.get("file") || env.CURRENT_DMG;
     const expires = url.searchParams.get("expires");
     const signature = url.searchParams.get("signature");
 

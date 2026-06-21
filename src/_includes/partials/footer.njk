@@ -3,18 +3,9 @@
     <details class="build-panel">
       <summary>v{{ site.version }} · release notes</summary>
       <div class="build-panel-body">
-        <div>
-          <p class="build-section-label">In this build</p>
-          <ul class="build-list">
-            {% for line in site.shipNotes.included %}<li>{{ line | safe }}</li>{% endfor %}
-          </ul>
-        </div>
-        <div>
-          <p class="build-section-label">Up next</p>
-          <ul class="build-list">
-            {% for line in site.shipNotes.upNext %}<li>{{ line | safe }}</li>{% endfor %}
-          </ul>
-        </div>
+        <ul class="build-list">
+          {% for line in site.shipNotes.included %}<li>{{ line | safe }}</li>{% endfor %}
+        </ul>
       </div>
     </details>
     <p class="footer-copyright">

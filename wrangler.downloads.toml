@@ -9,3 +9,6 @@ routes = [
 [[r2_buckets]]
 binding = "CUEPORT_DOWNLOADS"
 bucket_name = "cueport-downloads"
+
+[vars]
+CURRENT_DMG = "Cueport_0.3.0_aarch64.dmg"
