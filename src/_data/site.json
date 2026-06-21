@@ -6,7 +6,8 @@
   "scope": "desktop + mobile",
   "description": "Start on your Mac, where Cueport reads your Serato library. Pair the iPhone to the Mac over your local network, send some crates across, and play them anywhere. The Mac app is the source of truth and the iPhone app pairs to it.",
   "email": "hello@usecueport.com",
-  "version": "0.2.1",
+  "version": "0.3.0",
+  "dmgFilename": "Cueport_0.3.0_aarch64.dmg",
   "downloads": {
     "mac": "/download/",
     "ios": "#"
@@ -22,25 +23,17 @@
     { "label": "Support", "href": "/support/", "icon": "support" }
   ],
   "shipNotes": {
-    "title": "Cueport: library link, safety copies, browser and playback",
+    "title": "Cueport 0.3: cue and note write-back, collection publishing, restore points",
     "included": [
-      "Browser (Chrome/Edge): pick the folder that contains _Serato_ (e.g. Music). Read-only scan; nothing uploaded",
-      "Desktop: link the _Serato_ folder via the file picker (no automatic path)",
-      "Save the linked path in app settings (survives restart)",
-      "After link: automatic full duplicate of _Serato_ into Application Support (background thread)",
-      "24-hour cooldown: re-linking the same path skips another full copy unless you use \"Make another safety copy now\"",
-      "Manual \"Make another safety copy now\" anytime",
-      "Read-only scan: crate list and per-crate tracks (Subcrates, same idea as Serato's crate panel)",
-      "Crates and tracks browser with full-width player strip; row loads audio into the strip",
-      "Browser: same folder grant covers playback (paths resolved under that tree)",
-      "Refresh scan button; auto-scan when a library path is loaded",
-      "Read-only toward your live Serato folder. No writes to _Serato_ in this version"
-    ],
-    "upNext": [
-      "Waveforms, smart prep, mobile sync, and queue editing",
-      "Wi-Fi or QR transfer to phone",
-      "Write-back into Serato",
-      "Guaranteed support for every future Serato DB version (parser may lag new releases)"
+      "Edit cue points in the Cueport DB; staged into a private copy before touching your live files",
+      "Edit track notes (the ID3 Comment / Serato 'Comment' column) inline in the track table",
+      "Review cue and note diffs before staging; see exactly what changed per slot",
+      "Publish staged edits to your live Serato library with one click",
+      "Collection write-back: create, rename, delete, reorder collections and publish the .crate files",
+      "Per-publish restore points: every publish snapshots the replaced files; roll back from inside the app",
+      "Full safety copy of _Serato_ on link; 24-hour cooldown; manual copy anytime",
+      "Waveform strip with real Serato overview peaks and beatgrid markers",
+      "Drag-and-drop track reorder within a collection"
     ]
   }
 }

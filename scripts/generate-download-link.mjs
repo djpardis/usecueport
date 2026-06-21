@@ -1,9 +1,15 @@
 #!/usr/bin/env node
 import { createHmac } from "node:crypto";
 import { execFileSync } from "node:child_process";
+import { createRequire } from "node:module";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const root = dirname(dirname(fileURLToPath(import.meta.url)));
+const site = createRequire(import.meta.url)(join(root, "src/_data/site.json"));
 
 const DEFAULT_BASE_URL = "https://download.usecueport.com/";
-const DEFAULT_FILE = "Cueport_0.2.1_aarch64.dmg";
+const DEFAULT_FILE = site.dmgFilename;
 const DEFAULT_TTL_HOURS = 72;
 
 const secret = process.env.CUEPORT_DOWNLOAD_SECRET || readSecretFromKeychain();
