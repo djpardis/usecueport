@@ -28,7 +28,7 @@
 }
 
 * { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
+html, body { margin: 0; padding: 0; height: 100%; }
 body {
   font-family: var(--font-sans);
   font-size: 112.5%;
@@ -37,8 +37,12 @@ body {
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  padding-bottom: var(--footer-h);
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  min-height: 100vh;
 }
+#main { flex: 1; }
 a { color: var(--accent); text-decoration: none; }
 a:hover { color: var(--accent-hover); text-decoration: underline; text-underline-offset: 3px; }
 img, svg { display: block; max-width: 100%; }
@@ -127,9 +131,6 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
 
 /* Footer — fixed at bottom, release notes pops upward (does not shift layout) */
 .site-footer {
-  position: fixed;
-  left: 0; right: 0; bottom: 0;
-  z-index: 20;
   border-top: 1px solid var(--border);
   background: var(--bg);
   padding: 12px 0;
@@ -168,6 +169,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   display: block;
   width: min(720px, calc(100vw - 64px));
   max-height: calc(100vh - var(--footer-h) - 40px);
+  max-height: calc(100dvh - var(--footer-h) - 40px);
   overflow-y: auto;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
