@@ -470,11 +470,14 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
 .access-form textarea {
   width: 100%;
   border: 1px solid var(--border-strong);
+  border-radius: 0;
   background: var(--bg);
   color: var(--text);
   font: inherit;
   font-weight: 400;
   padding: 10px 12px;
+  -webkit-appearance: none;
+  appearance: none;
 }
 .access-form textarea {
   resize: vertical;
