@@ -6,8 +6,8 @@
   "scope": "desktop + mobile",
   "description": "Start on your Mac, where Cueport reads your Serato library. Pair the iPhone to the Mac over your local network, send some crates across, and play them anywhere. The Mac app is the source of truth and the iPhone app pairs to it.",
   "email": "hello@usecueport.com",
-  "version": "0.3.0",
-  "dmgFilename": "Cueport_0.3.0_aarch64.dmg",
+  "version": "1.0.0",
+  "dmgFilename": "Cueport_1.0.0_aarch64.dmg",
   "downloads": {
     "mac": "/download/",
     "ios": "#"
@@ -18,22 +18,34 @@
     }
   },
   "nav": [
-    { "label": "Features", "href": "/features/", "icon": "features" },
-    { "label": "Download", "href": "/download/", "icon": "download" },
-    { "label": "Support", "href": "/support/", "icon": "support" }
+    {
+      "label": "Features",
+      "href": "/features/",
+      "icon": "features"
+    },
+    {
+      "label": "Download",
+      "href": "/download/",
+      "icon": "download"
+    },
+    {
+      "label": "Support",
+      "href": "/support/",
+      "icon": "support"
+    }
   ],
   "shipNotes": {
-    "title": "Cueport 0.3: cue and note write-back, collection publishing, restore points",
+    "title": "Cueport 1.0: local-first library management for desktop and phone",
     "included": [
-      "Edit cue points in the Cueport DB; staged into a private copy before touching your live files",
-      "Edit track notes (the ID3 Comment / Serato 'Comment' column) inline in the track table",
-      "Review cue and note diffs before staging; see exactly what changed per slot",
-      "Publish staged edits to your live Serato library with one click",
-      "Collection write-back: create, rename, delete, reorder collections and publish the .crate files",
-      "Per-publish restore points: every publish snapshots the replaced files; roll back from inside the app",
-      "Full safety copy of _Serato_ on link; 24-hour cooldown; manual copy anytime",
-      "Waveform strip with real Serato overview peaks and beatgrid markers",
-      "Drag-and-drop track reorder within a collection"
+      "Read Serato crates, subcrates, tracks, cues, BPM, key, color, comments, and beatgrid markers from your local library",
+      "Play tracks locally from the desktop library with waveform context, cue markers, and continuous playback",
+      "Create, rename, delete, add tracks to, and manually reorder collections before publishing them back",
+      "Edit cue points, track comments, and track colors in a local working layer before any write-back happens",
+      "Review pending changes before publishing to Serato, with restore points for every publish",
+      "Pair an iPhone over the local network, choose collections for the phone, cache audio, and play offline",
+      "Use desktop and mobile column sorting as temporary views while keeping the # column as the manual order",
+      "Recover from pairing changes without deleting cached phone music",
+      "Signed Mac app build with local-first behavior and no music upload requirement"
     ]
   }
 }
