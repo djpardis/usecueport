@@ -11,4 +11,4 @@ binding = "CUEPORT_DOWNLOADS"
 bucket_name = "cueport-downloads"
 
 [vars]
-CURRENT_DMG = "Cueport_1.0.0_aarch64.dmg"
+CURRENT_DMG = "Cueport_1.0.1_aarch64.dmg"
