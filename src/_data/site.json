@@ -6,8 +6,8 @@
   "scope": "desktop + mobile",
   "description": "Start on your Mac, where Cueport reads your Serato library. Pair the iPhone to the Mac over your local network, send some crates across, and play them anywhere. The Mac app is the source of truth and the iPhone app pairs to it.",
   "email": "hello@usecueport.com",
-  "version": "1.0.0",
-  "dmgFilename": "Cueport_1.0.0_aarch64.dmg",
+  "version": "1.0.1",
+  "dmgFilename": "Cueport_1.0.1_aarch64.dmg",
   "downloads": {
     "mac": "/download/",
     "ios": "#"
