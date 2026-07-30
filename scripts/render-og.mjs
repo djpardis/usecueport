@@ -4,107 +4,126 @@ import { execSync } from "child_process";
 import { resolve } from "path";
 
 const FONT_DIR = "/Users/djpardis/Documents/talk1/public/fonts";
-const OUT_PNG = "src/assets/img/og.png";
+const DESKTOP_ORIG = "/Users/djpardis/.cursor/projects/Users-djpardis-Documents-usecueport/assets/Screenshot_2026-07-30_at_10.11.53_AM-6378391c-a354-4306-bd6d-fe896ce983cc.png";
+const MOBILE_ORIG  = "/Users/djpardis/.cursor/projects/Users-djpardis-Documents-usecueport/assets/IMG_2524-55c0be5e-25fd-4040-95d1-e05473a07d47.png";
+const OUT_PNG = resolve("src/assets/img/og.png");
 const W = 1200;
 const H = 630;
 
-function b64(file) {
-  return readFileSync(`${FONT_DIR}/${file}`).toString("base64");
+function b64file(path) {
+  return readFileSync(path).toString("base64");
 }
 
-const dmSans700 = b64("DMSans-700.woff2");
-const dmSans500 = b64("DMSans-500.woff2");
-const dmMono400 = b64("DMMono-400.woff2");
+const dmSans700 = b64file(`${FONT_DIR}/DMSans-700.woff2`);
+const dmSans500 = b64file(`${FONT_DIR}/DMSans-500.woff2`);
+const dmMono400 = b64file(`${FONT_DIR}/DMMono-400.woff2`);
+const dmMono500 = b64file(`${FONT_DIR}/DMMono-500.woff2`);
+const desktopB64 = b64file(DESKTOP_ORIG);
+const mobileB64  = b64file(MOBILE_ORIG);
 const logoSvg = readFileSync("src/assets/img/logo-transparent.svg", "utf8");
 
-// Replicates the talk1 closing slide exactly:
-// same font sizes, same logo size, same layout padding, same gap —
-// but centered (no QR column) and the conference footer replaced with the tagline.
 const html = `<!DOCTYPE html>
 <html><head>
+<meta charset="utf-8">
 <style>
-  @font-face {
-    font-family: "DM Sans";
-    font-weight: 700;
-    src: url("data:font/woff2;base64,${dmSans700}") format("woff2");
-  }
-  @font-face {
-    font-family: "DM Sans";
-    font-weight: 500;
-    src: url("data:font/woff2;base64,${dmSans500}") format("woff2");
-  }
-  @font-face {
-    font-family: "DM Mono";
-    font-weight: 400;
-    src: url("data:font/woff2;base64,${dmMono400}") format("woff2");
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html, body {
-    width: ${W}px;
-    height: ${H}px;
-    overflow: hidden;
-  }
-  /* Matches .slidev-layout */
+  @font-face { font-family:"DM Sans";  font-weight:700; src:url("data:font/woff2;base64,${dmSans700}") format("woff2"); }
+  @font-face { font-family:"DM Sans";  font-weight:500; src:url("data:font/woff2;base64,${dmSans500}") format("woff2"); }
+  @font-face { font-family:"DM Mono";  font-weight:400; src:url("data:font/woff2;base64,${dmMono400}") format("woff2"); }
+  @font-face { font-family:"DM Mono";  font-weight:500; src:url("data:font/woff2;base64,${dmMono500}") format("woff2"); }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
   body {
+    width: ${W}px; height: ${H}px; overflow: hidden;
     background: #f5ede0;
     font-family: "DM Sans", system-ui, sans-serif;
-    font-size: 1.55rem;
-    color: #18181b;
-    padding: 3rem 4.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
     -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    /* right padding keeps a clean margin; mobile stays inside */
+    padding-right: 36px;
   }
-  /* Matches the left column of the closing slide, centered */
-  .card {
+
+  /* Left panel: logo + wordmark + subtitle, vertically centered */
+  .left {
+    flex: 0 0 310px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 24px;
-    text-align: center;
+    gap: 16px;
+    padding: 40px 32px 60px 44px;
   }
-  .logo svg {
-    width: 140px;
-    height: 140px;
-    display: block;
-  }
-  /* Matches font-size:2.6rem; font-weight:700 from the slide div */
-  .title {
-    font-size: 2.6rem;
+  .logo svg { width: 130px; height: 130px; display: block; }
+  .wordmark {
+    font-size: 64px;
     font-weight: 700;
     color: #18181b;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
     line-height: 1;
   }
-  /* Matches font-size:1.5rem; line-height:1.4 from the slide div */
   .subtitle {
-    font-size: 1.5rem;
+    font-size: 17px;
+    font-weight: 500;
+    color: #52525b;
     line-height: 1.4;
-    color: #18181b;
+    white-space: nowrap;
+    text-align: center;
   }
-  /* Replaces the conference footer — same position as .slidev-layout::before */
+
+  /* Right panel: screenshots */
+  .right {
+    flex: 1;
+    min-width: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 16px 0 20px 0;
+  }
+  .desktop {
+    width: calc(100% - 100px);
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 12px 48px rgba(24,24,27,0.18);
+    margin-left: 40px;
+    margin-top: -40px;
+  }
+  .mobile {
+    position: absolute;
+    bottom: 30px;
+    right: 0;
+    width: 195px;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 12px 36px rgba(24,24,27,0.38));
+    z-index: 10;
+  }
+
+  /* Tagline pinned to bottom center */
   .tagline {
+    position: absolute;
+    bottom: 20px;
+    left: 0; right: 0;
+    text-align: center;
     font-family: "DM Mono", monospace;
-    font-size: 0.9rem;
+    font-size: 20px;
     font-weight: 500;
     color: #c2410c;
-    letter-spacing: 0.12em;
-    position: absolute;
-    bottom: 1.4rem;
-    left: 0;
-    right: 0;
-    text-align: center;
+    letter-spacing: 0.2em;
+    -webkit-text-stroke: 0.5px #c2410c;
   }
 </style>
 </head><body>
-  <div class="card">
+  <div class="left">
     <div class="logo">${logoSvg}</div>
-    <div class="title">Cueport</div>
+    <div class="wordmark">Cueport</div>
     <div class="subtitle">A local-first music player for DJs</div>
+  </div>
+  <div class="right">
+    <img class="desktop" src="data:image/png;base64,${desktopB64}" alt="">
+    <img class="mobile"  src="data:image/png;base64,${mobileB64}" alt="">
   </div>
   <div class="tagline">LOCAL-FIRST \u00b7 DESKTOP + MOBILE</div>
 </body></html>`;
@@ -112,7 +131,6 @@ const html = `<!DOCTYPE html>
 const htmlPath = "/tmp/og-render.html";
 writeFileSync(htmlPath, html);
 
-const outAbs = resolve(OUT_PNG);
 const script = `
 const puppeteer = require('puppeteer');
 (async () => {
@@ -121,15 +139,10 @@ const puppeteer = require('puppeteer');
   await page.setViewport({ width: ${W}, height: ${H}, deviceScaleFactor: 2 });
   await page.goto('file://${htmlPath}', { waitUntil: 'networkidle0' });
   await new Promise(r => setTimeout(r, 500));
-  await page.screenshot({
-    path: '${outAbs}',
-    type: 'png',
-    clip: { x: 0, y: 0, width: ${W}, height: ${H} }
-  });
+  await page.screenshot({ path: '${OUT_PNG}', type: 'png', clip: { x:0, y:0, width:${W}, height:${H} } });
   await browser.close();
-  console.log('wrote ${outAbs}');
+  console.log('wrote ${OUT_PNG}');
 })();
 `;
-
 writeFileSync("/tmp/og-puppeteer.cjs", script);
 execSync("node /tmp/og-puppeteer.cjs", { cwd: process.cwd(), stdio: "inherit" });
