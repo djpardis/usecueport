@@ -4,7 +4,7 @@ import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const DEFAULT_FILE = "Cueport_0.2.1_aarch64.dmg";
+const DEFAULT_FILE = "Cueport_1.0.1_aarch64.dmg";
 const DEFAULT_TTL_HOURS = 72;
 
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
