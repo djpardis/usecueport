@@ -6,8 +6,8 @@
   "scope": "desktop + mobile",
   "description": "Start on your Mac, where Cueport reads your Serato library. Pair the iPhone to the Mac over your local network, send some crates across, and play them anywhere. The Mac app is the source of truth and the iPhone app pairs to it.",
   "email": "hello@usecueport.com",
-  "version": "1.0.1",
-  "dmgFilename": "Cueport_1.0.1_aarch64.dmg",
+  "version": "1.1.0",
+  "dmgFilename": "Cueport_1.1.0_aarch64.dmg",
   "downloads": {
     "mac": "/download/",
     "ios": "#"
@@ -35,7 +35,7 @@
     }
   ],
   "shipNotes": {
-    "title": "Cueport 1.0: local-first library management for desktop and phone",
+    "title": "Cueport 1.1: local-first library management for desktop and phone",
     "included": [
       "Read Serato crates, subcrates, tracks, cues, BPM, key, color, comments, and beatgrid markers from your local library",
       "Play tracks locally from the desktop library with waveform context, cue markers, and continuous playback",
@@ -45,6 +45,11 @@
       "Pair an iPhone over the local network, choose collections for the phone, cache audio, and play offline",
       "Use desktop and mobile column sorting as temporary views while keeping the # column as the manual order",
       "Recover from pairing changes without deleting cached phone music",
+      "Album art from embedded ID3 tags shown in desktop track lists, mobile track detail, and lock screen",
+      "Tracks start playback at the first cue point on both desktop and mobile, matching Serato behavior",
+      "Skip previous and next buttons in the desktop player transport",
+      "In-app Wi-Fi isolation diagnostic and guided hotspot prompt for public networks",
+      "Faster mobile pairing by deferring artwork downloads until after audio sync",
       "Signed Mac app build with local-first behavior and no music upload requirement"
     ]
   }
