@@ -4,7 +4,7 @@
   "url": "https://usecueport.com",
   "subtitle": "A local-first music player for DJs",
   "scope": "desktop + mobile",
-  "description": "Start on your Mac, where Cueport reads your Serato library. Pair the iPhone to the Mac over your local network, send some crates across, and play them anywhere. The Mac app is the source of truth and the iPhone app pairs to it.",
+  "description": "Start on your Mac, where Cueport reads a Serato library or builds a Cueport Direct library from a music folder. Pair the iPhone to the Mac over your local network, send collections across, and play them anywhere. The Mac app is the source of truth and the iPhone app pairs to it.",
   "email": "hello@usecueport.com",
   "version": "1.1.0",
   "dmgFilename": "Cueport_1.1.0_aarch64.dmg",
@@ -38,6 +38,8 @@
     "title": "Cueport 1.1: local-first library management for desktop and phone",
     "included": [
       "Read Serato crates, subcrates, tracks, cues, BPM, key, color, comments, and beatgrid markers from your local library",
+      "Build a Cueport Direct library from a music folder without requiring Serato",
+      "Analyze Cueport Direct tracks locally with trail mix for BPM, key, and waveform columns",
       "Play tracks locally from the desktop library with waveform context, cue markers, and continuous playback",
       "Create, rename, delete, add tracks to, and manually reorder collections before publishing them back",
       "Edit cue points, track comments, and track colors in a local working layer before any write-back happens",

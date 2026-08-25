@@ -9,7 +9,7 @@ viewportMain: true
 <div class="container">
   <div class="page-head">
     <h1>Support</h1>
-    <p class="lede">These are answers about how Cueport handles your Serato library. If yours is not here, please email <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+    <p class="lede">These are answers about how Cueport handles Serato libraries, Cueport Direct libraries, and local playback. If yours is not here, please email <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
   </div>
   <div class="faq">
     <details open>
@@ -17,16 +17,20 @@ viewportMain: true
       <p>Cueport changes your Serato library only when you choose to publish. Your edits sit in Cueport's local database as <span class="mono">modified</span> until you review them and push back to a specific Serato connection. Before every push, Cueport takes a restore point so that you can roll the change back, and after you first link the folder it keeps an automatic safety copy of <code>_Serato_</code> in Application Support.</p>
     </details>
     <details>
+      <summary>Can I use Cueport without Serato?</summary>
+      <p>Yes. Cueport Direct builds a library from a music folder, stores cues, notes, colors, collections, restore points, and <a href="https://github.com/djpardis/trailmix">trail mix</a> analysis in Cueport's own database, and does not read Serato library files.</p>
+    </details>
+    <details>
       <summary>Which folder do I open?</summary>
-      <p>You should open the folder that contains your <code>_Serato_</code> folder, such as your <code>Music</code> folder or a drive root. Your audio files need to live somewhere under that same folder so that Cueport can resolve each track from the path Serato stored.</p>
+      <p>For Serato mode, open the folder that contains your <code>_Serato_</code> folder, such as your <code>Music</code> folder or a drive root. For Cueport Direct, open the music folder you want Cueport to scan. Audio files can live under any folder name inside that selected tree, including a folder named <code>_Serato_</code>.</p>
     </details>
     <details>
       <summary>How are hot cues read?</summary>
-      <p>Cueport reads hot cues from the <code>GEOB</code> frames that Serato writes into each MP3's ID3 tags. If those payloads are missing on a file, Cueport does not show a cue strip for that track.</p>
+      <p>In Serato mode, Cueport reads hot cues from the <code>GEOB</code> frames that Serato writes into each MP3's ID3 tags. If those payloads are missing on a file, Cueport does not show a cue strip for that track. In Cueport Direct, cue points are stored in Cueport's own database.</p>
     </details>
     <details>
       <summary>Can I add notes to tracks?</summary>
-      <p>You can edit a per-track note inline in the library. Cueport stores the edit locally as <span class="mono">modified</span> until you publish, at which point it writes the note into the Serato Comment field on the MP3 so that it appears in Serato as well.</p>
+      <p>You can edit a per-track note inline in the library. In Serato mode, Cueport stores the edit locally as <span class="mono">modified</span> until you publish, at which point it writes the note into the Serato Comment field on the MP3. In Cueport Direct, the note remains in Cueport's own database.</p>
     </details>
     <details>
       <summary>Does Cueport stream or upload anything?</summary>
@@ -38,11 +42,11 @@ viewportMain: true
     </details>
     <details>
       <summary>What do the waveform colors mean?</summary>
-      <p>The waveform strip colors are relative to the track you are playing, not an absolute frequency scale. Sections where the track's low-frequency content is higher than its own average appear orange or red. Sections near the track's midrange average appear green. Sections where high-frequency content is relatively stronger appear blue or cyan. The faint full-height lines mark bars (downbeats) from Serato's beatgrid, numbered like Serato's bar markers. Because the strip shows the whole track at once, only every few bars is numbered so the labels do not collide. Hold on the waveform for a moment to see a quick legend.</p>
+      <p>The waveform strip colors are relative to the track you are playing, not an absolute frequency scale. Serato mode reads Serato's embedded overview data. Cueport Direct reads trail mix waveform columns from Cueport's database. Sections where the track's low-frequency content is higher than its own average appear orange or red. Sections near the track's midrange average appear green. Sections where high-frequency content is relatively stronger appear blue or cyan. The faint full-height lines mark bars when beatgrid markers are available. Hold on the waveform for a moment to see a quick legend.</p>
     </details>
     <details>
       <summary>What is out of scope?</summary>
-      <p>Cueport does not handle mixing two decks, beatgrid editing, BPM or waveform analysis, play counts, listening history, or multi-DJ shared libraries. Those features live in the DJ software you already use.</p>
+      <p>Cueport does not handle mixing two decks, beatgrid editing, play counts, listening history, or multi-DJ shared libraries. Serato mode uses Serato's BPM, key, beatgrid, and waveform data. Cueport Direct analyzes BPM, key, and waveform locally with <a href="https://github.com/djpardis/trailmix">trail mix</a>.</p>
     </details>
   </div>
 </div>
