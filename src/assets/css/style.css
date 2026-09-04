@@ -274,6 +274,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   flex-direction: column;
   align-items: stretch;
   padding-top: 40px;
+  padding-bottom: 60px;
 }
 .viewport-main > * { width: 100%; }
 
@@ -440,24 +441,28 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
 
 .access-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.8fr);
-  gap: 18px;
-  align-items: start;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 1fr);
+  gap: 24px;
+  align-items: stretch;
 }
 .access-form {
   background: #ffffff;
   border: 1px solid var(--border);
   padding: 24px 26px;
-}
-.access-form {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  justify-content: center;
 }
-.form-grid {
+.form-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.form-row {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px 16px;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
 }
 .access-form label {
   display: flex;
@@ -513,26 +518,27 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   background: #ffffff;
   border: 1px solid var(--border);
   padding: 24px 26px;
-}
-.setup-steps {
-  list-style: none;
-  counter-reset: setup-step;
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 24px;
 }
-.setup-steps li {
-  counter-increment: setup-step;
-  position: relative;
-  padding-left: var(--marker-indent);
+
+/* Setup tree: root steps and branching paths */
+.setup-tree {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.setup-steps li::before {
-  content: counter(setup-step);
-  position: absolute;
-  left: 0;
-  top: 0;
+.tree-root {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 16px 0;
+}
+.tree-root:first-child { padding-top: 0; }
+.tree-root:last-child { padding-bottom: 0; }
+.tree-num {
+  flex-shrink: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -544,6 +550,53 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   font-family: var(--font-mono);
   font-size: 0.9rem;
   font-weight: 500;
+}
+.tree-branches {
+  border-left: 2px solid var(--border-strong);
+  margin-left: calc(var(--marker-size) / 2 - 1px);
+  padding-left: calc(14px + var(--marker-size) / 2);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.tree-or {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 0 4px calc(var(--marker-size) + 12px);
+}
+.tree-branch {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  position: relative;
+  padding: 12px 0;
+}
+.tree-branch::before {
+  content: "";
+  position: absolute;
+  left: calc(-1 * (14px + var(--marker-size) / 2));
+  top: calc(12px + var(--marker-size) / 2);
+  width: calc(14px + var(--marker-size) / 2 - 12px);
+  height: 0;
+  border-top: 2px solid var(--border-strong);
+}
+.tree-label {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--marker-size);
+  height: var(--marker-size);
+  border: 1px solid var(--accent);
+  background: var(--bg);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 .access-note h2 {
   margin: 0 0 6px;
@@ -557,8 +610,10 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
 }
 
 @media (max-width: 820px) {
-  .access-layout,
-  .form-grid {
+  .access-layout {
+    grid-template-columns: 1fr;
+  }
+  .form-row {
     grid-template-columns: 1fr;
   }
   .access-form {
