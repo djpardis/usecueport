@@ -9,10 +9,14 @@ viewportMain: true
 <div class="container">
   <div class="page-head">
     <h1>Support</h1>
-    <p class="lede">These are answers about how Cueport handles Serato libraries, Cueport Direct libraries, and local playback. If yours is not here, please email <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+    <p class="lede">Commonly asked questions about Cueport, Serato libraries, Cueport Direct, and local playback. If yours is not here, please email <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
   </div>
   <div class="faq">
     <details open>
+      <summary>Can I use the iPhone app on its own?</summary>
+      <p>The iPhone app needs to pair to the Mac first so it can receive collections, cached music files, and cues over your local network. Once paired, it plays everything on the go and away from your computer.</p>
+    </details>
+    <details>
       <summary>Will Cueport change my Serato library?</summary>
       <p>Cueport changes your Serato library only when you choose to publish. Your edits sit in Cueport's local database as <span class="mono">modified</span> until you review them and push back to a specific Serato connection. Before every push, Cueport takes a restore point so that you can roll the change back, and after you first link the folder it keeps an automatic safety copy of <code>_Serato_</code> in Application Support.</p>
     </details>
@@ -39,10 +43,6 @@ viewportMain: true
     <details>
       <summary>Does Cueport collect any of my data?</summary>
       <p>No. Cueport does not collect or upload music, metadata, listening history, or analytics. No data leaves your devices except for syncing between your Mac and iPhone over your local network.</p>
-    </details>
-    <details>
-      <summary>Can I use the iPhone app on its own?</summary>
-      <p>The iPhone app needs to pair to the Mac first so it can receive collections, cached music files, and cues over your local network. Once paired, it plays everything on the go and away from your computer.</p>
     </details>
     <details>
       <summary>What if pairing doesn't work on public Wi-Fi?</summary>
