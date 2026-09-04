@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 title: "Features"
-description: "What Cueport does with your local DJ library on the Mac."
+description: "What Cueport does with your local DJ library, whether it starts from Serato crates or a music folder on the Mac."
 permalink: /features/
 viewportMain: true
 ---
@@ -9,7 +9,7 @@ viewportMain: true
 <div class="container">
   <div class="page-head">
     <h1>Features</h1>
-    <p class="lede">Cueport reads a Serato library or builds a Cueport Direct library from a music folder. It lets you edit in a local working layer and keeps all edits behind a review.</p>
+    <p class="lede">Cueport reads a Serato library or opens a music folder with Cueport Direct, no Serato required. It analyzes local files on the Mac, lets you edit in a local working layer, and keeps library write-back behind a review.</p>
   </div>
   <div class="feature-list">
     <article class="feature">
@@ -17,18 +17,36 @@ viewportMain: true
         <span class="feature-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h6l2 2h8v10a2 2 0 0 1-2 2H4z"/><path d="M4 6v12"/><path d="M8 12h8"/><path d="M8 16h5"/></svg>
         </span>
-        <h3>Serato and Direct sources</h3>
+        <h3>Serato library</h3>
       </div>
-      <p>Cueport reads crates, subcrates, tracks, BPM, key, and color labels from your <code>_Serato_</code> folder, or scans a music folder directly with Cueport Direct.</p>
+      <p>Reads crates, subcrates, tracks, BPM, key, and color labels from your local <code>_Serato_</code> folder.</p>
+    </article>
+    <article class="feature">
+      <div class="feature-head">
+        <span class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h5l2 2h11v10H3z"/><path d="M3 7v12"/><circle cx="14" cy="14" r="3"/><path d="M14 11v6"/><path d="M11 14h6"/></svg>
+        </span>
+        <h3>Cueport Direct</h3>
+      </div>
+      <p>Open a music folder instead of linking Serato. Cueport builds a library from your files, no DJ software required.</p>
+    </article>
+    <article class="feature">
+      <div class="feature-head">
+        <span class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18V7"/><path d="M8 18V5"/><path d="M12 18V10"/><path d="M16 18V8"/><path d="M20 18V6"/><path d="M4 21h16"/></svg>
+        </span>
+        <h3>Local audio analysis</h3>
+      </div>
+      <p>Cueport Direct uses <a href="https://github.com/djpardis/trailmix">trail mix</a> to compute BPM, key, waveform columns, and beatgrid markers from audio on your machine.</p>
     </article>
     <article class="feature">
       <div class="feature-head">
         <span class="feature-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18V6"/><path d="M18 18V6"/><path d="M6 12h12"/><path d="M9 9l3 3-3 3"/><path d="M14 8h4"/><path d="M14 16h4"/></svg>
         </span>
-        <h3>Cue points and track notes</h3>
+        <h3>Cue points and notes</h3>
       </div>
-      <p>In Serato mode, Cueport reads hot cues from each MP3's Serato Markers and uses the Comment field as the track note. In Cueport Direct, cue points and notes live in Cueport's own database.</p>
+      <p>Read hot cues from Serato MP3 tags or create them in Cueport Direct. Add a text note to any track.</p>
     </article>
     <article class="feature">
       <div class="feature-head">
@@ -37,7 +55,7 @@ viewportMain: true
         </span>
         <h3>Local editing layer</h3>
       </div>
-      <p>Cueport stages your cue point edits, note changes, and new collections in a local database with a clear sync status on every entity.</p>
+      <p>Edits to cues, notes, colors, and collections are staged locally with a clear sync status on every entity.</p>
     </article>
     <article class="feature">
       <div class="feature-head">
@@ -46,16 +64,25 @@ viewportMain: true
         </span>
         <h3>Publish on approval</h3>
       </div>
-      <p>Cueport writes staged Serato edits back to MP3s and crate files only when you choose to publish. Cueport Direct edits remain in Cueport's own database.</p>
+      <p>Serato edits write back to MP3s and crate files only when you choose to publish. Cueport Direct edits remain in their own database.</p>
     </article>
     <article class="feature">
       <div class="feature-head">
         <span class="feature-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2"/><path d="M12 4v3"/><path d="M18.5 12H16"/><path d="M12 20v-3"/><path d="M5.5 12H8"/></svg>
         </span>
-        <h3>Local audio playback</h3>
+        <h3>Local playback</h3>
       </div>
-      <p>Cueport plays tracks from your local files while you browse collections, with waveform context, cues, and available beatgrid markers alongside the player.</p>
+      <p>Play tracks from local files while browsing collections, with waveform context, cues, and beatgrid markers alongside the player.</p>
+    </article>
+    <article class="feature">
+      <div class="feature-head">
+        <span class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M12 18h.01"/><path d="M10 6h4"/></svg>
+        </span>
+        <h3>iPhone companion</h3>
+      </div>
+      <p>Send selected collections and cached tracks to the iPhone app. Browse and play them on the go, including offline.</p>
     </article>
     <article class="feature">
       <div class="feature-head">
@@ -64,7 +91,7 @@ viewportMain: true
         </span>
         <h3>Backups and restore points</h3>
       </div>
-      <p>Cueport keeps Serato safety copies before publish and stores Cueport Direct restore points separately from Serato restore points.</p>
+      <p>Serato safety copies before each publish. Cueport Direct restore points stored separately so you can roll back either source.</p>
     </article>
   </div>
 </div>
