@@ -12,41 +12,6 @@ viewportMain: true
     <p class="lede">Cueport is rolling out with free access to DJs. Request a Mac download link below. The iPhone companion app is available on the App Store.</p>
   </div>
   <div class="access-layout">
-    <aside class="access-note">
-      <div class="setup-tree">
-        <div class="tree-root">
-          <span class="tree-num">1</span>
-          <div>
-            <h2>Start on Mac</h2>
-            <p>The Mac app reads local files, stores the working library on the Mac, and remains the source of truth.</p>
-          </div>
-        </div>
-        <div class="tree-branches">
-          <div class="tree-branch">
-            <span class="tree-label">A</span>
-            <div>
-              <h2>Serato library</h2>
-              <p>Link Cueport to your local <code>_Serato_</code> folder to read crates, tracks, cues, BPM, key, colors, comments, and beatgrid markers.</p>
-            </div>
-          </div>
-          <div class="tree-branch">
-            <span class="tree-label">B</span>
-            <div>
-              <h2>Cueport Direct</h2>
-              <p>Open a music folder. Cueport analyzes tracks locally and stores everything in its own database on your computer, no Serato required.</p>
-            </div>
-          </div>
-        </div>
-        <div class="tree-root">
-          <span class="tree-num">2</span>
-          <div>
-            <h2>Connect your iPhone</h2>
-            <p>The iPhone companion pairs to the Mac over your local network to receive selected collections and cached tracks.</p>
-          </div>
-        </div>
-      </div>
-    </aside>
-
     <form class="access-form" data-access-form method="POST" action="{{ site.forms.access.action }}">
       <div class="form-stack">
         <div class="form-row">
@@ -100,6 +65,41 @@ viewportMain: true
       <button class="btn" type="submit">Submit</button>
       <p class="form-status" data-access-form-status role="status" aria-live="polite"></p>
     </form>
+
+    <aside class="access-note">
+      <div class="setup-tree">
+        <div class="tree-root">
+          <span class="tree-num">1</span>
+          <div>
+            <h2>Start on Mac</h2>
+            <p>The Mac app reads local files, stores the working library on the Mac, and remains the source of truth.</p>
+          </div>
+        </div>
+        <div class="tree-branches">
+          <div class="tree-branch">
+            <span class="tree-label">A</span>
+            <div>
+              <h2>Serato library</h2>
+              <p>Link Cueport to your local <code>_Serato_</code> folder to read crates, tracks, cues, BPM, key, colors, comments, and beatgrid markers.</p>
+            </div>
+          </div>
+          <div class="tree-branch">
+            <span class="tree-label">B</span>
+            <div>
+              <h2>Cueport Direct</h2>
+              <p>Open a music folder. Cueport analyzes tracks locally and stores everything in its own database on your computer, no Serato required.</p>
+            </div>
+          </div>
+        </div>
+        <div class="tree-root">
+          <span class="tree-num">2</span>
+          <div>
+            <h2>Connect your iPhone</h2>
+            <p>The iPhone companion pairs to the Mac over your local network to receive selected collections and cached tracks.</p>
+          </div>
+        </div>
+      </div>
+    </aside>
   </div>
 </div>
 
