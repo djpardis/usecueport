@@ -301,6 +301,15 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
 .app-btn--primary {
   padding-right: 24px;
 }
+.app-btn--secondary {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+.app-btn--secondary:hover {
+  background: var(--bg-elevated);
+  color: var(--text);
+}
 
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
