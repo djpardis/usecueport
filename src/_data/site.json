@@ -12,6 +12,10 @@
     "mac": "/download/",
     "ios": "#"
   },
+  "demo": {
+    "url": "#",
+    "label": "Watch demo"
+  },
   "forms": {
     "access": {
       "action": "https://form.usecueport.com/submit/access-request"
@@ -38,13 +42,14 @@
     "title": "Cueport 1.1: local-first library management for desktop and phone",
     "included": [
       "Read Serato crates, subcrates, tracks, cues, BPM, key, color, comments, and beatgrid markers from your local library",
-      "Create a Cueport Direct library by scanning a folder of music files without requiring Serato",
-      "Analyze Cueport Direct tracks locally with trail mix for BPM, key, and waveform columns",
+      "Use Cueport Direct to scan one or more music folders into its own database without requiring Serato",
+      "Analyze Cueport Direct tracks with trail mix for integer display BPM, key, waveform height, and band-energy color hints",
       "Play tracks locally from the desktop library with waveform context, cue markers, and continuous playback",
       "Create, rename, delete, add tracks to, and manually reorder collections before publishing them back",
       "Edit cue points, track comments, and track colors in a local working layer before any write-back happens",
       "Review pending changes before publishing to Serato, with restore points for every publish",
-      "Pair an iPhone over the local network, choose collections for the phone, cache audio, and play offline",
+      "Pair an iPhone over the local network, choose collections for the phone, cache audio, and prefetch waveform data and beatgrids in the background",
+      "Show the paired source on iPhone and keep queued edits tied to that source",
       "Use desktop and mobile column sorting as temporary views while keeping the # column as the manual order",
       "Recover from pairing changes without deleting cached phone music",
       "Album art from embedded ID3 tags shown in desktop track lists, mobile track detail, and lock screen",
@@ -52,7 +57,13 @@
       "Skip previous and next buttons in the desktop player transport",
       "In-app Wi-Fi isolation diagnostic and guided hotspot prompt for public networks",
       "Faster mobile pairing by deferring artwork downloads until after audio sync",
+      "Full-waveform iPhone overlay with colored bars, bar markers, live time, square cues, cue add, and cue move",
       "Signed Mac app build with local-first behavior and no music upload requirement"
     ]
+  },
+  "trailMix": {
+    "label": "paper-preview 2026-09-06",
+    "commit": "06cc7d316ca5f34532a7cf1ec5128d35ad9ecde3",
+    "commitShort": "06cc7d3"
   }
 }

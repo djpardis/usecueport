@@ -4,6 +4,7 @@
       <summary>v{{ site.version }} · release notes</summary>
       <div class="build-panel-body">
         <ul class="build-list">
+          {% if site.trailMix %}<li>trail mix {{ site.trailMix.label }} ({{ site.trailMix.commitShort }})</li>{% endif %}
           {% for line in site.shipNotes.included %}<li>{{ line | safe }}</li>{% endfor %}
         </ul>
       </div>
