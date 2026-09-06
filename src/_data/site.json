@@ -19,14 +19,14 @@
   },
   "nav": [
     {
-      "label": "Features",
-      "href": "/features/",
-      "icon": "features"
-    },
-    {
       "label": "Download",
       "href": "/download/",
       "icon": "download"
+    },
+    {
+      "label": "Features",
+      "href": "/features/",
+      "icon": "features"
     },
     {
       "label": "Support",
