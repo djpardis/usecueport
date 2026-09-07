@@ -302,13 +302,14 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   padding-right: 24px;
 }
 .app-btn--secondary {
-  background: transparent;
-  color: var(--text);
-  border-color: var(--border-strong);
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
 }
 .app-btn--secondary:hover {
-  background: var(--bg-elevated);
-  color: var(--text);
+  background: var(--accent-hover);
+  color: #fff;
+  border-color: var(--accent-hover);
 }
 
 .btn {
