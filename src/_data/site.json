@@ -4,7 +4,7 @@
   "url": "https://usecueport.com",
   "subtitle": "A local-first music player for DJs",
   "scope": "desktop + mobile",
-  "description": "Cueport reads your Serato library or builds its own from your music folders. Pair your phone with your computer over the local network, send selected collections across, and play them anywhere. Create new collections and make edits on either device. Your computer is the source of truth and your phone pairs to it.",
+  "description": "Cueport reads your Serato library or builds its own. Pair your phone with your computer over the local network, send selected collections across, and play them anywhere. Create new collections and make edits on either device. Your computer is the source of truth and your phone pairs to it.",
   "email": "hello@usecueport.com",
   "version": "1.1.0",
   "dmgFilename": "Cueport_1.1.0_aarch64.dmg",
