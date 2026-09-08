@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 title: "Features"
-description: "What Cueport does with your local DJ library, whether it starts from Serato crates or a music folder on the Mac."
+description: "What Cueport does with your local DJ library, whether it starts from Serato crates or a music folder on your computer."
 permalink: /features/
 viewportMain: true
 ---
@@ -9,89 +9,170 @@ viewportMain: true
 <div class="container">
   <div class="page-head">
     <h1>Features</h1>
-    <p class="lede">Cueport reads a Serato library or opens a music folder with Cueport Direct, no Serato required. It analyzes local files on the Mac, lets you edit in a local working layer, and keeps library write-back behind a review.</p>
+    <p class="lede">Start from a Serato library or a music folder. Cueport analyzes local files, sends selected music to your phone, and keeps library write-back behind a review.</p>
   </div>
-  <div class="feature-list">
-    <article class="feature">
-      <div class="feature-head">
-        <span class="feature-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h6l2 2h8v10a2 2 0 0 1-2 2H4z"/><path d="M4 6v12"/><path d="M8 12h8"/><path d="M8 16h5"/></svg>
-        </span>
-        <h3>Serato library</h3>
+  <div class="feature-flow">
+    <section class="feature-group">
+      <div class="feature-group-intro">
+        <span class="feature-step">01</span>
+        <h2>Start with your library</h2>
+        <p>Use an existing Serato library or open a music folder directly. Your music and library data remain on your computer.</p>
       </div>
-      <p>Reads crates, subcrates, tracks, BPM, key, and color labels from your local <code>_Serato_</code> folder.</p>
-    </article>
-    <article class="feature">
-      <div class="feature-head">
-        <span class="feature-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v6"/></svg>
-        </span>
-        <h3>Cueport Direct</h3>
+      <div class="feature-group-items">
+        <article class="feature">
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h6l2 2h8v10a2 2 0 0 1-2 2H4z"/><path d="M4 6v12"/><path d="M8 12h8"/><path d="M8 16h5"/></svg>
+          </span>
+          <div>
+            <h3>Serato library</h3>
+            <p>Read crates, subcrates, tracks, hot cues, BPM, key, colors, comments, and beatgrid markers from your local <code>_Serato_</code> folder.</p>
+          </div>
+        </article>
+        <article class="feature">
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v6"/></svg>
+          </span>
+          <div>
+            <h3>Cueport Direct</h3>
+            <p>Open a music folder instead of linking Serato. Cueport builds a library from your files, no DJ software required.</p>
+          </div>
+        </article>
+        <article class="feature">
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18V7"/><path d="M8 18V5"/><path d="M12 18V10"/><path d="M16 18V8"/><path d="M20 18V6"/><path d="M4 21h16"/></svg>
+          </span>
+          <div>
+            <h3>Local audio analysis</h3>
+            <p>Cueport Direct uses <strong><a href="https://trailmix.tools" target="_blank" rel="noopener noreferrer">trail mix</a></strong> to compute BPM, key, waveform columns, and beatgrid markers from audio on your machine.</p>
+          </div>
+        </article>
       </div>
-      <p>Open a music folder instead of linking Serato. Cueport builds a library from your files, no DJ software required.</p>
-    </article>
-    <article class="feature">
-      <div class="feature-head">
-        <span class="feature-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18V7"/><path d="M8 18V5"/><path d="M12 18V10"/><path d="M16 18V8"/><path d="M20 18V6"/><path d="M4 21h16"/></svg>
-        </span>
-        <h3>Local audio analysis</h3>
+    </section>
+
+    <section class="feature-group">
+      <div class="feature-group-intro">
+        <span class="feature-step">02</span>
+        <h2>Prepare tracks on your computer and phone</h2>
+        <p>Play tracks and work with cues and notes on either device.</p>
       </div>
-      <p>Cueport Direct uses <a href="https://github.com/djpardis/trailmix">trail mix</a> to compute BPM, key, waveform columns, and beatgrid markers from audio on your machine.</p>
-    </article>
-    <article class="feature">
-      <div class="feature-head">
-        <span class="feature-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="6,4 20,12 6,20"/></svg>
-        </span>
-        <h3>Local playback</h3>
+      <div class="feature-group-items">
+        <article class="feature">
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="6,4 20,12 6,20"/></svg>
+          </span>
+          <div>
+            <h3>Local playback</h3>
+            <p>Play tracks from local files while browsing collections, with waveform context, cues, and beatgrid markers alongside the player.</p>
+          </div>
+        </article>
+        <article class="feature">
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18V6"/><path d="M18 18V6"/><path d="M6 12h12"/><path d="M9 9l3 3-3 3"/><path d="M14 8h4"/><path d="M14 16h4"/></svg>
+          </span>
+          <div>
+            <h3>Cue points and notes</h3>
+            <p>Add or edit hot cues and notes whether you use Serato or Cueport Direct.</p>
+          </div>
+        </article>
+        <article class="feature">
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M12 18h.01"/><path d="M10 6h4"/></svg>
+          </span>
+          <div>
+            <h3>Phone companion</h3>
+            <p>Send selected collections and their tracks to the phone app, where they are cached for browsing and playback. Phone edits can be sent back to the paired computer for review.</p>
+          </div>
+        </article>
       </div>
-      <p>Play tracks from local files while browsing collections, with waveform context, cues, and beatgrid markers alongside the player.</p>
-    </article>
-    <article class="feature">
-      <div class="feature-head">
-        <span class="feature-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M12 18h.01"/><path d="M10 6h4"/></svg>
-        </span>
-        <h3>iPhone companion</h3>
+    </section>
+
+    <section class="feature-group">
+      <div class="feature-group-intro">
+        <span class="feature-step">03</span>
+        <h2>Review and publish changes</h2>
+        <p>Send queued phone edits back to the paired computer. Review all pending changes there before updating Serato.</p>
       </div>
-      <p>Send selected collections and cached tracks to the iPhone app. Browse and play them on the go, including away from your computer.</p>
-    </article>
-    <article class="feature">
-      <div class="feature-head">
-        <span class="feature-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18V6"/><path d="M18 18V6"/><path d="M6 12h12"/><path d="M9 9l3 3-3 3"/><path d="M14 8h4"/><path d="M14 16h4"/></svg>
-        </span>
-        <h3>Cue points and notes</h3>
+      <div class="feature-group-items">
+        <article class="feature">
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7h14"/><path d="M5 12h10"/><path d="M5 17h7"/><path d="M16 15l3 3"/><path d="M19 15l-3 3"/></svg>
+          </span>
+          <div>
+            <h3>Local editing layer</h3>
+            <p>Cueport marks pending edits so you can see what changed across tracks and collections.</p>
+          </div>
+        </article>
+        <article class="feature">
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V7"/><path d="M7 12l5-5 5 5"/><path d="M5 20h14"/><path d="M5 16v4"/><path d="M19 16v4"/></svg>
+          </span>
+          <div>
+            <h3>Publish on approval</h3>
+            <p>Serato edits write back to MP3s and crate files only when you choose to publish. Cueport Direct edits remain in their own database.</p>
+          </div>
+        </article>
+        <article class="feature">
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-5"/><path d="M8 18h8"/></svg>
+          </span>
+          <div>
+            <h3>Backups and restore points</h3>
+            <p>Cueport creates safety copies before updating Serato. Cueport Direct manages edits and restore points in a separate database.</p>
+          </div>
+        </article>
       </div>
-      <p>Read hot cues from Serato MP3 tags or create them in Cueport Direct. Add a text note to any track.</p>
-    </article>
-    <article class="feature">
-      <div class="feature-head">
-        <span class="feature-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7h14"/><path d="M5 12h10"/><path d="M5 17h7"/><path d="M16 15l3 3"/><path d="M19 15l-3 3"/></svg>
-        </span>
-        <h3>Local editing layer</h3>
-      </div>
-      <p>Edits to cues, notes, colors, and collections are staged locally with a clear sync status on every entity.</p>
-    </article>
-    <article class="feature">
-      <div class="feature-head">
-        <span class="feature-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V7"/><path d="M7 12l5-5 5 5"/><path d="M5 20h14"/><path d="M5 16v4"/><path d="M19 16v4"/></svg>
-        </span>
-        <h3>Publish on approval</h3>
-      </div>
-      <p>Serato edits write back to MP3s and crate files only when you choose to publish. Cueport Direct edits remain in their own database.</p>
-    </article>
-    <article class="feature">
-      <div class="feature-head">
-        <span class="feature-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-5"/><path d="M8 18h8"/></svg>
-        </span>
-        <h3>Backups and restore points</h3>
-      </div>
-      <p>Serato safety copies before each publish. Cueport Direct restore points stored separately so you can roll back either source.</p>
-    </article>
+    </section>
   </div>
+
+  {# Parked desktop screenshot gallery. Retained for a future redesign.
+  <section class="desktop-screenshots" aria-labelledby="desktop-screenshots-title">
+    <div class="section-head">
+      <h2 id="desktop-screenshots-title">Cueport on Mac</h2>
+      <p>See how the desktop app brings library setup, track preparation, phone pairing, and change review into one local workflow.</p>
+    </div>
+
+    <div class="desktop-screenshot-grid">
+      <figure class="desktop-screenshot desktop-screenshot--lead">
+        <a href="/assets/img/screenshots/v1.1.0/cueport-v1.1.0-macos-01-main-library.png">
+          <img src="/assets/img/screenshots/v1.1.0/cueport-v1.1.0-macos-01-main-library.png" width="2880" height="1800" loading="lazy" alt="Cueport on Mac showing collections, track metadata, waveform cues, and the active player">
+        </a>
+        <figcaption>
+          <h3>Your library in one workspace</h3>
+          <p>Browse collections, search tracks, check BPM and key, and play music with waveform and cue context from the main library.</p>
+        </figcaption>
+      </figure>
+
+      <figure class="desktop-screenshot">
+        <a href="/assets/img/screenshots/v1.1.0/cueport-v1.1.0-macos-02-choose-library-source.png">
+          <img src="/assets/img/screenshots/v1.1.0/cueport-v1.1.0-macos-02-choose-library-source.png" width="2880" height="1800" loading="lazy" alt="Cueport Source screen with Serato Library and Cueport Direct options">
+        </a>
+        <figcaption>
+          <h3>Start with the library you already have</h3>
+          <p>Read an existing Serato library or open a music folder with Cueport Direct.</p>
+        </figcaption>
+      </figure>
+
+      <figure class="desktop-screenshot">
+        <a href="/assets/img/screenshots/v1.1.0/cueport-v1.1.0-macos-03-pair-phone.png">
+          <img src="/assets/img/screenshots/v1.1.0/cueport-v1.1.0-macos-03-pair-phone.png" width="2880" height="1800" loading="lazy" alt="Cueport Pair screen with a QR code for local phone pairing">
+        </a>
+        <figcaption>
+          <h3>Pair over local Wi-Fi or a personal hotspot</h3>
+          <p>Scan one QR code to connect the phone directly to the selected laptop library.</p>
+        </figcaption>
+      </figure>
+
+      <figure class="desktop-screenshot">
+        <a href="/assets/img/screenshots/v1.1.0/cueport-v1.1.0-macos-04-review-changes.png">
+          <img src="/assets/img/screenshots/v1.1.0/cueport-v1.1.0-macos-04-review-changes.png" width="2880" height="1800" loading="lazy" alt="Cueport Review screen showing queued cue and collection changes">
+        </a>
+        <figcaption>
+          <h3>Review every change before publishing</h3>
+          <p>Choose which cue, note, color, and collection edits to publish to Serato.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+  #}
+
 </div>
