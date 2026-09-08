@@ -309,8 +309,9 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   color: var(--text);
   border-color: var(--peach);
 }
-.app-btn--secondary:hover {
-  background: var(--peach);
+.app-btn--secondary:hover,
+.app-btn--secondary:active {
+  background: var(--peach-soft);
   color: var(--text);
   border-color: var(--peach);
 }
