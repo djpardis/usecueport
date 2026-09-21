@@ -253,9 +253,8 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   .home-sub { font-size: 0.95rem; margin-bottom: 16px; line-height: 1.5; }
   .home-actions { display: flex; flex-direction: row; gap: 8px; margin-bottom: 10px; }
   .home-actions .app-btn { min-width: 0; padding: 9px 10px; gap: 6px; justify-content: center; white-space: nowrap; }
-  .home-actions .app-btn--primary { flex: 1; }
-  .home-actions .app-btn--secondary .app-btn-text { display: none; }
-  .home-actions .app-btn--secondary { flex: 0 0 auto; }
+  .home-actions .demo-label-full { display: none; }
+  .home-actions .demo-label-short { display: inline; }
   .app-btn { min-width: 0; }
   .app-btn svg { width: 18px; height: 18px; }
   .app-btn-text { font-size: 0.88rem; }
@@ -341,6 +340,7 @@ body:has(.demo-page) {
 .app-btn:hover { background: #000; color: var(--bg); text-decoration: none; }
 .app-btn svg { width: 24px; height: 24px; flex-shrink: 0; fill: currentColor; }
 .app-btn-text { font-size: 1.05rem; font-weight: 500; letter-spacing: -0.01em; }
+.demo-label-short { display: none; }
 .app-btn--primary {
   padding-right: 24px;
 }
