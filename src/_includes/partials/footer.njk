@@ -3,10 +3,20 @@
     <details class="build-panel">
       <summary>v{{ site.version }} · release notes</summary>
       <div class="build-panel-body">
+        {% if site.trailMix %}
+          <p class="build-section-label small">Analysis engine</p>
+          <p class="build-panel-note small"><a href="{{ site.trailMix.url }}" target="_blank" rel="noopener noreferrer">trail mix {{ site.trailMix.version }}</a></p>
+        {% endif %}
+        <p class="build-section-label small">In this build</p>
         <ul class="build-list">
-          {% if site.trailMix %}<li>trail mix {{ site.trailMix.label }} ({{ site.trailMix.commitShort }})</li>{% endif %}
           {% for line in site.shipNotes.included %}<li>{{ line | safe }}</li>{% endfor %}
         </ul>
+        {% if site.shipNotes.upNext %}
+          <p class="build-section-label small">Up next</p>
+          <ul class="build-list muted-list">
+            {% for line in site.shipNotes.upNext %}<li>{{ line | safe }}</li>{% endfor %}
+          </ul>
+        {% endif %}
       </div>
     </details>
     <p class="footer-copyright">
@@ -15,3 +25,33 @@
     </p>
   </div>
 </footer>
+<script>
+  (() => {
+    const panel = document.querySelector(".build-panel");
+    if (!panel) return;
+
+    const badge = document.querySelector(".header-badge");
+
+    document.addEventListener("pointerdown", (event) => {
+      if (panel.open && !panel.contains(event.target) && event.target !== badge) {
+        panel.open = false;
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && panel.open) {
+        panel.open = false;
+        panel.querySelector("summary")?.focus();
+      }
+    });
+
+  if (badge) {
+    badge.style.cursor = "pointer";
+    badge.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      panel.open = !panel.open;
+    });
+  }
+  })();
+</script>

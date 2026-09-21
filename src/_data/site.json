@@ -3,8 +3,7 @@
   "domain": "usecueport.com",
   "url": "https://usecueport.com",
   "subtitle": "A local-first music player for DJs",
-  "scope": "desktop + mobile",
-  "description": "Cueport reads your Serato library or builds its own. Pair your phone with your computer over the local network, send selected collections across, and play them anywhere. Create new collections and make edits on either device. Your computer is the source of truth and your phone pairs to it.",
+  "description": "Do you own your music and want to play songs and prep sets on the go, even with no internet? Cueport builds a library from Serato or a folder, lets you sync your phone over the local network, and add cues and edit sets on either device.",
   "email": "hello@usecueport.com",
   "version": "1.1.0",
   "dmgFilename": "Cueport_1.1.0_aarch64.dmg",
@@ -28,6 +27,11 @@
       "icon": "download"
     },
     {
+      "label": "Demo",
+      "href": "/demo/",
+      "icon": "demo"
+    },
+    {
       "label": "Features",
       "href": "/features/",
       "icon": "features"
@@ -43,7 +47,7 @@
     "included": [
       "Read Serato crates, subcrates, tracks, cues, BPM, key, color, comments, and beatgrid markers from your local library",
       "Use Cueport Direct to scan one or more music folders into its own database without requiring Serato",
-      "Analyze Cueport Direct tracks with trail mix for integer display BPM, key, waveform height, and band-energy color hints",
+      "Analyze Cueport Direct tracks locally for integer display BPM, key, waveform height, and band-energy color hints",
       "Play tracks locally from the desktop library with waveform context, cue markers, and continuous playback",
       "Create, rename, delete, add tracks to, and manually reorder collections before publishing them back",
       "Edit cue points, track comments, and track colors in a local working layer before any write-back happens",
@@ -59,11 +63,15 @@
       "Faster mobile pairing by deferring artwork downloads until after audio sync",
       "Full-waveform iPhone overlay with colored bars, bar markers, live time, square cues, cue add, and cue move",
       "Signed Mac app build with local-first behavior and no music upload requirement"
+    ],
+    "upNext": [
+      "Bonjour rediscovery so paired phones can reconnect after desktop IP or port changes",
+      "Device checks for lock screen, background playback, and previous-button behavior",
+      "Mac distribution and notarization polish for the public release channel"
     ]
   },
   "trailMix": {
-    "label": "paper-preview 2026-09-06",
-    "commit": "06cc7d316ca5f34532a7cf1ec5128d35ad9ecde3",
-    "commitShort": "06cc7d3"
+    "version": "0.1.0-alpha.1",
+    "url": "https://github.com/djpardis/trailmix/releases/tag/v0.1.0-alpha.1"
   }
 }
