@@ -2,7 +2,7 @@
   <div class="container header-inner">
     <a class="logo-lockup" href="/" aria-label="{{ site.name }}">
       <img class="logo-mark" src="/assets/img/logo-transparent.svg" width="32" height="32" alt="" aria-hidden="true" />
-      <h1 class="brand-title">{{ site.name }}</h1>
+      <span class="brand-title">{{ site.name }}</span>
       <span class="header-badge">v{{ site.version }}</span>
     </a>
     <nav class="site-nav" aria-label="Primary">
@@ -15,6 +15,8 @@
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
                 {% elif item.icon == "download" %}
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13"/><path d="M7 11l5 5 5-5"/><path d="M4 21h16"/></svg>
+                {% elif item.icon == "demo" %}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5l11 7-11 7z"/></svg>
                 {% elif item.icon == "support" %}
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 5 0c0 1.6-2.5 2-2.5 4"/><circle cx="12" cy="17" r="0.6" fill="currentColor"/></svg>
                 {% endif %}
