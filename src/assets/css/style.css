@@ -249,7 +249,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   .home-actions { justify-content: flex-start; }
   .home-sub { margin-left: 0 !important; margin-right: 0 !important; max-width: none; }
   .home-eyebrow { font-size: 0.65rem; margin-bottom: 10px; letter-spacing: 0.08em; }
-  .home-title { font-size: 1.5rem !important; line-height: 1.12 !important; margin-bottom: 12px; }
+  .home-title { font-size: 1.5rem !important; line-height: 1.12 !important; margin-bottom: var(--home-section-gap) !important; }
   .home-sub { font-size: 0.95rem; margin-bottom: 16px; line-height: 1.5; }
   .home-actions { display: flex; flex-direction: row; gap: 8px; margin-bottom: 10px; }
   .home-actions .app-btn { min-width: 0; padding: 9px 10px; gap: 6px; justify-content: center; white-space: nowrap; }
@@ -370,6 +370,7 @@ body:has(.demo-page) {
 
 /* Home hero */
 .home-hero { width: 100%; padding: 0; }
+.home-copy { --home-section-gap: 48px; }
 .home-hero-inner {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -391,11 +392,11 @@ body:has(.demo-page) {
   font-weight: 700;
   letter-spacing: -0.035em;
   line-height: 1.05;
-  margin: 0 0 16px;
+  margin: 0 0 var(--home-section-gap);
 }
 .home-intro {
   max-width: 540px;
-  margin: 0 0 24px;
+  margin: 0 0 var(--home-section-gap);
   padding-left: 14px;
   border-left: 2px solid var(--peach);
 }
@@ -424,8 +425,10 @@ body:has(.demo-page) {
 }
 
 @media (max-width: 640px) {
+  .home-copy {
+    --home-section-gap: 28px;
+  }
   .home-intro {
-    margin-bottom: 16px;
     padding-left: 12px;
   }
 }
