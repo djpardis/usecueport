@@ -393,15 +393,18 @@ body:has(.demo-page) {
   line-height: 1.05;
   margin: 0 0 16px;
 }
-.home-question {
-  max-width: 520px;
-  margin: 0 0 4px;
-  color: var(--text-secondary);
-  font-size: var(--type-body);
-  font-weight: 700;
-  line-height: 1.55;
+.home-intro {
+  max-width: 540px;
+  margin: 0 0 24px;
+  padding-left: 14px;
+  border-left: 2px solid var(--peach);
 }
 .home-sub { font-size: var(--type-body); max-width: 520px; color: var(--text-secondary); margin: 0 0 24px; line-height: 1.55; }
+.home-question-inline {
+  color: var(--text-secondary);
+  font-weight: 700;
+}
+.home-intro .home-sub { margin-bottom: 0; }
 .home-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
 .home-art { display: flex; justify-content: center; }
 .home-art img { width: 100%; max-width: 280px; height: auto; }
@@ -418,6 +421,13 @@ body:has(.demo-page) {
   .home-hero-inner { grid-template-columns: 1fr; gap: 32px; text-align: left; }
   .home-actions { justify-content: flex-start; }
   .home-art img { max-width: 180px; }
+}
+
+@media (max-width: 640px) {
+  .home-intro {
+    margin-bottom: 16px;
+    padding-left: 12px;
+  }
 }
 
 /* Page head — quiet title so it does not fight the "Cueport" header */
