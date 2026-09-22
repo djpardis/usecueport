@@ -393,6 +393,14 @@ body:has(.demo-page) {
   line-height: 1.05;
   margin: 0 0 16px;
 }
+.home-question {
+  max-width: 520px;
+  margin: 0 0 4px;
+  color: var(--text-secondary);
+  font-size: var(--type-body);
+  font-weight: 700;
+  line-height: 1.55;
+}
 .home-sub { font-size: var(--type-body); max-width: 520px; color: var(--text-secondary); margin: 0 0 24px; line-height: 1.55; }
 .home-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
 .home-art { display: flex; justify-content: center; }
