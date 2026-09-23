@@ -60,13 +60,6 @@ viewportMain: true
           </select>
         </label>
 
-        {% if site.forms.access.turnstileSiteKey %}
-          <div
-            class="cf-turnstile"
-            data-sitekey="{{ site.forms.access.turnstileSiteKey }}"
-            data-action="access_request"
-          ></div>
-        {% endif %}
       </div>
 
       <input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
@@ -142,12 +135,6 @@ viewportMain: true
       accessStatus.textContent = body.error || "Something went wrong. Please try again.";
     } catch {
       accessStatus.textContent = "Could not reach the form service. Please try again.";
-    } finally {
-      window.turnstile?.reset?.();
     }
   });
 </script>
-
-{% if site.forms.access.turnstileSiteKey %}
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-{% endif %}
