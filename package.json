@@ -8,6 +8,7 @@
     "build": "eleventy",
     "clean": "rm -rf _site",
     "release": "node scripts/release.mjs",
+    "forms:deploy": "npx wrangler deploy --config wrangler.forms.toml",
     "download:link": "node scripts/generate-download-link.mjs",
     "email:access": "node scripts/render-access-email.mjs",
     "email:send-access": "node scripts/send-access-email.mjs"
