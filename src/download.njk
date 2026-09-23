@@ -21,7 +21,7 @@ viewportMain: true
           </label>
           <label>
             DJ name
-            <input name="DJ_name" autocomplete="organization">
+            <input name="DJ_name" autocomplete="organization" required>
           </label>
         </div>
 
@@ -32,7 +32,7 @@ viewportMain: true
 
         <label>
           Socials or website
-          <input name="social_or_site" placeholder="@name or https://...">
+          <input name="social_or_site" placeholder="@name or https://..." required>
         </label>
 
         <label>
@@ -51,7 +51,7 @@ viewportMain: true
 
         <label>
           Library size
-          <select name="library_size">
+          <select name="library_size" required>
             <option value="">Choose one</option>
             <option>Under 500 tracks</option>
             <option>500 to 2,000 tracks</option>
@@ -59,9 +59,17 @@ viewportMain: true
             <option>10,000+ tracks</option>
           </select>
         </label>
+
+        {% if site.forms.access.turnstileSiteKey %}
+          <div
+            class="cf-turnstile"
+            data-sitekey="{{ site.forms.access.turnstileSiteKey }}"
+            data-action="access_request"
+          ></div>
+        {% endif %}
       </div>
 
-      <input name="website" tabindex="-1" autocomplete="off" hidden>
+      <input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
 
       <button class="btn" type="submit">Submit</button>
       <p class="form-status" data-access-form-status role="status" aria-live="polite"></p>
@@ -134,6 +142,12 @@ viewportMain: true
       accessStatus.textContent = body.error || "Something went wrong. Please try again.";
     } catch {
       accessStatus.textContent = "Could not reach the form service. Please try again.";
+    } finally {
+      window.turnstile?.reset?.();
     }
   });
 </script>
+
+{% if site.forms.access.turnstileSiteKey %}
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+{% endif %}
