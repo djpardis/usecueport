@@ -19,8 +19,7 @@
   },
   "forms": {
     "access": {
-      "action": "https://form.usecueport.com/submit/access-request",
-      "turnstileSiteKey": "0x4AAAAAAFBVeK9vNipAKQDf"
+      "action": "https://form.usecueport.com/submit/access-request"
     }
   },
   "nav": [
