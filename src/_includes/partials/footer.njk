@@ -1,7 +1,7 @@
 <footer class="site-footer">
   <div class="container footer-grid">
     <details class="build-panel">
-      <summary>v{{ site.version }} · release notes</summary>
+      <summary>v{{ site.version }}{% if site.releaseStage %} {{ site.releaseStage }}{% endif %} · release notes</summary>
       <div class="build-panel-body">
         {% if site.trailMix %}
           <p class="build-section-label small">Analysis engine</p>
@@ -19,10 +19,15 @@
         {% endif %}
       </div>
     </details>
-    <p class="footer-copyright">
-      <span class="footer-copyright-full">© {{ "" | year }} {{ site.name }}. All rights reserved.</span>
-      <span class="footer-copyright-short">© {{ "" | year }} {{ site.name }}</span>
-    </p>
+    <div class="footer-meta">
+      <a class="footer-social" href="{{ site.follow.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ site.follow.ariaLabel }}">
+        Instagram
+      </a>
+      <p class="footer-copyright">
+        <span class="footer-copyright-full">© {{ "" | year }} {{ site.name }}. All rights reserved.</span>
+        <span class="footer-copyright-short">© {{ "" | year }} {{ site.name }}</span>
+      </p>
+    </div>
   </div>
 </footer>
 <script>

@@ -3,23 +3,28 @@
   "domain": "usecueport.com",
   "url": "https://usecueport.com",
   "subtitle": "A local-first music player for DJs",
-  "description": "Do you own your music and want to play it anywhere? Cueport builds a library from Serato or a music folder, syncs your phone over your local network, and lets you add cues and edit sets on either device.",
+  "description": "Do you own your music and want to play it anywhere? Cueport reads Serato or builds a local library from music files, syncs your phone over your local network, and lets you add cues and edit sets on either device.",
   "homeQuestion": "Do you own your music and want to play it anywhere?",
-  "homeDescription": "Cueport builds a library from Serato or a music folder, syncs your phone over your local network, and lets you add cues and edit sets on either device.",
+  "homeDescription": "Cueport reads Serato or builds a local library from music files, syncs your phone over your local network, and lets you add cues and edit sets on either device.",
   "email": "hello@usecueport.com",
   "version": "1.1.0",
+  "releaseStage": "beta",
   "dmgFilename": "Cueport_1.1.0_aarch64.dmg",
   "downloads": {
     "mac": "/download/",
     "ios": "#"
   },
-  "demo": {
-    "url": "/demo/",
-    "label": "Watch demo"
+  "follow": {
+    "label": "Follow us",
+    "ariaLabel": "Follow Cueport on Instagram",
+    "url": "https://www.instagram.com/usecueport/"
   },
   "forms": {
     "access": {
       "action": "https://form.usecueport.com/submit/access-request"
+    },
+    "mailingList": {
+      "action": "https://form.usecueport.com/submit/mailing-list"
     }
   },
   "nav": [
@@ -27,11 +32,6 @@
       "label": "Download",
       "href": "/download/",
       "icon": "download"
-    },
-    {
-      "label": "Demo",
-      "href": "/demo/",
-      "icon": "demo"
     },
     {
       "label": "Features",
@@ -48,7 +48,7 @@
     "title": "Cueport 1.1: local-first library management for desktop and phone",
     "included": [
       "Read Serato crates, subcrates, tracks, cues, BPM, key, color, comments, and beatgrid markers from your local library",
-      "Use Cueport Direct to scan one or more music folders into its own database without requiring Serato",
+      "Use Cueport Direct to build a local library from music files without requiring Serato",
       "Analyze Cueport Direct tracks locally for integer display BPM, key, waveform height, and band-energy color hints",
       "Play tracks locally from the desktop library with waveform context, cue markers, and continuous playback",
       "Create, rename, delete, add tracks to, and manually reorder collections before publishing them back",
@@ -73,7 +73,7 @@
     ]
   },
   "trailMix": {
-    "version": "0.1.0-alpha.1",
-    "url": "https://github.com/djpardis/trailmix/releases/tag/v0.1.0-alpha.1"
+    "version": "paper-preview 2026-09-06 (229ab350)",
+    "url": "https://github.com/djpardis/trailmix/commit/229ab350fd462386a61a57f23c4cec31540242ff"
   }
 }
