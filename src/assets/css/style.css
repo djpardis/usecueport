@@ -228,16 +228,19 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   min-width: 0;
 }
 .footer-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: var(--text-secondary);
-  font-weight: 500;
-  white-space: nowrap;
-  text-decoration: underline;
-  text-decoration-color: var(--border-strong);
-  text-underline-offset: 0.2em;
+  text-decoration: none;
 }
 .footer-social:hover {
   color: var(--accent);
-  text-decoration-color: var(--accent);
+  text-decoration: none;
+}
+.footer-social svg {
+  width: 19px;
+  height: 19px;
 }
 .footer-copyright {
   margin: 0;
