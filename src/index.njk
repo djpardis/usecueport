@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 title: ""
-description: "Do you own your music and want to play it anywhere? Cueport builds a library from Serato or a music folder, syncs your phone over your local network, and lets you add cues and edit sets on either device."
+description: "Do you own your music and want to play it anywhere? Cueport reads Serato or builds a local library from music files, syncs your phone over your local network, and lets you add cues and edit sets on either device."
 homeMain: true
 ---
 
@@ -14,22 +14,62 @@ homeMain: true
         <p class="home-sub"><strong class="home-question-inline">{{ site.homeQuestion }}</strong> {{ site.homeDescription }}</p>
       </div>
       <div class="home-actions">
-        <a class="app-btn app-btn--primary" href="{{ site.downloads.mac }}" aria-label="Request Cueport access">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.74.85 0 2.39-.91 4.01-.78 1.51.13 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.9 4.08M12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25"/>
+        <a class="app-btn app-btn--primary" href="{{ site.downloads.mac }}" aria-label="Request Cueport download link">
+          <svg class="icon-stroke" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3v13"/>
+            <path d="M7 11l5 5 5-5"/>
+            <path d="M4 21h16"/>
           </svg>
-          <span class="app-btn-text">Download Cueport</span>
-        </a>
-        <a class="app-btn app-btn--secondary" href="{{ site.demo.url }}" aria-label="{{ site.demo.label }}">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M7 4l13 8-13 8z"/>
-          </svg>
-          <span class="app-btn-text"><span class="demo-label-full">{{ site.demo.label }}</span><span class="demo-label-short">Demo</span></span>
+          <span class="app-btn-text">Download link</span>
         </a>
       </div>
+      <form class="mailing-list-form" data-mailing-list-form method="POST" action="{{ site.forms.mailingList.action }}">
+        <label>
+          Join the mailing list
+          <span class="mailing-list-row">
+            <input name="email" type="email" autocomplete="email" placeholder="Email address" required>
+            <button class="btn" type="submit">Join</button>
+          </span>
+        </label>
+        <input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
+        <p class="form-status" data-mailing-list-status role="status" aria-live="polite"></p>
+      </form>
     </div>
     <div class="home-art" aria-hidden="true">
       <img src="/assets/img/logo-transparent.svg" width="280" height="280" alt="" />
     </div>
   </div>
 </section>
+
+<script>
+  const mailingListForm = document.querySelector("[data-mailing-list-form]");
+  const mailingListStatus = document.querySelector("[data-mailing-list-status]");
+
+  mailingListForm?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    if (!mailingListForm.reportValidity()) {
+      return;
+    }
+
+    mailingListStatus.textContent = "Joining...";
+
+    try {
+      const response = await fetch(mailingListForm.action, {
+        method: "POST",
+        body: new FormData(mailingListForm)
+      });
+
+      if (response.ok) {
+        mailingListForm.reset();
+        mailingListStatus.textContent = "Thanks. You're on the mailing list.";
+        return;
+      }
+
+      const body = await response.json().catch(() => ({}));
+      mailingListStatus.textContent = body.error || "Something went wrong. Please try again.";
+    } catch {
+      mailingListStatus.textContent = "Could not reach the form service. Please try again.";
+    }
+  });
+</script>
