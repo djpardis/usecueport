@@ -102,7 +102,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   font-weight: 700;
   letter-spacing: -0.035em;
   line-height: 1;
-  color: var(--text);
+  color: var(--accent);
   margin: 0;
 }
 .header-badge {
@@ -406,20 +406,6 @@ body:has(.home-main) {
   align-items: flex-start;
   gap: 36px;
 }
-.home-heading {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.home-eyebrow {
-  font-family: var(--font-mono);
-  font-size: var(--type-label);
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin: 0;
-}
 .home-title {
   font-family: var(--font-sans);
   font-size: clamp(2.35rem, 5vw, 3.4rem);
@@ -486,8 +472,8 @@ body:has(.home-main) {
 .mailing-list-row {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  align-items: baseline;
-  gap: 24px;
+  align-items: center;
+  gap: 12px;
   border-bottom: 2px solid var(--accent);
 }
 .mailing-list-row input {
@@ -536,6 +522,7 @@ body:has(.home-main) {
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   border: none;
   background: none;
   font: inherit;
@@ -544,10 +531,14 @@ body:has(.home-main) {
   font-weight: 700;
   color: var(--accent);
   cursor: pointer;
-  padding: 6px 0 8px;
+  padding: 0;
   letter-spacing: 0.01em;
 }
 .btn-join:hover { color: var(--accent-hover); }
+.btn-join svg {
+  width: 1.55em;
+  height: 1.55em;
+}
 .home-art { display: flex; justify-content: center; align-items: center; }
 .home-art img {
   width: auto;
