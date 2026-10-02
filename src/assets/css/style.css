@@ -226,25 +226,26 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   justify-content: flex-end;
   gap: 1rem;
   min-width: 0;
+  color: #52525b;
 }
 .footer-social {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-secondary);
+  color: currentColor;
   text-decoration: none;
 }
 .footer-social:hover {
-  color: var(--accent);
+  color: currentColor;
   text-decoration: none;
 }
 .footer-social svg {
-  width: 19px;
-  height: 19px;
+  width: 1em;
+  height: 1em;
 }
 .footer-copyright {
   margin: 0;
-  color: #52525b;
+  color: currentColor;
   text-align: right;
   white-space: nowrap;
   align-self: center;
