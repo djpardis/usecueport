@@ -8,32 +8,35 @@ homeMain: true
 <section class="home-hero">
   <div class="container home-hero-inner">
     <div class="home-copy">
-      <p class="home-eyebrow">A local-first phone + desktop app</p>
-      <h2 class="home-title">{{ site.subtitle }}.</h2>
+      <div class="home-heading">
+        <p class="home-eyebrow">A local-first phone + desktop app</p>
+        <h2 class="home-title">{{ site.subtitle }}</h2>
+      </div>
       <div class="home-intro">
         <p class="home-sub"><strong class="home-question-inline">{{ site.homeQuestion }}</strong> {{ site.homeDescription }}</p>
       </div>
-      <div class="home-actions">
-        <a class="app-btn app-btn--primary" href="{{ site.downloads.mac }}" aria-label="Request Cueport download link">
-          <svg class="icon-stroke" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 3v13"/>
-            <path d="M7 11l5 5 5-5"/>
-            <path d="M4 21h16"/>
+      <div class="home-cta">
+        <form class="mailing-list-form" data-mailing-list-form method="POST" action="{{ site.forms.mailingList.action }}">
+          <div class="mailing-list-row">
+            <input name="email" type="email" autocomplete="email" placeholder="Stay up to date" required>
+            <button class="btn-join" type="submit">Join</button>
+          </div>
+          <input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
+          <input name="url" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
+          <p class="form-status" data-mailing-list-status role="status" aria-live="polite"></p>
+        </form>
+        <a class="home-download-link" href="{{ site.downloads.mac }}" aria-label="Download Cueport for Mac">
+          <svg class="icon-apple" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
           </svg>
-          <span class="app-btn-text">Download link</span>
+          <span class="icon-divider" aria-hidden="true"></span>
+          <svg class="icon-download" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <path d="M7 10l5 5 5-5"/>
+            <path d="M12 15V3"/>
+          </svg>
         </a>
       </div>
-      <form class="mailing-list-form" data-mailing-list-form method="POST" action="{{ site.forms.mailingList.action }}">
-        <label>
-          Join the mailing list
-          <span class="mailing-list-row">
-            <input name="email" type="email" autocomplete="email" placeholder="Email address" required>
-            <button class="btn" type="submit">Join</button>
-          </span>
-        </label>
-        <input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
-        <p class="form-status" data-mailing-list-status role="status" aria-live="polite"></p>
-      </form>
     </div>
     <div class="home-art" aria-hidden="true">
       <img src="/assets/img/logo-transparent.svg" width="280" height="280" alt="" />
