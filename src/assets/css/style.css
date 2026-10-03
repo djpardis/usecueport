@@ -414,10 +414,15 @@ body:has(.home-main) {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 36px;
+  gap: var(--home-section-gap);
 }
 .home-mobile-logo {
   display: none;
+}
+.home-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 .home-title {
   font-family: var(--font-sans);
@@ -434,6 +439,15 @@ body:has(.home-main) {
 .home-title-main,
 .home-title-tail {
   display: inline;
+}
+.home-eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--type-label);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 14px;
 }
 .home-sub { font-size: var(--type-body); max-width: 520px; color: var(--text-secondary); margin: 0; line-height: 1.55; }
 .home-question-inline {
@@ -596,24 +610,37 @@ body:has(.home-main) {
 
 @media (max-width: 640px) {
   .home-copy {
-    --home-section-gap: 28px;
+    --home-section-gap: 24px;
+  }
+  .home-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 18px;
+    align-items: center;
+    width: 100%;
+  }
+  .home-eyebrow {
+    grid-column: 1 / -1;
+    font-size: 0.65rem;
+    margin-bottom: 10px;
+    letter-spacing: 0.08em;
+  }
+  .home-title {
+    grid-column: 1;
   }
   .home-mobile-logo {
     display: block;
     width: 72px;
     height: 72px;
-    align-self: center;
-    margin-bottom: -8px;
-  }
-  .home-title {
-    font-size: clamp(2rem, 9vw, 2.35rem);
+    grid-column: 2;
+    margin: 0;
   }
   .home-title-main,
   .home-title-tail {
     display: block;
   }
   .home-title-main {
-    white-space: nowrap;
+    white-space: normal;
   }
   .home-cta {
     flex-direction: row;
