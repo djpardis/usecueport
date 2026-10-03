@@ -260,9 +260,12 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   align-self: center;
 }
 .footer-copyright-short { display: none; }
+.build-summary-short { display: none; }
 @media (max-width: 640px) {
   .footer-copyright-full { display: none; }
   .footer-copyright-short { display: inline; }
+  .build-summary-full { display: none; }
+  .build-summary-short { display: inline; }
 }
 
 @media (max-width: 640px) {
@@ -271,6 +274,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   .container { padding: 0 16px; }
   .site-header { height: 52px; }
   .brand-title { font-size: 1.25rem; }
+  .header-badge { display: none; }
   .logo-mark { width: 1.5rem; height: 1.5rem; }
   .nav-icon svg { width: 20px; height: 20px; }
   .site-nav a { padding: 6px; }
@@ -280,7 +284,6 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   .home-hero-inner { gap: 16px; text-align: left; }
   .home-actions { justify-content: flex-start; }
   .home-sub { margin-left: 0 !important; margin-right: 0 !important; max-width: none; }
-  .home-title { font-size: 2rem !important; line-height: 1.08 !important; margin-bottom: 0 !important; }
   .home-sub { font-size: 0.95rem; margin-bottom: 16px; line-height: 1.5; }
   .home-actions { display: flex; flex-direction: row; gap: 8px; margin: 0; }
   .home-actions .app-btn { min-width: 0; padding: 10px 11px; gap: 6px; justify-content: center; white-space: nowrap; }
@@ -424,10 +427,11 @@ body:has(.home-main) {
   font-weight: 700;
 }
 .home-cta {
+  --home-cta-height: 62px;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  gap: 28px;
+  align-items: flex-start;
+  gap: 8px;
   width: 100%;
   max-width: 540px;
   flex-wrap: wrap;
@@ -436,8 +440,10 @@ body:has(.home-main) {
 .home-download-link {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
-  padding: 11px 15px;
+  padding: 0 15px;
+  min-height: var(--home-cta-height);
   background: var(--accent);
   color: #ffffff;
   text-decoration: none;
@@ -468,6 +474,14 @@ body:has(.home-main) {
   flex: 1 1 240px;
   min-width: 220px;
   margin: 0;
+  position: relative;
+}
+.mailing-list-box {
+  padding: 10px 12px;
+  min-height: var(--home-cta-height);
+  background: #ffffff;
+  border: 1px solid var(--border);
+  box-sizing: border-box;
 }
 .mailing-list-row {
   display: grid;
@@ -480,7 +494,7 @@ body:has(.home-main) {
   min-width: 0;
   border: none;
   border-radius: 0;
-  padding: 6px 0 8px;
+  padding: 6px 10px 8px;
   font: inherit;
   font-size: var(--type-body);
   line-height: 1.5;
@@ -514,6 +528,12 @@ body:has(.home-main) {
   -webkit-text-fill-color: var(--text);
   box-shadow: 0 0 0 1000px #eaf2ff inset;
   transition: background-color 9999s ease-out;
+}
+.mailing-list-form .form-status {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
 }
 .mailing-list-row:focus-within {
   border-bottom-color: var(--accent);
@@ -564,14 +584,14 @@ body:has(.home-main) {
   .home-copy {
     --home-section-gap: 28px;
   }
-  .home-intro {
-    padding-left: 12px;
-  }
   .home-cta {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
-    gap: 18px;
+    gap: 8px;
+    flex-wrap: nowrap;
   }
+  .mailing-list-form { min-width: 0; }
+  .home-download-link { flex: 0 0 auto; }
 }
 
 /* Page head — quiet title so it does not fight the "Cueport" header */
@@ -763,6 +783,57 @@ body:has(.home-main) {
 
 @media (max-width: 720px) { .download-grid { grid-template-columns: 1fr; } }
 
+.viewport-main:has(.download-page) {
+  justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+.download-page .page-head {
+  margin-bottom: 16px;
+}
+.download-page .page-head h1 {
+  margin-bottom: 5px;
+}
+.download-page .access-layout {
+  gap: 22px;
+  align-items: center;
+}
+.download-page .access-form {
+  padding: 18px 22px;
+  gap: 12px;
+}
+.download-page .form-stack {
+  gap: 10px;
+}
+.download-page .form-row {
+  gap: 12px;
+}
+.download-page .access-form input,
+.download-page .access-form select,
+.download-page .access-form textarea {
+  padding-top: 7px;
+  padding-bottom: 8px;
+}
+.download-page .access-note {
+  padding: 8px 0;
+}
+.download-page .tree-root {
+  padding: 10px 0;
+}
+.download-page .tree-branch {
+  padding: 8px 0;
+}
+.download-page .tree-branch::before {
+  top: calc(8px + var(--marker-size) / 2);
+}
+.download-page .access-note p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+.download-page .access-note .tree-store-note {
+  margin-top: 5px;
+}
+
 .access-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 1fr);
@@ -777,6 +848,12 @@ body:has(.home-main) {
   flex-direction: column;
   gap: 16px;
   justify-content: center;
+  position: relative;
+}
+.access-required-note {
+  margin: 0;
+  color: var(--text-secondary);
+  font: inherit;
 }
 .form-stack {
   display: flex;
@@ -787,6 +864,10 @@ body:has(.home-main) {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 14px;
+}
+.form-row--submit {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
 }
 .access-form label {
   display: flex;
@@ -800,18 +881,30 @@ body:has(.home-main) {
 .access-form select,
 .access-form textarea {
   width: 100%;
-  border: 1px solid var(--border-strong);
+  border: none;
+  border-bottom: 2px solid var(--accent);
   border-radius: 0;
-  background: var(--bg);
+  background: #eaf2ff;
   color: var(--text);
   font: inherit;
   font-weight: 400;
-  padding: 10px 12px;
+  padding: 9px 10px 10px;
   -webkit-appearance: none;
   appearance: none;
 }
+.access-form input::placeholder,
+.access-form textarea::placeholder {
+  color: var(--text-secondary);
+  opacity: 1;
+}
+.access-form select:invalid {
+  color: var(--text-secondary);
+}
+.access-form option {
+  color: var(--text);
+}
 .access-form select {
-  padding-right: 36px;
+  padding-right: 34px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23737373' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 10px center;
@@ -823,9 +916,25 @@ body:has(.home-main) {
 .access-form input:focus,
 .access-form select:focus,
 .access-form textarea:focus {
-  outline: 2px solid rgba(194, 65, 12, 0.28);
-  outline-offset: 1px;
-  border-color: var(--accent);
+  outline: none;
+  border-color: var(--accent-hover);
+}
+.access-submit-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  cursor: pointer;
+}
+.access-submit-icon:hover {
+  color: var(--accent-hover);
+}
+.access-submit-icon svg {
+  width: 1.55rem;
+  height: 1.55rem;
 }
 .access-form .btn {
   align-self: flex-end;
@@ -834,6 +943,12 @@ body:has(.home-main) {
   margin: 0;
   font-size: var(--type-small);
   color: var(--text-secondary);
+}
+.access-form .form-status {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
 }
 .form-status:empty {
   display: none;
@@ -947,12 +1062,20 @@ body:has(.home-main) {
   .form-row {
     grid-template-columns: 1fr;
   }
+  .form-row--submit {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
   .access-form {
     padding: 16px;
   }
-  .access-note {
-    order: -1;
-    padding: 16px;
+  .download-page .access-note {
+    display: none;
+  }
+  .download-analysis-note {
+    display: none;
+  }
+  .tree-branch--direct {
+    display: none;
   }
 }
 

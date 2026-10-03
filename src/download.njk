@@ -6,7 +6,7 @@ permalink: /download/
 viewportMain: true
 ---
 
-<div class="container">
+<div class="container download-page">
   <div class="page-head">
     <h1>Download</h1>
     <p class="lede">Cueport is rolling out with free access to DJs. Request a Mac download link.</p>
@@ -15,58 +15,48 @@ viewportMain: true
     <form class="access-form" data-access-form method="POST" action="{{ site.forms.access.action }}">
       <div class="form-stack">
         <div class="form-row">
-          <label>
-            Name
-            <input name="full_name" autocomplete="name" required>
-          </label>
-          <label>
-            DJ name
-            <input name="DJ_name" autocomplete="organization" required>
-          </label>
+          <input name="full_name" autocomplete="name" placeholder="Name" aria-label="Name" required>
+          <input name="DJ_name" autocomplete="organization" placeholder="DJ name" aria-label="DJ name" required>
         </div>
 
-        <label>
-          Email
-          <input name="email" type="email" autocomplete="email" required>
-        </label>
+        <input name="email" type="email" autocomplete="email" placeholder="Email" aria-label="Email" required>
 
-        <label>
-          Socials or website
-          <input name="social_or_site" placeholder="@name or https://..." required>
-        </label>
+        <input name="social_or_site" placeholder="Socials or website" aria-label="Socials or website" required>
 
-        <label>
-          Main DJ software
-          <select name="DJ_software" required>
-            <option value="">Choose one</option>
-            <option>Serato DJ Pro</option>
-            <option>Rekordbox</option>
-            <option>Traktor</option>
-            <option>VirtualDJ</option>
-            <option>Engine DJ</option>
-            <option>Mixxx</option>
-            <option>Other</option>
-          </select>
-        </label>
+        <select name="DJ_software" aria-label="Main DJ software" required>
+          <option value="" disabled selected>Main DJ software</option>
+          <option>Serato DJ Pro</option>
+          <option>Rekordbox</option>
+          <option>Traktor</option>
+          <option>VirtualDJ</option>
+          <option>Engine DJ</option>
+          <option>Mixxx</option>
+          <option>Other</option>
+        </select>
 
-        <label>
-          Library size
-          <select name="library_size" required>
-            <option value="">Choose one</option>
+        <div class="form-row form-row--submit">
+          <select name="library_size" aria-label="Library size" required>
+            <option value="" disabled selected>Library size</option>
             <option>Under 500 tracks</option>
             <option>500 to 2,000 tracks</option>
             <option>2,000 to 10,000 tracks</option>
             <option>10,000+ tracks</option>
           </select>
-        </label>
+          <button class="access-submit-icon" type="submit" aria-label="Request download link">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="butt" stroke-linejoin="miter">
+              <path d="M20 4v11H4"/>
+              <path d="M9 10l-5 5 5 5"/>
+            </svg>
+          </button>
+        </div>
 
 
       </div>
 
       <input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
 
-      <button class="btn" type="submit">Request download link</button>
       <p class="form-status" data-access-form-status role="status" aria-live="polite"></p>
+      <p class="access-required-note">All fields are required.</p>
     </form>
 
     <aside class="access-note">
@@ -86,11 +76,11 @@ viewportMain: true
               <p>Link your local <code>_Serato_</code> folder.</p>
             </div>
           </div>
-          <div class="tree-branch">
+          <div class="tree-branch tree-branch--direct">
             <span class="tree-label">B</span>
             <div>
               <h2>Cueport Direct</h2>
-              <p>Build a Cueport library from local music files. The audio stays in place while <strong><a href="https://trailmix.tools" target="_blank" rel="noopener noreferrer">trail mix</a></strong> analyzes BPM, key, and waveform data.</p>
+              <p>Build a Cueport library from local music files.<span class="download-analysis-note"> The audio stays in place while <strong><a href="https://trailmix.tools" target="_blank" rel="noopener noreferrer">trail mix</a></strong> does the analysis.</span></p>
             </div>
           </div>
         </div>
@@ -111,6 +101,13 @@ viewportMain: true
   const accessForm = document.querySelector("[data-access-form]");
   const accessStatus = document.querySelector("[data-access-form-status]");
 
+  accessForm?.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" && event.shiftKey) {
+      event.preventDefault();
+      accessForm.requestSubmit();
+    }
+  });
+
   accessForm?.addEventListener("submit", async (event) => {
     event.preventDefault();
 
@@ -128,7 +125,7 @@ viewportMain: true
 
       if (response.ok) {
         accessForm.reset();
-        accessStatus.textContent = "Thanks. We got your request and we'll get in touch by email.";
+        accessStatus.textContent = "Thanks. We got your request and will share the download link when the next build ships.";
         return;
       }
 
