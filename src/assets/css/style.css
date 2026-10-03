@@ -32,6 +32,7 @@
 
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
+html { background: var(--bg); }
 body {
   font-family: var(--font-sans);
   font-size: 112.5%;
