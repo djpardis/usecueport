@@ -406,8 +406,8 @@ body:has(.home-main) {
 .home-copy { --home-section-gap: 44px; }
 .home-hero-inner {
   display: grid;
-  grid-template-columns: 1.22fr 0.78fr;
-  gap: 64px;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 36px;
   align-items: center;
 }
 .home-copy {
@@ -566,7 +566,8 @@ body:has(.home-main) {
 .mailing-list-row:focus-within {
   border-bottom-color: var(--accent);
 }
-.btn-join {
+.btn-join,
+.access-submit-icon {
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
@@ -582,16 +583,20 @@ body:has(.home-main) {
   padding: 0;
   letter-spacing: 0.01em;
 }
-.btn-join:hover { color: var(--accent-hover); }
-.btn-join svg {
+.btn-join:hover,
+.access-submit-icon:hover {
+  color: var(--accent-hover);
+}
+.btn-join svg,
+.access-submit-icon svg {
   width: 1.55em;
   height: 1.55em;
 }
 .home-art { display: flex; justify-content: center; align-items: center; }
 .home-art img {
-  width: auto;
+  width: min(100%, clamp(340px, 38vw, 420px));
   max-width: 100%;
-  height: clamp(300px, 32vw, 360px);
+  height: auto;
 }
 .error-code {
   font-family: var(--font-mono);
@@ -908,6 +913,11 @@ body:has(.home-main) {
 .form-row--submit {
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
+  gap: 12px;
+  border-bottom: 2px solid var(--accent);
+}
+.form-row--submit:focus-within {
+  border-bottom-color: var(--accent-hover);
 }
 .access-form label {
   display: flex;
@@ -951,6 +961,9 @@ body:has(.home-main) {
   background-repeat: no-repeat;
   background-position: right 10px center;
 }
+.form-row--submit select {
+  border-bottom: 0;
+}
 .access-form textarea {
   resize: vertical;
   min-height: 132px;
@@ -960,23 +973,6 @@ body:has(.home-main) {
 .access-form textarea:focus {
   outline: none;
   border-color: var(--accent-hover);
-}
-.access-submit-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  border: 0;
-  background: none;
-  color: var(--accent);
-  cursor: pointer;
-}
-.access-submit-icon:hover {
-  color: var(--accent-hover);
-}
-.access-submit-icon svg {
-  width: 1.55rem;
-  height: 1.55rem;
 }
 .access-form .btn {
   align-self: flex-end;
