@@ -612,28 +612,10 @@ body:has(.home-main) {
   .home-copy {
     --home-section-gap: 24px;
   }
-  .home-heading {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    column-gap: 18px;
-    align-items: center;
-    width: 100%;
-  }
   .home-eyebrow {
-    grid-column: 1 / -1;
     font-size: 0.65rem;
     margin-bottom: 10px;
     letter-spacing: 0.08em;
-  }
-  .home-title {
-    grid-column: 1;
-  }
-  .home-mobile-logo {
-    display: block;
-    width: 72px;
-    height: 72px;
-    grid-column: 2;
-    margin: 0;
   }
   .home-title-main,
   .home-title-tail {
