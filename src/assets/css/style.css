@@ -872,8 +872,11 @@ body:has(.home-main) {
   top: calc(8px + var(--marker-size) / 2);
 }
 .download-page .access-note p {
-  font-size: 0.95rem;
-  line-height: 1.4;
+  font-size: var(--type-body);
+  line-height: 1.45;
+}
+.download-page .access-note h2 {
+  font-size: var(--type-body);
 }
 .download-page .access-note .tree-store-note {
   margin-top: 5px;
