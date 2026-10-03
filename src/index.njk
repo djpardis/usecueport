@@ -14,14 +14,16 @@ homeMain: true
       </div>
       <div class="home-cta">
         <form class="mailing-list-form" data-mailing-list-form method="POST" action="{{ site.forms.mailingList.action }}">
-          <div class="mailing-list-row">
-            <input name="email" type="email" autocomplete="email" placeholder="Stay in the loop" required>
-            <button class="btn-join" type="submit" aria-label="Join mailing list">
-              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="butt" stroke-linejoin="miter">
-                <path d="M20 4v11H4"/>
-                <path d="M9 10l-5 5 5 5"/>
-              </svg>
-            </button>
+          <div class="mailing-list-box">
+            <div class="mailing-list-row">
+              <input name="email" type="email" autocomplete="email" placeholder="Stay in the loop" required>
+              <button class="btn-join" type="submit" aria-label="Join mailing list">
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="butt" stroke-linejoin="miter">
+                  <path d="M20 4v11H4"/>
+                  <path d="M9 10l-5 5 5 5"/>
+                </svg>
+              </button>
+            </div>
           </div>
           <input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
           <input name="url" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
