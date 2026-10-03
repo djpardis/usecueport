@@ -1056,6 +1056,11 @@ body:has(.home-main) {
 }
 
 @media (max-width: 820px) {
+  .viewport-main:has(.download-page) {
+    justify-content: flex-start;
+    padding-top: 20px;
+    padding-bottom: 28px;
+  }
   .access-layout {
     grid-template-columns: 1fr;
   }
