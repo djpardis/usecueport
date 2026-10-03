@@ -125,7 +125,9 @@ viewportMain: true
 
       if (response.ok) {
         accessForm.reset();
-        accessStatus.textContent = "Thank you. We’ll email you the download link when we ship.";
+        accessStatus.textContent = window.matchMedia("(max-width: 640px)").matches
+          ? "Thank you. Stay tuned."
+          : "Thank you. We’ll email you the download link when we ship.";
         return;
       }
 
