@@ -8,17 +8,25 @@
   "homeDescription": "Cueport reads Serato or builds a local library from music files, syncs your phone over your local network, and lets you play music, add cues, and edit sets on all your devices.",
   "email": "hello@usecueport.com",
   "version": "1.1.0",
-  "releaseStage": "beta",
   "dmgFilename": "Cueport_1.1.0_aarch64.dmg",
   "downloads": {
     "mac": "/download/",
     "ios": "#"
   },
-  "follow": {
-    "label": "Follow us",
-    "ariaLabel": "Follow Cueport on Instagram",
-    "url": "https://www.instagram.com/usecueport/"
-  },
+  "social": [
+    {
+      "label": "Instagram",
+      "ariaLabel": "Follow Cueport on Instagram",
+      "url": "https://www.instagram.com/usecueport/",
+      "icon": "instagram"
+    },
+    {
+      "label": "YouTube",
+      "ariaLabel": "Subscribe to Cueport on YouTube",
+      "url": "https://www.youtube.com/@usecueport",
+      "icon": "youtube"
+    }
+  ],
   "forms": {
     "access": {
       "action": "https://form.usecueport.com/submit/access-request"
@@ -43,37 +51,5 @@
       "href": "/support/",
       "icon": "support"
     }
-  ],
-  "shipNotes": {
-    "title": "Cueport 1.1: local-first library management for desktop and phone",
-    "included": [
-      "Read Serato crates, subcrates, tracks, cues, BPM, key, color, comments, and beatgrid markers from your local library",
-      "Use Cueport Direct to build a local library from music files without requiring Serato",
-      "Analyze Cueport Direct tracks locally for integer display BPM, key, waveform height, and band-energy color hints",
-      "Play tracks locally from the desktop library with waveform context, cue markers, and continuous playback",
-      "Create, rename, delete, add tracks to, and manually reorder collections before publishing them back",
-      "Edit cue points, track comments, and track colors in a local working layer before any write-back happens",
-      "Review pending changes before publishing to Serato, with restore points for every publish",
-      "Pair an iPhone over the local network, choose collections for the phone, cache audio, and prefetch waveform data and beatgrids in the background",
-      "Show the paired source on iPhone and keep queued edits tied to that source",
-      "Use desktop and mobile column sorting as temporary views while keeping the # column as the manual order",
-      "Recover from pairing changes without deleting cached phone music",
-      "Album art from embedded ID3 tags shown in desktop track lists, mobile track detail, and lock screen",
-      "Tracks start playback at the first cue point on both desktop and mobile, matching Serato behavior",
-      "Skip previous and next buttons in the desktop player transport",
-      "In-app Wi-Fi isolation diagnostic and guided hotspot prompt for public networks",
-      "Faster mobile pairing by deferring artwork downloads until after audio sync",
-      "Full-waveform iPhone overlay with colored bars, bar markers, live time, square cues, cue add, and cue move",
-      "Signed Mac app build with local-first behavior and no music upload requirement"
-    ],
-    "upNext": [
-      "Bonjour rediscovery so paired phones can reconnect after desktop IP or port changes",
-      "Device checks for lock screen, background playback, and previous-button behavior",
-      "Mac distribution and notarization polish for the public release channel"
-    ]
-  },
-  "trailMix": {
-    "version": "paper-preview 2026-09-06 (229ab350)",
-    "url": "https://github.com/djpardis/trailmix/commit/229ab350fd462386a61a57f23c4cec31540242ff"
-  }
+  ]
 }

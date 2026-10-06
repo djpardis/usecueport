@@ -122,7 +122,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   padding: 0.2rem 0.45rem;
   color: var(--accent);
   background: #ffffff;
-  border: 1px solid var(--border-strong);
+  border: 0;
   margin-left: 0.5rem;
   align-self: center;
   transform: translateY(-0.45em);
@@ -148,7 +148,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   .site-nav ul { gap: 8px; }
 }
 
-/* Footer — fixed at bottom, release notes pops upward (does not shift layout) */
+/* Footer */
 .site-footer {
   border-top: 1px solid var(--border);
   background: var(--bg);
@@ -170,70 +170,20 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   min-width: 0;
 }
 .footer-grid > * { min-width: 0; }
-.build-panel { position: relative; }
-.build-panel summary {
-  cursor: pointer;
-  font-weight: 600;
-  color: var(--accent);
-  list-style: none;
-  text-decoration: underline;
-  text-decoration-color: var(--border-strong);
-  text-underline-offset: 0.2em;
-}
-.build-panel summary::after {
-  content: "▲";
-  margin-left: 6px;
-  font-size: 0.7em;
-  text-decoration: none;
-  display: inline-block;
-}
-.build-panel[open] summary::after {
-  content: "▼";
-}
-.build-panel summary:hover {
-  color: var(--accent-hover);
-  text-decoration-color: var(--accent);
-}
-.build-panel summary::-webkit-details-marker { display: none; }
-.build-panel-body {
-  position: absolute;
-  left: 0;
-  bottom: calc(100% + 14px);
-  display: block;
-  width: min(720px, calc(100vw - 64px));
-  max-height: calc(100vh - var(--header-h) - var(--footer-h) - 42px);
-  max-height: calc(100dvh - var(--header-h) - var(--footer-h) - 42px);
-  overflow-y: auto;
-  background: #ffffff;
-  border: 1px solid var(--border);
-  padding: 18px 22px;
-  box-shadow: 0 -6px 24px rgba(24, 24, 27, 0.06);
-}
-.build-section-label {
-  margin: 0.35rem 0 0.15rem;
-  font-weight: 600;
-  color: #a1a1aa;
-}
-.build-section-label:first-child { margin-top: 0; }
-.build-list {
-  margin: 0.05rem 0 0.2rem;
-  padding-left: 1rem;
-  color: var(--text-secondary);
-  line-height: 1.5;
-}
-.build-list li { margin: 0.12rem 0; }
-.build-panel-note {
-  margin: 0.05rem 0 0.2rem;
-  color: var(--text-secondary);
-  line-height: 1.5;
-}
-.muted-list { opacity: 0.92; }
 .footer-meta {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: 1rem;
+  justify-self: end;
   min-width: 0;
+  color: #52525b;
+}
+.footer-social-list {
+  display: flex;
+  align-items: center;
+  justify-self: start;
+  gap: 0.85rem;
   color: #52525b;
 }
 .footer-social {
@@ -248,17 +198,10 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   text-decoration: none;
 }
 .footer-social svg {
-  /* viewBox is cropped to the glyph, so the drawn icon is exactly 1em tall.
-     Icon and separator share the same height. */
-  width: 1em;
-  height: 1em;
-}
-.footer-separator {
-  display: inline-block;
-  width: 1px;
-  height: 1em;
-  background: currentColor;
-  opacity: 0.45;
+  /* Slightly oversize line icons so they match the text's visual weight. */
+  width: 1.08em;
+  height: 1.08em;
+  stroke-width: 1.75;
 }
 .footer-copyright {
   margin: 0;
@@ -268,12 +211,9 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   align-self: center;
 }
 .footer-copyright-short { display: none; }
-.build-summary-short { display: none; }
 @media (max-width: 640px) {
   .footer-copyright-full { display: none; }
   .footer-copyright-short { display: inline; }
-  .build-summary-full { display: none; }
-  .build-summary-short { display: inline; }
 }
 
 @media (max-width: 640px) {
@@ -330,14 +270,6 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   }
   .footer-meta { gap: 10px; }
   .footer-copyright { white-space: nowrap; }
-  .build-panel summary { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .build-panel-body {
-    width: calc(100vw - 36px);
-    left: -18px;
-    grid-template-columns: 1fr;
-    padding: 14px 18px;
-    gap: 12px;
-  }
 }
 
 /* One-viewport main — content pinned to a consistent top so titles align across pages */
@@ -509,7 +441,7 @@ body:has(.home-main) {
   padding: 10px 12px;
   min-height: var(--home-cta-height);
   background: #ffffff;
-  border: 1px solid var(--border);
+  border: 0;
   box-sizing: border-box;
 }
 .mailing-list-row {
@@ -599,6 +531,15 @@ body:has(.home-main) {
   max-width: 100%;
   height: auto;
 }
+
+@media (max-width: 1100px) and (min-width: 861px) {
+  .home-art { justify-content: flex-end; }
+  .home-art img {
+    width: min(44vw, 440px);
+    max-width: none;
+  }
+}
+
 .error-code {
   font-family: var(--font-mono);
   font-size: var(--type-label);
@@ -659,7 +600,7 @@ body:has(.home-main) {
 }
 .feature-list-section {
   background: #ffffff;
-  border: 1px solid var(--border);
+  border: 0;
   padding: 14px 20px;
 }
 .feature-list-section summary {
@@ -749,7 +690,7 @@ body:has(.home-main) {
   margin: 0;
   overflow: hidden;
   background: #ffffff;
-  border: 1px solid var(--border);
+  border: 0;
 }
 .desktop-screenshot--lead {
   grid-column: 1 / -1;
@@ -799,7 +740,7 @@ body:has(.home-main) {
 }
 .download-card {
   background: #ffffff;
-  border: 1px solid var(--border);
+  border: 0;
   padding: 24px 26px;
   display: flex; flex-direction: column; gap: 14px;
 }
@@ -891,7 +832,7 @@ body:has(.home-main) {
 }
 .access-form {
   background: #ffffff;
-  border: 1px solid var(--border);
+  border: 0;
   padding: 24px 26px;
   display: flex;
   flex-direction: column;
@@ -1139,7 +1080,7 @@ body:has(.home-main) {
 /* FAQ — white pills, body-size copy */
 .faq details {
   background: #ffffff;
-  border: 1px solid var(--border);
+  border: 0;
   margin-bottom: 10px;
   padding: 14px 20px;
 }

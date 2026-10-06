@@ -101,7 +101,7 @@ Done. Remaining steps:
   [ ] Build and sign the Mac app in the dj repo:
         cd apps/desktop && npm run tauri build
 
-  [ ] Update shipNotes in site.json if the text needs changing, then:
+  [ ] Commit the website data change, then:
         cd ${root}
         git add src/_data/site.json wrangler.downloads.toml
         git commit -m "Release ${version}"
