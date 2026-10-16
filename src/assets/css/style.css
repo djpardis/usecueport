@@ -241,6 +241,8 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   .download-card .app-btn { align-self: stretch; justify-content: center; }
   .download-card .app-btn svg { width: 22px; height: 22px; }
   .home-hero-inner > .home-art { display: none; }
+  .home-setup-tree { display: none; }
+  .home-workflow { padding: 0; }
 
   .viewport-main { padding-top: 20px; padding-bottom: 28px; }
   .home-main { padding-top: 20px; padding-bottom: 28px; align-items: flex-start; }
@@ -339,11 +341,16 @@ body:has(.home-main) {
 .home-copy { --home-section-gap: 44px; }
 .home-hero-inner {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 36px;
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+  grid-template-areas:
+    "copy workflow"
+    "cta download";
+  column-gap: 52px;
+  row-gap: 28px;
+  align-items: start;
 }
 .home-copy {
+  grid-area: copy;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -389,13 +396,13 @@ body:has(.home-main) {
 }
 .home-cta {
   --home-cta-height: 62px;
+  grid-area: cta;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   gap: 8px;
   width: 100%;
-  max-width: 540px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 .home-actions { display: flex; gap: 12px; flex-wrap: wrap; margin: 0; flex-shrink: 0; }
 .home-download-link {
@@ -432,8 +439,8 @@ body:has(.home-main) {
   flex-shrink: 0;
 }
 .mailing-list-form {
-  flex: 1 1 240px;
-  min-width: 220px;
+  flex: 1 1 auto;
+  min-width: 0;
   margin: 0;
   position: relative;
 }
@@ -531,13 +538,91 @@ body:has(.home-main) {
   max-width: 100%;
   height: auto;
 }
+.home-workflow {
+  grid-area: workflow;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+}
+.home-download-slot {
+  grid-area: download;
+  width: 100%;
+}
+.home-download-card {
+  --home-cta-height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  min-height: var(--home-cta-height);
+  padding: 0 18px;
+  background: var(--text);
+  color: var(--bg);
+  text-decoration: none;
+  transition: background 0.12s ease;
+}
+.home-download-card:hover {
+  background: #000000;
+  color: var(--bg);
+  text-decoration: none;
+}
+.home-download-title {
+  font-size: var(--type-body);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+.home-download-icon {
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.home-download-icon .icon-apple,
+.home-download-icon .icon-download {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+.home-download-icon .icon-divider {
+  width: 1px;
+  height: 24px;
+  background: rgba(245, 237, 224, 0.42);
+  flex-shrink: 0;
+}
+.home-setup-tree {
+  padding-right: 12px;
+}
+.home-setup-tree .tree-root,
+.home-setup-tree .tree-branch {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.home-setup-tree .tree-root:first-child {
+  padding-top: 0;
+}
+.home-setup-tree h2 {
+  margin: 0 0 6px;
+  font-size: var(--type-body);
+  line-height: 1.25;
+}
+.home-setup-tree p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.45;
+}
 
 @media (max-width: 1100px) and (min-width: 861px) {
+  .home-hero-inner { column-gap: 36px; }
   .home-art { justify-content: flex-end; }
   .home-art img {
     width: min(44vw, 440px);
     max-width: none;
   }
+  .home-download-card { padding: 0 18px; }
 }
 
 .error-code {
@@ -550,9 +635,21 @@ body:has(.home-main) {
 }
 
 @media (max-width: 860px) {
-  .home-hero-inner { grid-template-columns: 1fr; gap: 32px; text-align: left; }
+  .home-hero-inner {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "copy"
+      "cta"
+      "download";
+    column-gap: 0;
+    row-gap: 24px;
+    text-align: left;
+  }
   .home-actions { justify-content: flex-start; }
   .home-art img { width: 100%; max-width: 180px; height: auto; }
+  .home-workflow { display: none; }
+  .home-cta,
+  .home-download-slot { max-width: 540px; }
 }
 
 @media (max-width: 640px) {
@@ -579,6 +676,22 @@ body:has(.home-main) {
   }
   .mailing-list-form { min-width: 0; }
   .home-download-link { flex: 0 0 auto; }
+  .home-download-card {
+    min-height: 62px;
+    padding: 0 16px;
+  }
+  .home-download-title { font-size: 1rem; }
+  .home-download-icon {
+    gap: 8px;
+  }
+  .home-download-icon .icon-apple,
+  .home-download-icon .icon-download {
+    width: 19px;
+    height: 19px;
+  }
+  .home-download-icon .icon-divider {
+    height: 21px;
+  }
 }
 
 /* Page head — quiet title so it does not fight the "Cueport" header */
@@ -782,8 +895,10 @@ body:has(.home-main) {
   margin-bottom: 6px;
 }
 .download-page .access-layout {
+  grid-template-columns: minmax(0, 680px);
   gap: 24px;
   align-items: stretch;
+  max-width: 680px;
 }
 .download-page .access-form {
   padding: 24px 26px;
