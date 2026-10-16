@@ -1,0 +1,86 @@
+<div class="access-layout">
+  <form class="access-form" data-access-form method="POST" action="{{ site.forms.access.action }}">
+    <div class="form-stack">
+      <div class="form-row">
+        <input name="full_name" autocomplete="name" placeholder="Name" aria-label="Name" required>
+        <input name="DJ_name" autocomplete="organization" placeholder="DJ name" aria-label="DJ name" required>
+      </div>
+
+      <input name="email" type="email" autocomplete="email" placeholder="Email" aria-label="Email" required>
+
+      <input name="social_or_site" placeholder="Socials or website" aria-label="Socials or website" required>
+
+      <select name="DJ_software" aria-label="Main DJ software" required>
+        <option value="" disabled selected>Main DJ software</option>
+        <option>Serato DJ Pro</option>
+        <option>Rekordbox</option>
+        <option>Traktor</option>
+        <option>VirtualDJ</option>
+        <option>Engine DJ</option>
+        <option>Mixxx</option>
+        <option>Other</option>
+      </select>
+
+      <div class="form-row form-row--submit">
+        <select name="library_size" aria-label="Library size" required>
+          <option value="" disabled selected>Library size</option>
+          <option>Under 500 tracks</option>
+          <option>500 to 2,000 tracks</option>
+          <option>2,000 to 10,000 tracks</option>
+          <option>10,000+ tracks</option>
+        </select>
+        <button class="access-submit-icon" type="submit" aria-label="Request download link">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="butt" stroke-linejoin="miter">
+            <path d="M20 4v11H4"/>
+            <path d="M9 10l-5 5 5 5"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
+
+    <p class="form-status" data-access-form-status role="status" aria-live="polite"></p>
+    <p class="access-required-note">All fields are required.</p>
+  </form>
+</div>
+
+<script>
+  const accessForm = document.querySelector("[data-access-form]");
+  const accessStatus = document.querySelector("[data-access-form-status]");
+
+  accessForm?.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" && event.shiftKey) {
+      event.preventDefault();
+      accessForm.requestSubmit();
+    }
+  });
+
+  accessForm?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    if (!accessForm.reportValidity()) {
+      return;
+    }
+
+    accessStatus.textContent = "Sending...";
+
+    try {
+      const response = await fetch(accessForm.action, {
+        method: "POST",
+        body: new FormData(accessForm)
+      });
+
+      if (response.ok) {
+        accessForm.reset();
+        accessStatus.textContent = "Thank you. We'll email you the download link when we ship.";
+        return;
+      }
+
+      const body = await response.json().catch(() => ({}));
+      accessStatus.textContent = body.error || "Something went wrong. Please try again.";
+    } catch {
+      accessStatus.textContent = "Could not reach the form service. Please try again.";
+    }
+  });
+</script>

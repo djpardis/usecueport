@@ -341,18 +341,25 @@ body:has(.home-main) {
 .home-copy { --home-section-gap: 44px; }
 .home-hero-inner {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
-  grid-template-areas:
-    "copy workflow"
-    "cta download";
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-areas: "product workflow";
   column-gap: 52px;
-  row-gap: 28px;
-  align-items: start;
+  align-items: stretch;
 }
-.home-copy {
-  grid-area: copy;
+.home-product {
+  grid-area: product;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  gap: 28px;
+  min-width: 0;
+}
+.home-copy {
+  align-self: stretch;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: flex-start;
   gap: var(--home-section-gap);
 }
@@ -375,6 +382,9 @@ body:has(.home-main) {
 .home-intro {
   max-width: 540px;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 .home-title-main,
 .home-title-tail {
@@ -389,14 +399,20 @@ body:has(.home-main) {
   color: var(--accent);
   margin: 0 0 14px;
 }
-.home-sub { font-size: var(--type-body); max-width: 520px; color: var(--text-secondary); margin: 0; line-height: 1.55; }
-.home-question-inline {
+.home-question,
+.home-sub {
+  font-size: var(--type-body);
+  max-width: 520px;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.55;
+}
+.home-question {
   color: var(--text-secondary);
   font-weight: 700;
 }
 .home-cta {
   --home-cta-height: 62px;
-  grid-area: cta;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -544,10 +560,17 @@ body:has(.home-main) {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
   padding: 0;
 }
+.home-action-row {
+  align-self: end;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+  width: 100%;
+}
 .home-download-slot {
-  grid-area: download;
   width: 100%;
 }
 .home-download-card {
@@ -603,6 +626,16 @@ body:has(.home-main) {
 }
 .home-setup-tree .tree-root:first-child {
   padding-top: 0;
+  position: relative;
+}
+.home-setup-tree .tree-root:first-child::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--marker-size) / 2 - 1px);
+  top: calc(var(--marker-size) + 4px);
+  bottom: -10px;
+  width: 0;
+  border-left: 2px solid var(--border-strong);
 }
 .home-setup-tree h2 {
   margin: 0 0 6px;
@@ -611,12 +644,60 @@ body:has(.home-main) {
 }
 .home-setup-tree p {
   margin: 0;
-  font-size: 1rem;
+  font-size: var(--type-body);
   line-height: 1.45;
+}
+.home-setup-tree .tree-store-note {
+  display: inline-block;
+  width: fit-content;
+  margin-top: 7px;
+  padding: 2px 7px;
+  color: var(--text);
+  background: #fff176;
+  font-weight: 600;
+}
+.tree-download-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+  min-height: 40px;
+  padding: 0 14px;
+  background: var(--text);
+  color: var(--bg);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+.tree-download-link:hover {
+  background: #000000;
+  color: var(--bg);
+  text-decoration: none;
+}
+.tree-download-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.tree-download-icon .icon-apple,
+.tree-download-icon .icon-download {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+.tree-download-icon .icon-divider {
+  width: 1px;
+  height: 19px;
+  background: rgba(245, 237, 224, 0.42);
+  flex-shrink: 0;
 }
 
 @media (max-width: 1100px) and (min-width: 861px) {
   .home-hero-inner { column-gap: 36px; }
+  .home-action-row { column-gap: 36px; }
   .home-art { justify-content: flex-end; }
   .home-art img {
     width: min(44vw, 440px);
@@ -637,19 +718,17 @@ body:has(.home-main) {
 @media (max-width: 860px) {
   .home-hero-inner {
     grid-template-columns: 1fr;
-    grid-template-areas:
-      "copy"
-      "cta"
-      "download";
+    grid-template-areas: "product";
     column-gap: 0;
-    row-gap: 24px;
     text-align: left;
+  }
+  .home-product {
+    max-width: 540px;
   }
   .home-actions { justify-content: flex-start; }
   .home-art img { width: 100%; max-width: 180px; height: auto; }
   .home-workflow { display: none; }
-  .home-cta,
-  .home-download-slot { max-width: 540px; }
+  .home-action-row { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 640px) {
@@ -893,6 +972,52 @@ body:has(.home-main) {
 }
 .download-page .page-head h1 {
   margin-bottom: 6px;
+}
+.download-mobile-head,
+.download-intro {
+  display: none;
+}
+.download-form-panel--desktop {
+  display: block;
+}
+.download-intro {
+  max-width: 680px;
+  min-height: calc(100dvh - var(--header-h) - var(--footer-h) - 160px);
+  align-items: center;
+  padding: 4px 0 52px;
+}
+.download-setup-tree {
+  width: 100%;
+}
+.download-setup-tree h2 {
+  margin: 0 0 6px;
+  font-size: var(--type-body);
+  line-height: 1.25;
+}
+.download-setup-tree p {
+  margin: 0;
+  font-size: var(--type-body);
+  line-height: 1.45;
+}
+.download-setup-tree .tree-store-note {
+  display: inline-block;
+  width: fit-content;
+  margin-top: 7px;
+  padding: 2px 7px;
+  color: var(--text);
+  background: #fff176;
+  font-weight: 600;
+}
+.download-form-head {
+  padding-top: 40px;
+  scroll-margin-top: 40px;
+}
+.download-form-head h2 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  margin: 0 0 6px;
+  color: var(--text);
 }
 .download-page .access-layout {
   grid-template-columns: minmax(0, 680px);
@@ -1180,15 +1305,27 @@ body:has(.home-main) {
   .download-analysis-note {
     display: none;
   }
-  .tree-branch--direct {
-    display: none;
-  }
 }
 
 @media (max-width: 640px) {
   .viewport-main:has(.download-page) {
     padding-top: 40px;
     padding-bottom: 60px;
+  }
+  .download-desktop-head,
+  .download-form-panel--desktop {
+    display: none;
+  }
+  .download-mobile-head {
+    display: block;
+  }
+  .download-intro {
+    display: flex;
+    min-height: calc(100dvh - var(--header-h) - var(--footer-h) - 132px);
+    padding-bottom: 44px;
+  }
+  .download-form-head {
+    padding-top: 28px;
   }
 }
 
