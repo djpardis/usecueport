@@ -18,6 +18,7 @@ homeMain: true
           <p class="home-sub">{{ site.homeDescription }}</p>
         </div>
       </div>
+      {#
       <div class="home-action-row">
         <div class="home-cta">
           <form class="mailing-list-form" data-mailing-list-form method="POST" action="{{ site.forms.mailingList.action }}">
@@ -38,6 +39,7 @@ homeMain: true
           </form>
         </div>
       </div>
+      #}
     </div>
     <aside class="home-workflow" aria-label="Cueport setup">
       <div class="setup-tree home-setup-tree">
@@ -92,6 +94,7 @@ homeMain: true
   </div>
 </section>
 
+{#
 <script>
   const mailingListForm = document.querySelector("[data-mailing-list-form]");
   const mailingListStatus = document.querySelector("[data-mailing-list-status]");
@@ -132,3 +135,4 @@ homeMain: true
     }
   });
 </script>
+#}
