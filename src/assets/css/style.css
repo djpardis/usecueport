@@ -18,7 +18,10 @@
   --radio-blue-hover: #1d4ed8;
   --radio-blue-soft: #eaf2ff;
   --radio-blue-line: rgba(37, 99, 235, 0.42);
-  --room: #111412;
+  --room: #f0ebe3;
+  --room-text: #0d1f3d;
+  --room-text-muted: #26385a;
+  --room-icon: #40557c;
 
   --font-sans: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: "DM Mono", "JetBrains Mono", ui-monospace, "SF Mono", monospace;
@@ -206,10 +209,11 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
 .site-footer {
   border-top: 0;
   background: var(--bg);
-  height: var(--header-h);
+  min-height: 120px;
   display: flex;
   align-items: center;
   flex-shrink: 0;
+  padding: 20px 0 36px;
 }
 .site-footer * {
   font-family: inherit;
@@ -218,7 +222,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
 .footer-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  gap: 0.75rem 1rem;
+  gap: 1rem 1.25rem;
   align-items: center;
   width: 100%;
   min-width: 0;
@@ -228,7 +232,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 1rem;
+  gap: 1.25rem;
   justify-self: end;
   min-width: 0;
   color: #52525b;
@@ -237,8 +241,24 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   display: flex;
   align-items: center;
   justify-self: start;
-  gap: 0.85rem;
-  color: #52525b;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: var(--radio-blue);
+}
+.footer-social:hover { color: var(--radio-blue-hover); }
+.footer-tune-in {
+  font-weight: 600;
+  color: var(--radio-blue);
+  margin-right: 4px;
+  white-space: nowrap;
+}
+.footer-tune-arrow {
+  display: inline-block;
+  margin-left: 1px;
+  transition: transform 0.2s ease;
+}
+.footer-social-list:hover .footer-tune-arrow {
+  transform: translateX(3px);
 }
 .footer-social {
   display: inline-flex;
@@ -253,9 +273,9 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
 }
 .footer-social svg {
   /* Slightly oversize line icons so they match the text's visual weight. */
-  width: 1.08em;
-  height: 1.08em;
-  stroke-width: 1.75;
+  width: 1.15em;
+  height: 1.15em;
+  stroke-width: 1.8;
 }
 .footer-copyright {
   margin: 0;
@@ -286,7 +306,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   .home-hero-inner { gap: 16px; text-align: left; }
   .home-actions { justify-content: flex-start; }
   .home-sub { margin-left: 0 !important; margin-right: 0 !important; max-width: none; }
-  .home-sub { font-size: 0.95rem; margin-bottom: 16px; line-height: 1.5; }
+  .home-sub { font-size: 1.05rem; margin-bottom: 16px; line-height: 1.55; }
   .home-actions { display: flex; flex-direction: row; gap: 8px; margin: 0; }
   .home-actions .app-btn { min-width: 0; padding: 10px 11px; gap: 6px; justify-content: center; white-space: nowrap; }
   .app-btn { min-width: 0; }
@@ -318,14 +338,30 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   .faq summary { font-size: 0.95rem; }
   .faq p { font-size: 0.9rem; line-height: 1.5; margin-top: 8px; }
 
-  .site-footer { height: 52px; }
+  .site-footer { min-height: 92px; padding: 16px 0 28px; }
+  .site-footer * { font-size: var(--type-body); }
   .footer-grid {
-    grid-template-columns: minmax(0, 1fr) auto;
-    gap: 6px 12px;
-    align-items: center;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    align-items: start;
   }
-  .footer-meta { gap: 10px; }
-  .footer-copyright { white-space: nowrap; }
+  .footer-social-list {
+    justify-self: start;
+    gap: 10px 12px;
+  }
+  .footer-tune-in {
+    flex: 0 0 100%;
+    margin-right: 0;
+  }
+  .footer-meta {
+    justify-self: start;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  .footer-copyright {
+    text-align: left;
+    white-space: nowrap;
+  }
 }
 
 /* One-viewport main — content pinned to a consistent top so titles align across pages */
@@ -451,7 +487,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
 }
 .home-question,
 .home-sub {
-  font-size: var(--type-body);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
   max-width: 520px;
   color: var(--text-secondary);
   margin: 0;
@@ -1446,7 +1482,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   font-size: clamp(2.45rem, 5.6vw, 4.25rem);
   line-height: 0.96;
   letter-spacing: -0.055em;
-  color: var(--bg);
+  color: var(--room-text);
 }
 .home-page .home-intro {
   max-width: 620px;
@@ -1454,11 +1490,11 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
 .home-page .home-question,
 .home-page .home-sub {
   max-width: none;
-  color: var(--bg);
+  color: var(--room-text);
 }
 .home-page .home-sub {
-  color: rgba(217, 208, 195, 0.78);
-  line-height: 1.45;
+  color: var(--room-text-muted);
+  line-height: 1.55;
 }
 .home-page .home-actions {
   display: flex;
@@ -1502,9 +1538,9 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   gap: 12px;
 }
 .home-social-label {
-  font-size: 18px;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
   font-weight: 600;
-  color: var(--radio-blue);
+  color: var(--room-text);
   margin-right: 4px;
 }
 .social-arrow {
@@ -1516,16 +1552,28 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
 .home-social:hover .social-arrow {
   transform: translateX(3px);
 }
+.home-404-link {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--room-text);
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+.home-404-link:hover {
+  color: var(--room-text);
+  transform: translateX(3px);
+}
 .home-page .app-btn--social {
   width: 44px;
   padding: 0;
   justify-content: center;
   background: transparent;
-  color: var(--radio-blue);
+  color: var(--room-text);
 }
 .home-page .app-btn--social:hover {
   background: transparent;
-  color: var(--radio-blue-hover);
+  color: var(--room-text);
 }
 .home-page .app-btn--social svg {
   width: 36px;

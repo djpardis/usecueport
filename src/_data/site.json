@@ -16,10 +16,10 @@
   },
   "social": [
     {
-      "label": "Instagram",
-      "ariaLabel": "Follow Cueport on Instagram",
-      "url": "https://www.instagram.com/usecueport/",
-      "icon": "instagram"
+      "label": "Substack",
+      "ariaLabel": "Read Cueport Radio on Substack",
+      "url": "https://usecueport.substack.com/",
+      "icon": "substack"
     },
     {
       "label": "YouTube",
@@ -28,10 +28,10 @@
       "icon": "youtube"
     },
     {
-      "label": "Substack",
-      "ariaLabel": "Read Cueport Radio on Substack",
-      "url": "https://usecueport.substack.com/",
-      "icon": "substack"
+      "label": "Instagram",
+      "ariaLabel": "Follow Cueport on Instagram",
+      "url": "https://www.instagram.com/usecueport/",
+      "icon": "instagram"
     }
   ],
   "forms": {
