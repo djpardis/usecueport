@@ -2,6 +2,7 @@
 :root {
   --bg: #d9d0c3;
   --bg-elevated: #cfc4b4;
+  --surface: #f0ebe3;
   --brand-tile: #bda991;
   --border: #b8ad9f;
   --border-strong: #9f927f;
@@ -89,7 +90,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   top: 0;
   z-index: 100;
   border-bottom: 0;
-  background: #ffffff;
+  background: var(--surface);
   height: var(--header-h);
   flex-shrink: 0;
 }
@@ -125,7 +126,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   text-transform: uppercase;
   padding: 0.2rem 0.45rem;
   color: var(--accent);
-  background: #ffffff;
+  background: var(--surface);
   border: 0;
   margin-left: 0.5rem;
   align-self: center;
@@ -361,12 +362,12 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   padding-right: 25px;
 }
 .app-btn--secondary {
-  background: #ffffff;
+  background: var(--surface);
   color: var(--text);
 }
 .app-btn--secondary:hover,
 .app-btn--secondary:active {
-  background: #ffffff;
+  background: var(--surface);
   color: var(--accent);
 }
 
@@ -512,7 +513,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
 .mailing-list-box {
   padding: 10px 12px;
   min-height: var(--home-cta-height);
-  background: #ffffff;
+  background: var(--surface);
   border: 0;
   box-sizing: border-box;
 }
@@ -835,7 +836,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   gap: 10px;
 }
 .feature-list-section {
-  background: #ffffff;
+  background: var(--surface);
   border: 0;
   padding: 14px 20px;
 }
@@ -925,7 +926,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
 .desktop-screenshot {
   margin: 0;
   overflow: hidden;
-  background: #ffffff;
+  background: var(--surface);
   border: 0;
 }
 .desktop-screenshot--lead {
@@ -975,7 +976,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   grid-template-columns: repeat(2, 1fr);
 }
 .download-card {
-  background: #ffffff;
+  background: var(--surface);
   border: 0;
   padding: 24px 26px;
   display: flex; flex-direction: column; gap: 14px;
@@ -1115,7 +1116,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   align-items: stretch;
 }
 .access-form {
-  background: #ffffff;
+  background: var(--surface);
   border: 0;
   padding: 24px 26px;
   display: flex;
@@ -1376,7 +1377,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
 
 /* FAQ — white pills, body-size copy */
 .faq details {
-  background: #ffffff;
+  background: var(--surface);
   border: 0;
   margin-bottom: 10px;
   padding: 14px 20px;
@@ -1487,11 +1488,11 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   color: #ffffff;
 }
 .home-page .app-btn--secondary {
-  background: #ffffff;
+  background: var(--surface);
   color: var(--text);
 }
 .home-page .app-btn--secondary:hover {
-  background: #ffffff;
+  background: var(--surface);
   color: var(--accent);
 }
 .home-page .home-social {
@@ -1669,7 +1670,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   content: "";
   position: absolute;
   inset: 0;
-  background: #ffffff;
+  background: var(--surface);
   transform: rotate(45deg);
 }
 .flow-decision span {
@@ -1738,7 +1739,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   gap: 14px;
   align-items: flex-start;
   padding: 18px 20px;
-  background: #ffffff;
+  background: var(--surface);
   border: 0;
 }
 .setup-flow > .setup-step {
@@ -1816,7 +1817,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   border: 0;
   border-bottom: 2px solid var(--accent);
   border-radius: 0;
-  background: #ffffff;
+  background: var(--surface);
   color: var(--text);
   font: inherit;
   font-size: var(--type-body);
