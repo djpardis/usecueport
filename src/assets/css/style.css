@@ -305,6 +305,10 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   .home-hero { padding: 0; }
   .home-hero-inner { gap: 16px; text-align: left; }
   .home-actions { justify-content: flex-start; }
+  .home-question,
+  .home-social-label {
+    font-size: var(--type-body);
+  }
   .home-sub { margin-left: 0 !important; margin-right: 0 !important; max-width: none; }
   .home-sub { font-size: 1.05rem; margin-bottom: 16px; line-height: 1.55; }
   .home-actions { display: flex; flex-direction: row; gap: 8px; margin: 0; }
