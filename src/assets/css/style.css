@@ -85,6 +85,9 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
 
 /* Header */
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   border-bottom: 0;
   background: var(--radio-blue-soft);
   height: var(--header-h);
@@ -201,7 +204,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
 /* Footer */
 .site-footer {
   border-top: 0;
-  background: var(--radio-blue-soft);
+  background: var(--bg);
   height: var(--header-h);
   display: flex;
   align-items: center;
@@ -1400,13 +1403,26 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   padding: 0;
 }
 .home-page .home-hero {
+  position: relative;
+  overflow: hidden;
   height: calc(100svh - var(--header-h));
   display: flex;
   align-items: center;
   padding: clamp(18px, 4vw, 42px) 0;
   background: var(--room);
 }
+.hero-waveform {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
 .home-page .home-hero-inner {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: minmax(0, 860px);
   grid-template-areas: "copy";
@@ -1481,18 +1497,34 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
 .home-page .home-social {
   display: flex;
   flex-wrap: nowrap;
+  align-items: center;
   gap: 12px;
+}
+.home-social-label {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--radio-blue);
+  margin-right: 4px;
+}
+.social-arrow {
+  display: inline-block;
+  font-size: 0.9em;
+  margin-left: 2px;
+  transition: transform 0.2s ease;
+}
+.home-social:hover .social-arrow {
+  transform: translateX(3px);
 }
 .home-page .app-btn--social {
   width: 44px;
   padding: 0;
   justify-content: center;
   background: transparent;
-  color: rgba(217, 208, 195, 0.55);
+  color: var(--radio-blue);
 }
 .home-page .app-btn--social:hover {
   background: transparent;
-  color: var(--bg);
+  color: var(--radio-blue-hover);
 }
 .home-page .app-btn--social svg {
   width: 36px;
@@ -1509,7 +1541,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   padding: clamp(28px, 5vw, 56px) 0;
 }
 .home-section--workflow {
-  background: #c7aa92;
+  background: var(--bg);
   height: auto;
   min-height: calc(100svh - var(--header-h));
 }
@@ -1517,7 +1549,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   background: var(--bg);
 }
 .home-section--local {
-  background: var(--bg);
+  background: #c7aa92;
   height: auto;
   min-height: calc(100svh - var(--header-h));
 }
