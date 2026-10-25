@@ -89,7 +89,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   top: 0;
   z-index: 100;
   border-bottom: 0;
-  background: var(--radio-blue-soft);
+  background: #ffffff;
   height: var(--header-h);
   flex-shrink: 0;
 }
