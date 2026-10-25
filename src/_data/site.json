@@ -2,7 +2,8 @@
   "name": "Cueport",
   "domain": "usecueport.com",
   "url": "https://usecueport.com",
-  "subtitle": "A mobile workstation for DJs",
+  "radioUrl": "https://usecueport.substack.com/",
+  "subtitle": "A multi-device workstation for DJs",
   "description": "Do you own your music and want to play it anywhere? Cueport reads Serato or builds a library directly from your music files. It syncs music and metadata to your phone over the local network. Now you can play music, add cues, and edit sets on all your devices!",
   "homeQuestion": "Do you own your music and want to play it anywhere?",
   "homeDescription": "Cueport reads Serato or builds a library directly from your music files. It syncs music and metadata to your phone over the local network. Now you can play music, add cues, and edit sets on all your devices!",
@@ -10,7 +11,7 @@
   "version": "1.1.0",
   "dmgFilename": "Cueport_1.1.0_aarch64.dmg",
   "downloads": {
-    "mac": "/download/",
+    "mac": "https://usecueport.substack.com/",
     "ios": "#"
   },
   "social": [
@@ -25,6 +26,12 @@
       "ariaLabel": "Subscribe to Cueport on YouTube",
       "url": "https://www.youtube.com/@usecueport",
       "icon": "youtube"
+    },
+    {
+      "label": "Substack",
+      "ariaLabel": "Read Cueport Radio on Substack",
+      "url": "https://usecueport.substack.com/",
+      "icon": "substack"
     }
   ],
   "forms": {
@@ -37,13 +44,14 @@
   },
   "nav": [
     {
-      "label": "Download",
-      "href": "/download/",
-      "icon": "download"
+      "label": "Cueport Radio",
+      "href": "https://usecueport.substack.com/",
+      "icon": "radio",
+      "external": true
     },
     {
-      "label": "Features",
-      "href": "/features/",
+      "label": "How it works",
+      "href": "/how-it-works/",
       "icon": "features"
     },
     {

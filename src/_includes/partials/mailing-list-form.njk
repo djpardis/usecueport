@@ -1,0 +1,53 @@
+<div class="mailing-card">
+  <form class="mailing-form" data-mailing-list-form method="POST" action="{{ site.forms.mailingList.action }}">
+    <label class="mailing-field">
+      <input name="email" type="email" autocomplete="email" placeholder="Email" aria-label="Email" required>
+    </label>
+    <button class="mailing-submit" type="submit">Subscribe</button>
+
+    <input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
+    <input name="url" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
+
+    <p class="form-status" data-mailing-list-status role="status" aria-live="polite"></p>
+  </form>
+</div>
+
+<script>
+  const mailingListForm = document.querySelector("[data-mailing-list-form]");
+  const mailingListStatus = document.querySelector("[data-mailing-list-status]");
+
+  mailingListForm?.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" && event.shiftKey) {
+      event.preventDefault();
+      mailingListForm.requestSubmit();
+    }
+  });
+
+  mailingListForm?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    if (!mailingListForm.reportValidity()) {
+      return;
+    }
+
+    mailingListStatus.textContent = "Sending...";
+
+    try {
+      const response = await fetch(mailingListForm.action, {
+        method: "POST",
+        body: new FormData(mailingListForm)
+      });
+
+      if (response.ok) {
+        mailingListForm.reset();
+        mailingListStatus.textContent = "Thank you. You are on the list. Watch your inbox for launch notes and early-user invites.";
+        return;
+      }
+
+      const body = await response.json().catch(() => ({}));
+      mailingListStatus.textContent = body.error || "Something went wrong. Please try again.";
+    } catch {
+      mailingListStatus.textContent = "Could not reach the form service. Please try again.";
+    }
+  });
+</script>

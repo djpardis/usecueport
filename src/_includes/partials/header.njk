@@ -8,16 +8,18 @@
       <ul>
         {% for item in site.nav %}
           <li>
-            <a href="{{ item.href }}" aria-label="{{ item.label }}" title="{{ item.label }}"{% if page.url == item.href %} aria-current="page"{% endif %}>
+            <a href="{{ item.href }}"{% if item.icon == "radio" %} class="nav-radio"{% endif %} aria-label="{{ item.label }}" title="{{ item.label }}"{% if item.external %} target="_blank" rel="noopener noreferrer"{% endif %}{% if page.url == item.href %} aria-current="page"{% endif %}>
               <span class="nav-icon" aria-hidden="true">
                 {% if item.icon == "features" %}
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="square" stroke-linejoin="miter"><rect x="4" y="4" width="6" height="6"/><rect x="14" y="4" width="6" height="6"/><rect x="9" y="14" width="6" height="6"/><path d="M10 7h4"/><path d="M12 10v4"/></svg>
                 {% elif item.icon == "signup" %}
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
                 {% elif item.icon == "download" %}
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+                {% elif item.icon == "radio" %}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="square" stroke-linejoin="miter"><rect x="9" y="3" width="6" height="10" rx="3"/><path d="M6 10v1a6 6 0 0 0 12 0v-1"/><path d="M12 17v4"/><path d="M8 21h8"/><path d="M4 7l-1.5-1.5"/><path d="M20 7l1.5-1.5"/></svg>
                 {% elif item.icon == "support" %}
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 5 0c0 1.6-2.5 2-2.5 4"/><circle cx="12" cy="17" r="0.6" fill="currentColor"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="square" stroke-linejoin="miter"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 5 0c0 1.6-2.5 2-2.5 4"/><path d="M12 17h.01"/></svg>
                 {% endif %}
               </span>
               <span class="nav-label">{{ item.label }}</span>

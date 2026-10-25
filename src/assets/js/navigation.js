@@ -43,7 +43,10 @@
 
     document.querySelectorAll(".site-nav a").forEach((link) => {
       const linkUrl = new URL(link.href);
-      if (normalizePath(linkUrl) === activePath) {
+      if (
+        linkUrl.origin === window.location.origin &&
+        normalizePath(linkUrl) === activePath
+      ) {
         link.setAttribute("aria-current", "page");
       } else {
         link.removeAttribute("aria-current");

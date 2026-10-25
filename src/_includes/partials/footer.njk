@@ -14,6 +14,10 @@
               <rect x="3" y="6" width="18" height="12" rx="3"/>
               <path d="M10 9.5v5l5-2.5z" fill="currentColor" stroke="none"/>
             </svg>
+          {% elif item.icon == "substack" %}
+            <svg viewBox="-2 -2 28 28" aria-hidden="true" fill="currentColor" stroke="none">
+              <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
+            </svg>
           {% endif %}
         </a>
       {% endfor %}

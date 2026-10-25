@@ -5,134 +5,140 @@ description: "Do you own your music and want to play it anywhere? Cueport reads 
 homeMain: true
 ---
 
-<section class="home-hero">
-  <div class="container home-hero-inner">
-    <div class="home-product">
+<div class="home-page">
+  <section class="home-hero">
+    <div class="container home-hero-inner home-hero-inner--single">
       <div class="home-copy">
-        <div class="home-heading">
-          <p class="home-eyebrow">LOCAL-FIRST SOFTWARE</p>
-          <h2 class="home-title"><span class="home-title-main">A multi-device workstation</span> <span class="home-title-tail">for DJs</span></h2>
-        </div>
+        <p class="home-eyebrow">LOCAL-FIRST SOFTWARE</p>
+        <h1 class="home-title"><span class="home-title-main">A multi-device workstation</span> <span class="home-title-tail">for DJs</span></h1>
         <div class="home-intro">
           <p class="home-question">{{ site.homeQuestion }}</p>
           <p class="home-sub">{{ site.homeDescription }}</p>
         </div>
-      </div>
-      {#
-      <div class="home-action-row">
-        <div class="home-cta">
-          <form class="mailing-list-form" data-mailing-list-form method="POST" action="{{ site.forms.mailingList.action }}">
-            <div class="mailing-list-box">
-              <div class="mailing-list-row">
-                <input name="email" type="email" autocomplete="email" placeholder="Stay in the loop" required>
-                <button class="btn-join" type="submit" aria-label="Join mailing list">
-                  <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="butt" stroke-linejoin="miter">
-                    <path d="M20 4v11H4"/>
-                    <path d="M9 10l-5 5 5 5"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
-            <input name="url" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
-            <p class="form-status" data-mailing-list-status role="status" aria-live="polite"></p>
-          </form>
-        </div>
-      </div>
-      #}
-    </div>
-    <aside class="home-workflow" aria-label="Cueport setup">
-      <div class="setup-tree home-setup-tree">
-        <div class="tree-root">
-          <span class="tree-num">1</span>
-          <div>
-            <h2>Start on your Mac</h2>
-            <p>Install Cueport and pick your library setup.</p>
-            <a class="tree-download-link" href="{{ site.downloads.mac }}" aria-label="Download Cueport for Mac">
-              <span>Download</span>
-              <span class="tree-download-icon" aria-hidden="true">
-                <svg class="icon-apple" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+        <div class="home-actions" aria-label="Primary actions">
+          <div class="home-social">
+          {% for item in site.social %}
+            <a class="app-btn app-btn--social" href="{{ item.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ item.ariaLabel }}">
+              {% if item.icon == "instagram" %}
+                <svg viewBox="2 2 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="5"/>
+                  <circle cx="12" cy="12" r="4"/>
+                  <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" stroke="none"/>
                 </svg>
-                <span class="icon-divider"></span>
-                <svg class="icon-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                  <path d="M7 10l5 5 5-5"/>
-                  <path d="M12 15V3"/>
+              {% elif item.icon == "youtube" %}
+                <svg viewBox="2 2 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="6" width="18" height="12" rx="3"/>
+                  <path d="M10 9.5v5l5-2.5z" fill="currentColor" stroke="none"/>
                 </svg>
-              </span>
+              {% elif item.icon == "substack" %}
+                <svg viewBox="-2 -2 28 28" aria-hidden="true" fill="none" stroke="none">
+                  <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" fill="currentColor"/>
+                </svg>
+              {% endif %}
             </a>
+          {% endfor %}
           </div>
         </div>
-        <div class="tree-branches">
-          <div class="tree-branch">
-            <span class="tree-label">A</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section home-section--local" aria-labelledby="local-title">
+    <div class="container home-section-grid">
+      <div class="section-head">
+        <p class="home-eyebrow">WHY LOCAL-FIRST</p>
+        <h2 id="local-title">Your music, on your devices.</h2>
+        <p>Cueport works with the music files you already own. Nothing streams from a server, so playback does not depend on your connection.</p>
+      </div>
+      <ul class="benefit-grid">
+        <li class="benefit">
+          <span class="benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" stroke-linejoin="miter"><path d="M4 9h4l6-5v16l-6-5H4z"/><path d="M18 8c1.4 1.1 2 2.4 2 4s-.6 2.9-2 4"/></svg>
+          </span>
+          <div>
+            <h3>Original files, original sound</h3>
+            <p>Cueport plays your actual files, not a compressed stream. What you hear on iPhone is what you hear on your Mac.</p>
+          </div>
+        </li>
+        <li class="benefit">
+          <span class="benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13a10 10 0 0 1 14 0"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><path d="M12 20h.01"/><path d="M3 4l18 18"/></svg>
+          </span>
+          <div>
+            <h3>Plays without internet</h3>
+            <p>Synced collections keep playing at a basement club, on a flight, or anywhere the signal drops.</p>
+          </div>
+        </li>
+        <li class="benefit">
+          <span class="benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" stroke-linejoin="miter"><rect x="4" y="5" width="6" height="14"/><rect x="14" y="7" width="6" height="10"/><path d="M10 12h4"/></svg>
+          </span>
+          <div>
+            <h3>Syncs over your network</h3>
+            <p>Your Mac sends music to your iPhone over local Wi-Fi or a personal hotspot, not through a cloud service.</p>
+          </div>
+        </li>
+        <li class="benefit">
+          <span class="benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 3l7 3v5c0 4.6-2.8 8-7 10-4.2-2-7-5.4-7-10V6l7-3z"/><path d="M9 12l2 2 4-5"/></svg>
+          </span>
+          <div>
+            <h3>Private by default</h3>
+            <p>Your library moves over your local network, not through an external server. Cueport does not upload your music, cues, crates, notes, or analytics.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="home-section home-section--workflow" aria-labelledby="workflow-title">
+    <div class="container home-section-grid">
+      <div class="section-head">
+        <p class="home-eyebrow">SET UP</p>
+        <h2 id="workflow-title">Set up in three steps.</h2>
+        <p>Use Serato or Cueport Direct on your Mac, then send selected collections to iPhone.</p>
+      </div>
+      <div class="setup-flow">
+        <article class="setup-step">
+          <span class="setup-step-marker">1</span>
+          <div>
+            <h2>Get Cueport for Mac</h2>
+            <p>Install the app on your Mac.</p>
+          </div>
+        </article>
+        <div class="flow-line flow-line--arrow" aria-hidden="true"></div>
+        <div class="flow-decision"><span>Choose a library</span></div>
+        <div class="flow-split" aria-hidden="true"><span></span><span></span></div>
+        <div class="flow-line flow-line--arrow flow-line--stacked" aria-hidden="true"></div>
+        <div class="setup-options">
+          <article class="setup-step">
+            <span class="setup-step-marker">2A</span>
             <div>
               <h2>Serato library</h2>
               <p>Use your <code>_Serato_</code> folder to build your Cueport library.</p>
             </div>
-          </div>
-          <div class="tree-or">OR</div>
-          <div class="tree-branch tree-branch--direct">
-            <span class="tree-label">B</span>
+          </article>
+          <span class="flow-or">or</span>
+          <article class="setup-step">
+            <span class="setup-step-marker">2B</span>
             <div>
               <h2>Cueport Direct</h2>
               <p>Build your Cueport library directly from your music files.</p>
             </div>
-          </div>
+          </article>
         </div>
-        <div class="tree-root">
-          <span class="tree-num">2</span>
+        <div class="flow-join" aria-hidden="true"><span></span><span></span></div>
+        <div class="flow-line flow-line--arrow" aria-hidden="true"></div>
+        <article class="setup-step">
+          <span class="setup-step-marker">3</span>
           <div>
             <h2>Connect your iPhone</h2>
             <p>Sync selected collections to your phone.</p>
             <p class="tree-store-note">Available separately on the App Store.</p>
           </div>
-        </div>
+        </article>
       </div>
-    </aside>
-  </div>
-</section>
+    </div>
+  </section>
 
-{#
-<script>
-  const mailingListForm = document.querySelector("[data-mailing-list-form]");
-  const mailingListStatus = document.querySelector("[data-mailing-list-status]");
-  const mailingListEmail = mailingListForm?.querySelector('input[name="email"]');
-
-  mailingListEmail?.addEventListener("keydown", (event) => {
-    if (event.key === "Enter" && event.shiftKey) {
-      event.preventDefault();
-      mailingListForm.requestSubmit();
-    }
-  });
-
-  mailingListForm?.addEventListener("submit", async (event) => {
-    event.preventDefault();
-
-    if (!mailingListForm.reportValidity()) {
-      return;
-    }
-
-    mailingListStatus.textContent = "Joining...";
-
-    try {
-      const response = await fetch(mailingListForm.action, {
-        method: "POST",
-        body: new FormData(mailingListForm)
-      });
-
-      if (response.ok) {
-        mailingListForm.reset();
-        mailingListStatus.textContent = "Thanks. You're on the mailing list.";
-        return;
-      }
-
-      const body = await response.json().catch(() => ({}));
-      mailingListStatus.textContent = body.error || "Something went wrong. Please try again.";
-    } catch {
-      mailingListStatus.textContent = "Could not reach the form service. Please try again.";
-    }
-  });
-</script>
-#}
+</div>
