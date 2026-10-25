@@ -1457,6 +1457,9 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   pointer-events: none;
   z-index: 0;
 }
+.hero-waveform rect {
+  width: 56px;
+}
 .home-page .home-hero-inner {
   position: relative;
   z-index: 1;
