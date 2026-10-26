@@ -174,6 +174,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
 }
 .nav-icon { display: inline-flex; }
 .nav-icon svg { width: 20px; height: 20px; }
+.nav-short { display: none; }
 
 @media (max-width: 860px) {
   .site-nav a {
@@ -188,18 +189,23 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   .nav-icon { display: inline-flex; }
   .nav-label { display: none; }
   .site-nav a.nav-radio {
-    min-width: 44px;
+    min-width: 0;
     min-height: 44px;
-    padding: 0;
+    padding: 0 12px;
     background: var(--radio-blue-hover);
     color: #ffffff;
+    font-size: var(--type-body);
+    font-weight: 600;
   }
   .site-nav a.nav-radio:hover {
     background: var(--radio-blue);
     color: #ffffff;
   }
   .site-nav a.nav-radio .nav-icon {
-    display: inline-flex;
+    display: none;
+  }
+  .site-nav a.nav-radio .nav-short {
+    display: inline;
   }
   .nav-icon svg { width: 26px; height: 26px; }
   .site-nav ul { gap: 10px; }
@@ -300,15 +306,12 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   .logo-mark { width: 1.5rem; height: 1.5rem; }
   .nav-icon svg { width: 24px; height: 24px; }
   .site-nav a { padding: 4px; }
+  .site-nav a.nav-radio { padding: 0 12px; }
   .site-nav ul { gap: 8px; }
 
   .home-hero { padding: 0; }
   .home-hero-inner { gap: 16px; text-align: left; }
   .home-actions { justify-content: flex-start; }
-  .home-question,
-  .home-social-label {
-    font-size: var(--type-body);
-  }
   .home-sub { margin-left: 0 !important; margin-right: 0 !important; max-width: none; }
   .home-sub { font-size: 1.05rem; margin-bottom: 16px; line-height: 1.55; }
   .home-actions { display: flex; flex-direction: row; gap: 8px; margin: 0; }
@@ -1589,6 +1592,12 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
 }
 .home-page .app-btn--social svg [fill="currentColor"] {
   fill: currentColor;
+}
+@media (max-width: 640px) {
+  .home-page .home-question,
+  .home-page .home-social-label {
+    font-size: 1.25rem;
+  }
 }
 .home-section {
   height: calc(100svh - var(--header-h));

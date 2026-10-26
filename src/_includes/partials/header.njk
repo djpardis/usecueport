@@ -23,6 +23,9 @@
                 {% endif %}
               </span>
               <span class="nav-label">{{ item.label }}</span>
+              {% if item.icon == "radio" %}
+                <span class="nav-short" aria-hidden="true">Radio</span>
+              {% endif %}
             </a>
           </li>
         {% endfor %}
