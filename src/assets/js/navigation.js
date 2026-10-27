@@ -1,6 +1,20 @@
 (() => {
   const mainSelector = "#main";
   const parser = new DOMParser();
+  const header = document.querySelector(".site-header");
+  let headerFrame = 0;
+
+  const syncHeaderState = () => {
+    headerFrame = 0;
+    if (!header) return;
+    header.classList.toggle("site-header--muted", window.scrollY > 12);
+    header.classList.toggle("site-header--collapsed", window.scrollY > 96);
+  };
+
+  const scheduleHeaderState = () => {
+    if (headerFrame) return;
+    headerFrame = window.requestAnimationFrame(syncHeaderState);
+  };
 
   const normalizePath = (url) => {
     const path = url.pathname.endsWith("/") ? url.pathname : `${url.pathname}/`;
@@ -75,12 +89,14 @@
   const scrollToTarget = (url) => {
     if (!url.hash) {
       window.scrollTo({ top: 0, left: 0 });
+      syncHeaderState();
       return;
     }
 
     const target = document.getElementById(decodeURIComponent(url.hash.slice(1)));
     if (target) {
       target.scrollIntoView();
+      syncHeaderState();
     }
   };
 
@@ -155,4 +171,10 @@
       window.location.reload();
     });
   });
+
+  window.addEventListener("scroll", scheduleHeaderState, { passive: true });
+  window.addEventListener("wheel", scheduleHeaderState, { passive: true });
+  window.addEventListener("touchmove", scheduleHeaderState, { passive: true });
+  window.addEventListener("resize", syncHeaderState);
+  syncHeaderState();
 })();

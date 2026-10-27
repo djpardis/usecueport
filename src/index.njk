@@ -11,11 +11,8 @@ homeMain: true
     <div class="container home-hero-inner home-hero-inner--single">
       <div class="home-copy">
         <p class="home-eyebrow">LOCAL-FIRST SOFTWARE</p>
-        <h1 class="home-title"><span class="home-title-main">A multi-device workstation</span> <span class="home-title-tail">for DJs</span></h1>
-        <div class="home-intro">
-          <p class="home-question">{{ site.homeQuestion }}</p>
-          <p class="home-sub">{{ site.homeDescription }}</p>
-        </div>
+        <h1 class="home-title">A portable workstation for DJs</h1>
+        <p class="home-intro home-sub"><strong class="home-question-inline">{{ site.homeQuestion }}</strong> {{ site.homeDescription }}</p>
         <div class="home-actions" aria-label="Primary actions">
           <div class="home-social">
           <span class="home-social-label">Follow us <span class="social-arrow" aria-hidden="true">→</span></span>
@@ -48,8 +45,8 @@ homeMain: true
     <div class="container home-section-grid">
       <div class="section-head">
         <p class="home-eyebrow">WHY LOCAL-FIRST</p>
-        <h2 id="local-title">Your music, on your devices.</h2>
-        <p>Cueport works with the music files you already own. Nothing streams from a server, so playback does not depend on your connection.</p>
+        <h2 id="local-title">Your library should travel with you.</h2>
+        <p>Cueport is for people who own their music and want it available beyond one laptop. Tracks, cues, crates, and notes move between your devices, so listening, prep, and playback can happen wherever you are.</p>
       </div>
       <ul class="benefit-grid">
         <li class="benefit">
@@ -99,38 +96,42 @@ homeMain: true
         <h2 id="workflow-title">Set up in three steps.</h2>
         <p>Use Serato or Cueport Direct on your Mac, then send selected collections to iPhone.</p>
       </div>
-      <div class="setup-flow">
-        <article class="setup-step">
+      <div class="setup-flow setup-algorithm">
+        <svg class="setup-connectors" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <marker id="setup-arrowhead" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="4.5" markerHeight="4.5" orient="auto-start-reverse">
+              <path d="M 1.5 1.5 L 6 4 L 1.5 6.5" />
+            </marker>
+          </defs>
+          <path d="M 24.7 50 H 31.6" />
+          <path d="M 40.7 50 C 44 50 44 25 47.5 25" />
+          <path d="M 40.7 50 C 44 50 44 75 47.5 75" />
+          <path d="M 68.4 25 C 72 25 72 50 75.2 50" />
+          <path d="M 68.4 75 C 72 75 72 50 75.2 50" />
+        </svg>
+        <article class="setup-step setup-node setup-node--start">
           <span class="setup-step-marker">1</span>
           <div>
             <h2>Get Cueport for Mac</h2>
             <p>Install the app on your Mac.</p>
           </div>
         </article>
-        <div class="flow-line flow-line--arrow" aria-hidden="true"></div>
-        <div class="flow-decision"><span>Choose a library</span></div>
-        <div class="flow-split" aria-hidden="true"><span></span><span></span></div>
-        <div class="flow-line flow-line--arrow flow-line--stacked" aria-hidden="true"></div>
-        <div class="setup-options">
-          <article class="setup-step">
-            <span class="setup-step-marker">2A</span>
-            <div>
-              <h2>Serato library</h2>
-              <p>Use your <code>_Serato_</code> folder to build your Cueport library.</p>
-            </div>
-          </article>
-          <span class="flow-or">or</span>
-          <article class="setup-step">
-            <span class="setup-step-marker">2B</span>
-            <div>
-              <h2>Cueport Direct</h2>
-              <p>Build your Cueport library directly from your music files.</p>
-            </div>
-          </article>
-        </div>
-        <div class="flow-join" aria-hidden="true"><span></span><span></span></div>
-        <div class="flow-line flow-line--arrow" aria-hidden="true"></div>
-        <article class="setup-step">
+        <div class="flow-decision setup-node setup-node--decision"><span>Choose a library</span></div>
+        <article class="setup-step setup-node setup-node--serato">
+          <span class="setup-step-marker">2A</span>
+          <div>
+            <h2>Serato library</h2>
+            <p>Use your <code>_Serato_</code> folder to build your Cueport library.</p>
+          </div>
+        </article>
+        <article class="setup-step setup-node setup-node--direct">
+          <span class="setup-step-marker">2B</span>
+          <div>
+            <h2>Cueport Direct</h2>
+            <p>Build your Cueport library directly from your music files.</p>
+          </div>
+        </article>
+        <article class="setup-step setup-node setup-node--finish">
           <span class="setup-step-marker">3</span>
           <div>
             <h2>Connect your iPhone</h2>
