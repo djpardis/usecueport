@@ -7,8 +7,9 @@
   const syncHeaderState = () => {
     headerFrame = 0;
     if (!header) return;
-    header.classList.toggle("site-header--muted", window.scrollY > 12);
-    header.classList.toggle("site-header--collapsed", window.scrollY > 96);
+    const allowAnimatedLogo = window.matchMedia("(min-width: 641px)").matches;
+    header.classList.toggle("site-header--muted", allowAnimatedLogo && window.scrollY > 12);
+    header.classList.toggle("site-header--collapsed", allowAnimatedLogo && window.scrollY > 96);
   };
 
   const scheduleHeaderState = () => {

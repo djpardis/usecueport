@@ -51,8 +51,9 @@
         const syncHeaderLogo = () => {
           frame = 0;
           const y = window.scrollY || document.documentElement.scrollTop || 0;
-          header.classList.toggle("site-header--muted", y > 12);
-          header.classList.toggle("site-header--collapsed", y > 96);
+          const allowAnimatedLogo = window.matchMedia("(min-width: 641px)").matches;
+          header.classList.toggle("site-header--muted", allowAnimatedLogo && y > 12);
+          header.classList.toggle("site-header--collapsed", allowAnimatedLogo && y > 96);
         };
         const scheduleHeaderLogo = () => {
           if (frame) return;
