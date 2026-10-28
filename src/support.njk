@@ -22,11 +22,11 @@ viewportMain: true
     </details>
     <details>
       <summary>Will Cueport change my Serato library?</summary>
-      <p>Cueport changes your Serato library only when you choose to publish. Your edits sit in Cueport's local database as <span class="mono">modified</span> until you review them and push back to a specific Serato connection. Before every push, Cueport takes a restore point so that you can roll the change back, and after you first link the folder it keeps an automatic safety copy of <code>_Serato_</code> inside Application Support.</p>
+      <p>Cueport changes your Serato library only when you choose to publish. Your edits sit in Cueport's local database as <span class="mono">modified</span> until you review them and write them back to the Serato library you linked. Before every push, Cueport takes a restore point so that you can roll the change back, and after you first link the folder it keeps an automatic safety copy of <code>_Serato_</code> inside Application Support.</p>
     </details>
     <details>
       <summary>Can I use Cueport without Serato?</summary>
-      <p>Yes. Add music files with Cueport Direct instead of linking a Serato library. Cueport keeps the audio in place and writes cues, notes, colors, collections, restore points, and analysis to a local database on your computer.</p>
+      <p>Yes. Add music files with Cueport Direct instead of linking a Serato library. Cueport keeps the audio in place. It uses <a href="https://github.com/djpardis/trailmix">trail mix</a> for local BPM, key, and waveform analysis. Cueport writes cues, notes, colors, collections, restore points, and analysis to a local database on your computer.</p>
     </details>
     <details>
       <summary>Will Cueport support Rekordbox, Traktor, Mixxx, or other DJ apps?</summary>
@@ -58,7 +58,7 @@ viewportMain: true
     </details>
     <details>
       <summary>What is not in scope?</summary>
-      <p>Cueport does not handle mixing two decks. Serato mode uses Serato's BPM, key, beatgrid, and waveform data. Cueport Direct analyzes BPM, key, and waveform locally with <a href="https://github.com/djpardis/trailmix">trail mix</a>.</p>
+      <p>Cueport does not handle mixing two decks or beatgrid editing.</p>
     </details>
   </div>
 </div>

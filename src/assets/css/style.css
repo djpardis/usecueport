@@ -1869,6 +1869,9 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   .setup-diagram--mobile .setup-diagram-body {
     font-size: 19px;
   }
+  .setup-diagram--mobile .setup-diagram-code {
+    font-size: 19px;
+  }
   .setup-diagram--mobile .setup-diagram-marker,
   .setup-diagram--mobile .setup-diagram-or {
     font-size: 16px;
@@ -2043,6 +2046,24 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   fill: var(--text-secondary);
   font-size: 18px;
   line-height: 1.45;
+}
+.setup-diagram-code-bg {
+  fill: var(--bg-elevated);
+}
+.setup-diagram-code {
+  fill: var(--text);
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 500;
+}
+.setup-diagram-link-label {
+  fill: var(--accent);
+  text-decoration: underline;
+}
+.setup-diagram-body-normal {
+  fill: var(--text-secondary);
+  font-weight: 400;
+  text-decoration: none;
 }
 .setup-diagram-marker {
   fill: var(--accent);

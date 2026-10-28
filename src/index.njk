@@ -101,7 +101,7 @@ homeMain: true
       <div class="setup-flow setup-flow--desktop setup-algorithm">
         <svg class="setup-diagram" viewBox="0 30 1360 440" role="img" aria-labelledby="setup-diagram-title setup-diagram-desc">
           <title id="setup-diagram-title">Cueport setup algorithm</title>
-          <desc id="setup-diagram-desc">Install Cueport for Mac, choose either a Serato library or Cueport Direct, then connect your iPhone.</desc>
+          <desc id="setup-diagram-desc">Install Cueport for Mac, choose either a Serato library or Cueport Direct with trail mix analysis, then connect your iPhone.</desc>
           <defs>
             <marker id="setup-diagram-arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4.4" markerHeight="4.4" orient="auto">
               <path d="M 2.5 2.5 L 8 5 L 2.5 7.5" />
@@ -137,10 +137,13 @@ homeMain: true
             <text class="setup-diagram-marker" x="35" y="42" text-anchor="middle">2A</text>
             <text class="setup-diagram-title" x="72" y="36">Serato library</text>
             <text class="setup-diagram-body" x="72" y="66">
-              <tspan x="72" dy="0">Use your _Serato_</tspan>
-              <tspan x="72" dy="24">folder to build</tspan>
-              <tspan x="72" dy="24">your Cueport</tspan>
-              <tspan x="72" dy="24">library.</tspan>
+              <tspan x="72" dy="0">Use your</tspan>
+            </text>
+            <rect class="setup-diagram-code-bg" x="72" y="76" width="92" height="26" rx="2" />
+            <text class="setup-diagram-code" x="80" y="95">_Serato_</text>
+            <text class="setup-diagram-body" x="72" y="126">
+              <tspan x="72" dy="0">folder to build your</tspan>
+              <tspan x="72" dy="24">Cueport library.</tspan>
             </text>
           </g>
           <g class="setup-diagram-card setup-diagram-card--source" transform="translate(620 290)">
@@ -149,10 +152,10 @@ homeMain: true
             <text class="setup-diagram-marker" x="35" y="42" text-anchor="middle">2B</text>
             <text class="setup-diagram-title" x="72" y="36">Cueport Direct</text>
             <text class="setup-diagram-body" x="72" y="66">
-              <tspan x="72" dy="0">Build your</tspan>
-              <tspan x="72" dy="24">Cueport library</tspan>
-              <tspan x="72" dy="24">directly from</tspan>
+              <tspan x="72" dy="0">Build directly from</tspan>
               <tspan x="72" dy="24">your music files.</tspan>
+              <a href="https://github.com/djpardis/trailmix" target="_blank" rel="noopener noreferrer"><tspan class="setup-diagram-link-label" x="72" dy="24">trail mix</tspan></a><tspan class="setup-diagram-body-normal"> analyzes</tspan>
+              <tspan x="72" dy="24">BPM, key, waveform.</tspan>
             </text>
           </g>
           <g class="setup-diagram-card setup-diagram-card--finish" transform="translate(1040 155)">
@@ -175,7 +178,7 @@ homeMain: true
       <div class="setup-flow setup-flow--mobile setup-algorithm-mobile">
         <svg class="setup-diagram setup-diagram--mobile" viewBox="0 0 400 720" role="img" aria-labelledby="setup-mobile-diagram-title setup-mobile-diagram-desc">
           <title id="setup-mobile-diagram-title">Cueport mobile setup algorithm</title>
-          <desc id="setup-mobile-diagram-desc">Install Cueport for Mac, choose either a Serato library or Cueport Direct, then connect your iPhone.</desc>
+          <desc id="setup-mobile-diagram-desc">Install Cueport for Mac, choose either a Serato library or Cueport Direct with trail mix analysis, then connect your iPhone.</desc>
           <defs>
             <marker id="setup-mobile-diagram-arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4.4" markerHeight="4.4" orient="auto">
               <path d="M 2.5 2.5 L 8 5 L 2.5 7.5" />
@@ -200,10 +203,11 @@ homeMain: true
             <text class="setup-diagram-marker" x="55" y="118" text-anchor="middle">2A</text>
             <text class="setup-diagram-title" x="92" y="112">Serato library</text>
             <text class="setup-diagram-body" x="92" y="142">
-              <tspan x="92" dy="0">Use your _Serato_</tspan>
-              <tspan x="92" dy="24">folder to build</tspan>
-              <tspan x="92" dy="24">your Cueport library.</tspan>
+              <tspan x="92" dy="0">Use your</tspan>
             </text>
+            <rect class="setup-diagram-code-bg" x="92" y="152" width="92" height="26" rx="2" />
+            <text class="setup-diagram-code" x="100" y="171">_Serato_</text>
+            <text class="setup-diagram-body" x="92" y="200">folder to build your library.</text>
             <text class="setup-diagram-or" x="160" y="252" text-anchor="middle">OR</text>
             <rect class="setup-diagram-option" x="20" y="276" width="280" height="118" />
             <rect class="setup-diagram-badge" x="38" y="298" width="34" height="34" />
@@ -212,6 +216,7 @@ homeMain: true
             <text class="setup-diagram-body" x="92" y="342">
               <tspan x="92" dy="0">Build directly from your</tspan>
               <tspan x="92" dy="24">music files.</tspan>
+              <a href="https://github.com/djpardis/trailmix" target="_blank" rel="noopener noreferrer"><tspan class="setup-diagram-link-label" x="92" dy="24">trail mix</tspan></a><tspan class="setup-diagram-body-normal"> analyzes.</tspan>
             </text>
           </g>
           <g class="setup-diagram-card setup-diagram-card--finish" transform="translate(40 590)">
