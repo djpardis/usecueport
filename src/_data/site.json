@@ -9,7 +9,7 @@
   "homeDescription": "Cueport brings your Mac library to iPhone so you can listen, cue, organize, and build sets wherever you are, with your tracks and metadata syncing directly between your devices.",
   "email": "hello@usecueport.com",
   "version": "1.1.0",
-  "assetVersion": "20261102-header-left-1",
+  "assetVersion": "20261102-mobile-nav-align-11",
   "dmgFilename": "Cueport_1.1.0_aarch64.dmg",
   "downloads": {
     "mac": "https://usecueport.substack.com/",
@@ -45,12 +45,6 @@
   },
   "nav": [
     {
-      "label": "Cueport Radio",
-      "href": "https://usecueport.substack.com/",
-      "icon": "radio",
-      "external": true
-    },
-    {
       "label": "How it works",
       "href": "/how-it-works/",
       "icon": "features"
@@ -59,6 +53,12 @@
       "label": "Support",
       "href": "/support/",
       "icon": "support"
+    },
+    {
+      "label": "Cueport Radio",
+      "href": "https://usecueport.substack.com/",
+      "icon": "radio",
+      "external": true
     }
   ]
 }

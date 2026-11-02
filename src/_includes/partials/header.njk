@@ -33,6 +33,14 @@
               {% if item.icon == "radio" %}
                 <span class="nav-short" aria-hidden="true">Radio</span>
               {% endif %}
+              {% if item.external %}
+                <span class="nav-external" aria-hidden="true">
+                  <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" stroke-linejoin="miter">
+                    <path d="M4 2h6v6"/>
+                    <path d="M10 2 3 9"/>
+                  </svg>
+                </span>
+              {% endif %}
             </a>
           </li>
         {% endfor %}
