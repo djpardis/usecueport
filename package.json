@@ -4,7 +4,7 @@
   "private": true,
   "description": "Marketing site for Cueport, the DJ desktop and mobile app.",
   "scripts": {
-    "start": "eleventy --serve --port=8090",
+    "start": "eleventy && python3 -m http.server 8090 --directory _site",
     "build": "eleventy",
     "clean": "rm -rf _site",
     "release": "node scripts/release.mjs",

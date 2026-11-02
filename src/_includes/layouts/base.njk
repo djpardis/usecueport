@@ -37,36 +37,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/assets/css/style.css" />
-    <script src="/assets/js/navigation.js?v={{ site.version }}" defer></script>
+    <link rel="stylesheet" href="/assets/css/style.css?v={{ site.assetVersion or site.version }}" />
   </head>
   <body>
     {% include "partials/header.njk" %}
-    <script>
-      (() => {
-        const header = document.querySelector(".site-header");
-        if (!header) return;
-
-        let frame = 0;
-        const syncHeaderLogo = () => {
-          frame = 0;
-          const y = window.scrollY || document.documentElement.scrollTop || 0;
-          const allowAnimatedLogo = window.matchMedia("(min-width: 641px)").matches;
-          header.classList.toggle("site-header--muted", allowAnimatedLogo && y > 12);
-          header.classList.toggle("site-header--collapsed", allowAnimatedLogo && y > 96);
-        };
-        const scheduleHeaderLogo = () => {
-          if (frame) return;
-          frame = window.requestAnimationFrame(syncHeaderLogo);
-        };
-
-        window.addEventListener("scroll", scheduleHeaderLogo, { passive: true });
-        window.addEventListener("wheel", scheduleHeaderLogo, { passive: true });
-        window.addEventListener("touchmove", scheduleHeaderLogo, { passive: true });
-        window.addEventListener("resize", syncHeaderLogo);
-        syncHeaderLogo();
-      })();
-    </script>
     <main id="main"{% if homeMain %} class="home-main"{% elif viewportMain %} class="viewport-main"{% endif %}>
       {{ content | safe }}
     </main>
