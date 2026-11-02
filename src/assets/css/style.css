@@ -2852,6 +2852,22 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   border-right: 1px solid var(--diagram-line);
   transform: translateY(-50%) rotate(45deg);
 }
+.setup-card-note {
+  display: block;
+  margin-top: 10px;
+  padding: 0;
+  background: transparent;
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.42em;
+  text-decoration-color: rgba(194, 65, 12, 0.28);
+  text-underline-offset: -0.18em;
+  text-decoration-skip-ink: none;
+}
 .home-download-panel .access-layout {
   display: block;
   max-width: 680px;
