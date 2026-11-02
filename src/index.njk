@@ -14,8 +14,9 @@ homeMain: true
         <p class="home-eyebrow">LOCAL-FIRST SOFTWARE</p>
         <h1 class="home-title"><span class="home-title-line">A portable</span><span class="home-title-line">workstation</span><span class="home-title-line">for DJs</span></h1>
         <p class="home-intro home-sub"><strong class="home-question-inline">{{ site.homeQuestion }}</strong> {{ site.homeDescription }}</p>
-        <div class="home-actions" aria-label="Primary actions">
-          <div class="home-social">
+      </div>
+      <div class="home-actions home-actions--social" aria-label="Social links">
+        <div class="home-social">
           <span class="home-social-label">Follow us <span class="social-arrow" aria-hidden="true">→</span></span>
           {% for item in site.social %}
             <a class="app-btn app-btn--social" href="{{ item.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ item.ariaLabel }}">
@@ -36,7 +37,6 @@ homeMain: true
               {% endif %}
             </a>
           {% endfor %}
-          </div>
         </div>
       </div>
     </div>
@@ -98,139 +98,7 @@ homeMain: true
         <h2 id="workflow-title">Set up in three steps.</h2>
         <p>Use Serato or Cueport Direct on your Mac, then send selected collections to iPhone.</p>
       </div>
-      <div class="setup-flow setup-flow--desktop setup-algorithm">
-        <svg class="setup-diagram" viewBox="0 30 1360 440" role="img" aria-labelledby="setup-diagram-title setup-diagram-desc">
-          <title id="setup-diagram-title">Cueport setup algorithm</title>
-          <desc id="setup-diagram-desc">Install Cueport for Mac, choose either a Serato library or Cueport Direct with trail mix analysis, then connect your iPhone.</desc>
-          <defs>
-            <marker id="setup-diagram-arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4.4" markerHeight="4.4" orient="auto">
-              <path d="M 2.5 2.5 L 8 5 L 2.5 7.5" />
-            </marker>
-          </defs>
-          <g class="setup-diagram-links">
-            <path class="setup-diagram-link setup-diagram-link--choice" d="M 320 250 H 386" />
-            <path class="setup-diagram-link setup-diagram-link--source" d="M 532 250 C 580 250 565 125 620 125" />
-            <path class="setup-diagram-link setup-diagram-link--source" d="M 532 250 C 580 250 565 375 620 375" />
-            <path class="setup-diagram-link setup-diagram-link--finish" d="M 930 125 C 990 125 980 250 1040 250" />
-            <path class="setup-diagram-link setup-diagram-link--finish" d="M 930 375 C 990 375 980 250 1040 250" />
-          </g>
-          <g class="setup-diagram-card setup-diagram-card--start" transform="translate(0 185)">
-            <rect width="320" height="130" />
-            <rect class="setup-diagram-badge" x="18" y="20" width="34" height="34" />
-            <text class="setup-diagram-marker" x="35" y="42" text-anchor="middle">1</text>
-            <text class="setup-diagram-title" x="72" y="36">Get Cueport for Mac</text>
-            <text class="setup-diagram-body" x="72" y="66">
-              <tspan x="72" dy="0">Install the app on</tspan>
-              <tspan x="72" dy="24">your Mac.</tspan>
-            </text>
-          </g>
-          <g class="setup-diagram-decision setup-diagram-card--choice" transform="translate(390 179)">
-            <path d="M 71 0 L 142 71 L 71 142 L 0 71 Z" />
-            <text x="71" y="65" text-anchor="middle">
-              <tspan x="71" dy="0">Choose a</tspan>
-              <tspan x="71" dy="20">library</tspan>
-            </text>
-          </g>
-          <g class="setup-diagram-card setup-diagram-card--source" transform="translate(620 40)">
-            <rect width="310" height="170" />
-            <rect class="setup-diagram-badge" x="18" y="20" width="34" height="34" />
-            <text class="setup-diagram-marker" x="35" y="42" text-anchor="middle">2A</text>
-            <text class="setup-diagram-title" x="72" y="36">Serato library</text>
-            <text class="setup-diagram-body" x="72" y="66">
-              <tspan x="72" dy="0">Use your</tspan>
-            </text>
-            <rect class="setup-diagram-code-bg" x="72" y="76" width="92" height="26" rx="2" />
-            <text class="setup-diagram-code" x="80" y="95">_Serato_</text>
-            <text class="setup-diagram-body" x="72" y="126">
-              <tspan x="72" dy="0">folder to build your</tspan>
-              <tspan x="72" dy="24">Cueport library.</tspan>
-            </text>
-          </g>
-          <g class="setup-diagram-card setup-diagram-card--source" transform="translate(620 290)">
-            <rect width="310" height="170" />
-            <rect class="setup-diagram-badge" x="18" y="20" width="34" height="34" />
-            <text class="setup-diagram-marker" x="35" y="42" text-anchor="middle">2B</text>
-            <text class="setup-diagram-title" x="72" y="36">Cueport Direct</text>
-            <text class="setup-diagram-body" x="72" y="66">
-              <tspan x="72" dy="0">Build directly from</tspan>
-              <tspan x="72" dy="24">your music files.</tspan>
-              <a href="https://github.com/djpardis/trailmix" target="_blank" rel="noopener noreferrer"><tspan class="setup-diagram-link-label" x="72" dy="24">trail mix</tspan></a><tspan class="setup-diagram-body-normal"> analyzes</tspan>
-              <tspan x="72" dy="24">BPM, key, waveform.</tspan>
-            </text>
-          </g>
-          <g class="setup-diagram-card setup-diagram-card--finish" transform="translate(1040 155)">
-            <rect width="320" height="190" />
-            <rect class="setup-diagram-badge" x="18" y="20" width="34" height="34" />
-            <text class="setup-diagram-marker" x="35" y="42" text-anchor="middle">3</text>
-            <text class="setup-diagram-title" x="72" y="36">Connect your iPhone</text>
-            <text class="setup-diagram-body" x="72" y="66">
-              <tspan x="72" dy="0">Sync selected</tspan>
-              <tspan x="72" dy="26">collections to</tspan>
-              <tspan x="72" dy="26">your phone.</tspan>
-            </text>
-            <text class="setup-diagram-note" x="72" y="158">
-              <tspan x="72" dy="0">Available separately</tspan>
-              <tspan x="72" dy="18">on the App Store.</tspan>
-            </text>
-          </g>
-        </svg>
-      </div>
-      <div class="setup-flow setup-flow--mobile setup-algorithm-mobile">
-        <svg class="setup-diagram setup-diagram--mobile" viewBox="0 0 400 720" role="img" aria-labelledby="setup-mobile-diagram-title setup-mobile-diagram-desc">
-          <title id="setup-mobile-diagram-title">Cueport mobile setup algorithm</title>
-          <desc id="setup-mobile-diagram-desc">Install Cueport for Mac, choose either a Serato library or Cueport Direct with trail mix analysis, then connect your iPhone.</desc>
-          <defs>
-            <marker id="setup-mobile-diagram-arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4.4" markerHeight="4.4" orient="auto">
-              <path d="M 2.5 2.5 L 8 5 L 2.5 7.5" />
-            </marker>
-          </defs>
-          <g class="setup-diagram-links setup-diagram-links--mobile">
-            <path class="setup-diagram-link setup-diagram-link--source" d="M 200 96 V 138" />
-            <path class="setup-diagram-link setup-diagram-link--finish" d="M 200 550 V 588" />
-          </g>
-          <g class="setup-diagram-card setup-diagram-card--start" transform="translate(40 0)">
-            <rect width="320" height="96" />
-            <rect class="setup-diagram-badge" x="18" y="20" width="34" height="34" />
-            <text class="setup-diagram-marker" x="35" y="42" text-anchor="middle">1</text>
-            <text class="setup-diagram-title" x="72" y="36">Get Cueport for Mac</text>
-            <text class="setup-diagram-body" x="72" y="66">Install the app on your Mac.</text>
-          </g>
-          <g class="setup-diagram-card setup-diagram-card--source" transform="translate(40 140)">
-            <rect width="320" height="410" />
-            <text class="setup-diagram-title" x="28" y="38">Choose a library</text>
-            <rect class="setup-diagram-option" x="20" y="70" width="280" height="150" />
-            <rect class="setup-diagram-badge" x="38" y="96" width="34" height="34" />
-            <text class="setup-diagram-marker" x="55" y="118" text-anchor="middle">2A</text>
-            <text class="setup-diagram-title" x="92" y="112">Serato library</text>
-            <text class="setup-diagram-body" x="92" y="142">
-              <tspan x="92" dy="0">Use your</tspan>
-            </text>
-            <rect class="setup-diagram-code-bg" x="92" y="152" width="92" height="26" rx="2" />
-            <text class="setup-diagram-code" x="100" y="171">_Serato_</text>
-            <text class="setup-diagram-body" x="92" y="200">folder to build your library.</text>
-            <text class="setup-diagram-or" x="160" y="252" text-anchor="middle">OR</text>
-            <rect class="setup-diagram-option" x="20" y="276" width="280" height="118" />
-            <rect class="setup-diagram-badge" x="38" y="298" width="34" height="34" />
-            <text class="setup-diagram-marker" x="55" y="320" text-anchor="middle">2B</text>
-            <text class="setup-diagram-title" x="92" y="314">Cueport Direct</text>
-            <text class="setup-diagram-body" x="92" y="342">
-              <tspan x="92" dy="0">Build directly from your</tspan>
-              <tspan x="92" dy="24">music files.</tspan>
-              <a href="https://github.com/djpardis/trailmix" target="_blank" rel="noopener noreferrer"><tspan class="setup-diagram-link-label" x="92" dy="24">trail mix</tspan></a><tspan class="setup-diagram-body-normal"> analyzes.</tspan>
-            </text>
-          </g>
-          <g class="setup-diagram-card setup-diagram-card--finish" transform="translate(40 590)">
-            <rect width="320" height="122" />
-            <rect class="setup-diagram-badge" x="18" y="20" width="34" height="34" />
-            <text class="setup-diagram-marker" x="35" y="42" text-anchor="middle">3</text>
-            <text class="setup-diagram-title" x="72" y="36">Connect your iPhone</text>
-            <text class="setup-diagram-body" x="72" y="66">
-              <tspan x="72" dy="0">Sync selected collections</tspan>
-              <tspan x="72" dy="24">to your phone.</tspan>
-            </text>
-          </g>
-        </svg>
-      </div>
+      {% include "partials/setup-diagram.njk" %}
     </div>
   </section>
 
