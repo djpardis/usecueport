@@ -177,7 +177,6 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   font-family: var(--font-sans);
   font-size: var(--type-body);
   font-weight: 500;
-  line-height: 1;
   position: relative;
 }
 .site-nav a:hover { color: var(--accent); text-decoration: none; }
@@ -214,7 +213,6 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   line-height: 0;
 }
 .nav-icon svg { width: 20px; height: 20px; }
-.nav-label,
 .nav-short {
   line-height: 1;
 }
@@ -251,10 +249,14 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
 }
 
 @media (max-width: 860px) {
+  .header-inner {
+    justify-content: flex-start;
+    gap: 20px;
+  }
   .site-nav a {
     display: inline-flex;
-    min-height: 26px;
-    min-width: 0;
+    min-height: 44px;
+    min-width: 34px;
     align-items: center;
     justify-content: center;
     padding: 0;
@@ -268,6 +270,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
     min-height: 0;
     width: auto;
     gap: 4px;
+    margin-left: 4px;
     padding: 0.16rem 0.55rem;
     background: var(--radio-blue-hover);
     color: #ffffff;
@@ -295,7 +298,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
     margin-left: 1px;
   }
   .nav-icon svg { width: 26px; height: 26px; }
-  .site-nav ul { gap: clamp(16px, 4vw, 24px); }
+  .site-nav ul { gap: 16px; }
 }
 
 /* Footer */
@@ -303,7 +306,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   position: relative;
   z-index: 5;
   border-top: 0;
-  background: var(--surface);
+  background: var(--bg);
   min-height: 120px;
   display: flex;
   align-items: center;
@@ -404,7 +407,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   body { font-size: 100%; }
   .container { padding: 0 16px; }
   .site-header { height: 56px; }
-  .header-inner { gap: 8px; }
+  .header-inner { gap: 11px; }
   .logo-lockup { gap: 0.45rem; }
   .brand-title { font-size: 1.55rem; }
   .header-badge { display: none; }
@@ -423,9 +426,9 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
     transform: translate(-50%, -50%) scale(0.55);
   }
   .nav-icon svg { width: 24px; height: 24px; }
-  .site-nav a { padding: 0; }
-  .site-nav a.nav-radio { padding: 0.16rem 0.55rem; }
-  .site-nav ul { gap: 16px; }
+  .site-nav a { padding: 4px; }
+  .site-nav a.nav-radio { margin-left: 5px; padding: 0.16rem 0.55rem; }
+  .site-nav ul { gap: 6px; }
 
   .home-hero { padding: 0; }
   .home-hero-inner { gap: 16px; text-align: left; }
