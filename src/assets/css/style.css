@@ -44,6 +44,8 @@ html, body { margin: 0; padding: 0; }
 html {
   background: var(--bg);
   scroll-padding-top: var(--header-h);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 body {
   font-family: var(--font-sans);
@@ -249,10 +251,6 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
 }
 
 @media (max-width: 860px) {
-  .header-inner {
-    justify-content: flex-start;
-    gap: 20px;
-  }
   .site-nav a {
     display: inline-flex;
     min-height: 44px;
@@ -407,7 +405,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   body { font-size: 100%; }
   .container { padding: 0 16px; }
   .site-header { height: 56px; }
-  .header-inner { gap: 11px; }
+  .header-inner { gap: 8px; }
   .logo-lockup { gap: 0.45rem; }
   .brand-title { font-size: 1.55rem; }
   .header-badge { display: none; }
