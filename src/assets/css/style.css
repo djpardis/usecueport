@@ -4547,7 +4547,13 @@ body:has(main.viewport-main) .site-header {
   text-wrap: pretty;
 }
 .paper-item strong {
+  color: var(--text);
   font-weight: 700;
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.42em;
+  text-decoration-color: rgba(194, 65, 12, 0.28);
+  text-underline-offset: -0.18em;
+  text-decoration-skip-ink: none;
 }
 .paper-qa-item {
   break-inside: avoid;
@@ -4802,6 +4808,69 @@ body:has(main.viewport-main) .site-header {
   .home-page .home-front-main .home-copy--lede .home-title {
     display: block;
   }
+}
+/* Step and section markers set as type, like the Q. mark and page folios */
+.setup-step-num,
+.paper-num {
+  display: block;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background: none;
+  color: var(--accent);
+  font-size: var(--type-lead);
+  font-weight: 700;
+  line-height: 1.3;
+}
+.setup-step-num {
+  padding-top: 4px;
+  text-align: center;
+}
+.setup-step:not(:last-child)::before {
+  top: calc(4px + var(--type-lead) * 1.3 + 8px);
+  bottom: 8px;
+  left: calc(var(--step-size) / 2);
+  width: 1px;
+}
+.setup-choice-tag {
+  display: inline;
+  width: auto;
+  height: auto;
+  border: 0;
+  border-radius: 0;
+  font-size: inherit;
+  font-weight: 700;
+  line-height: inherit;
+}
+.setup-choice h4 {
+  align-items: baseline;
+}
+.setup-choice p {
+  padding-left: calc(1ch + 8px);
+}
+.paper-head {
+  align-items: baseline;
+  gap: 10px;
+}
+.home-front .home-section .section-head .home-eyebrow--badge {
+  display: flex;
+  width: auto;
+  align-items: center;
+  gap: 10px;
+}
+.home-front .home-section .section-head .home-eyebrow--badge::before {
+  content: "";
+  flex: none;
+  width: 24px;
+  height: 1px;
+  background: var(--accent);
+}
+body a[target="_blank"]:not(.nav-radio) {
+  color: var(--radio-blue-hover);
+  font-weight: 700;
+}
+body a[target="_blank"]:not(.nav-radio):hover {
+  color: var(--text);
 }
 .trailmix-link {
   font-weight: 700;
