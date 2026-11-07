@@ -1,0 +1,56 @@
+[
+  {
+    "title": "Start with your library",
+    "summary": "Cueport reads your Serato library or builds a local library from your music files on your computer. Your music and library data remain local.",
+    "items": [
+      {
+        "title": "Serato library.",
+        "text": "Read crates, subcrates, tracks, hot cues, BPM, key, colors, comments, and beatgrid markers from your local <code>_Serato_</code> folder."
+      },
+      {
+        "title": "Cueport Direct.",
+        "text": "Add music files instead of linking Serato. Cueport keeps the audio in place and stores collections, cues, notes, colors, restore points, and analysis in its own database."
+      },
+      {
+        "title": "Local analysis.",
+        "text": "Compute BPM, key, waveform columns, and beatgrid markers from audio on your machine."
+      }
+    ]
+  },
+  {
+    "title": "Send music to your phone",
+    "summary": "Pair the phone app with your computer over the local network, then send selected collections and tracks to the phone for browsing and playback.",
+    "items": [
+      {
+        "title": "Local playback.",
+        "text": "Play tracks from local files while browsing collections, with waveform context, cues, and beatgrid markers alongside the player."
+      },
+      {
+        "title": "Cue points and notes.",
+        "text": "Add or edit hot cues and notes whether you use Serato or Cueport Direct."
+      },
+      {
+        "title": "Phone companion.",
+        "text": "Send selected collections to the phone app, cache tracks for playback, and send phone edits back to the paired computer for review."
+      }
+    ]
+  },
+  {
+    "title": "Review before publishing",
+    "summary": "Cueport queues edits in a local working layer so you can review what changed before updating Serato files or keeping Cueport Direct changes in its database.",
+    "items": [
+      {
+        "title": "Local editing layer.",
+        "text": "Cueport marks pending edits so you can see what changed across tracks and collections."
+      },
+      {
+        "title": "Publish on approval.",
+        "text": "Serato edits write back to MP3s and crate files only when you choose to publish. Cueport Direct edits remain in their own database."
+      },
+      {
+        "title": "Backups and restore points.",
+        "text": "Cueport creates safety copies before updating Serato. Cueport Direct manages edits and restore points in a separate database."
+      }
+    ]
+  }
+]

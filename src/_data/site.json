@@ -4,16 +4,12 @@
   "url": "https://usecueport.com",
   "radioUrl": "https://usecueport.substack.com/",
   "subtitle": "A portable workstation for DJs",
-  "description": "Do you own your music and want to play it anywhere? Cueport brings your Mac library to iPhone so you can listen, cue, organize, and build sets wherever you are, with your tracks and metadata syncing directly between your devices.",
+  "description": "A portable workstation for DJs. Cueport keeps your music library in sync across your devices so you can listen, cue, and build sets wherever you are.",
   "homeDescription": "Cueport keeps your music library in sync across your devices so you can listen, cue, and build sets wherever you are.",
   "email": "hello@usecueport.com",
   "version": "1.1.0",
-  "assetVersion": "20261107-header-same",
+  "assetVersion": "20261107-wide-lede4",
   "dmgFilename": "Cueport_1.1.0_aarch64.dmg",
-  "downloads": {
-    "mac": "https://usecueport.substack.com/",
-    "ios": "#"
-  },
   "social": [
     {
       "label": "Substack",

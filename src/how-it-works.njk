@@ -11,36 +11,16 @@ viewportMain: true
     <h1>How it works.</h1>
     <p class="lede">Start from a Serato library or music files on your computer. Send selected music to your phone, make edits on either device, and review changes before publishing them back.</p>
   </div>
-  <div class="feature-lists">
-    <details class="feature-list-section" open>
-      <summary><span class="feature-step" aria-hidden="true">1</span><span>Start with your library</span></summary>
-      <p>Cueport reads your Serato library or builds a local library from your music files on your computer. Your music and library data remain local.</p>
-      <ul>
-        <li><strong>Serato library.</strong> Read crates, subcrates, tracks, hot cues, BPM, key, colors, comments, and beatgrid markers from your local <code>_Serato_</code> folder.</li>
-        <li><strong>Cueport Direct.</strong> Add music files instead of linking Serato. Cueport keeps the audio in place and stores collections, cues, notes, colors, restore points, and analysis in its own database.</li>
-        <li><strong>Local analysis.</strong> Compute BPM, key, waveform columns, and beatgrid markers from audio on your machine.</li>
-      </ul>
-    </details>
-
-    <details class="feature-list-section">
-      <summary><span class="feature-step" aria-hidden="true">2</span><span>Send music to your phone</span></summary>
-      <p>Pair the phone app with your computer over the local network, then send selected collections and tracks to the phone for browsing and playback.</p>
-      <ul>
-        <li><strong>Local playback.</strong> Play tracks from local files while browsing collections, with waveform context, cues, and beatgrid markers alongside the player.</li>
-        <li><strong>Cue points and notes.</strong> Add or edit hot cues and notes whether you use Serato or Cueport Direct.</li>
-        <li><strong>Phone companion.</strong> Send selected collections to the phone app, cache tracks for playback, and send phone edits back to the paired computer for review.</li>
-      </ul>
-    </details>
-
-    <details class="feature-list-section">
-      <summary><span class="feature-step" aria-hidden="true">3</span><span>Review before publishing</span></summary>
-      <p>Cueport queues edits in a local working layer so you can review what changed before updating Serato files or keeping Cueport Direct changes in its database.</p>
-      <ul>
-        <li><strong>Local editing layer.</strong> Cueport marks pending edits so you can see what changed across tracks and collections.</li>
-        <li><strong>Publish on approval.</strong> Serato edits write back to MP3s and crate files only when you choose to publish. Cueport Direct edits remain in their own database.</li>
-        <li><strong>Backups and restore points.</strong> Cueport creates safety copies before updating Serato. Cueport Direct manages edits and restore points in a separate database.</li>
-      </ul>
-    </details>
+  <div class="paper-cols">
+    {%- for step in howItWorks %}
+    <article class="paper-col">
+      <h2 class="paper-head"><span class="paper-num" aria-hidden="true">{{ loop.index }}</span>{{ step.title }}</h2>
+      <p class="paper-dek">{{ step.summary }}</p>
+      {%- for item in step.items %}
+      <p class="paper-item"><strong>{{ item.title }}</strong> {{ item.text | safe }}</p>
+      {%- endfor %}
+    </article>
+    {%- endfor %}
   </div>
 
   {# Parked desktop screenshot gallery. Retained for a future redesign.

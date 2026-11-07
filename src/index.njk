@@ -1,7 +1,6 @@
 ---
 layout: layouts/base.njk
 title: ""
-description: "Do you own your music and want to play it anywhere? Cueport reads Serato or builds a library directly from your music files. It syncs music and metadata to your phone over the local network. Now you can play music, add cues, and edit sets on all your devices!"
 homeMain: true
 ---
 
@@ -9,78 +8,86 @@ homeMain: true
   {% include "partials/section-buckets.njk" %}
   <section class="home-hero">
     {% include "partials/hero-waveform.njk" %}
-    <div class="container home-hero-inner home-hero-inner--single">
-      <div class="home-copy home-copy--lede">
-        <h1 class="home-title"><span class="home-title-line">A portable</span><span class="home-title-line">workstation</span><span class="home-title-line">for DJs.</span></h1>
-        <p class="home-intro home-sub">{{ site.homeDescription }}</p>
-      </div>
-      <div class="home-actions home-actions--social" aria-label="Social links">
-        <div class="home-social">
-          <a class="home-social-label home-social-cta" href="{{ site.radioUrl }}" target="_blank" rel="noopener noreferrer"><span class="home-social-kicker">Cueport Radio · Substack</span><span class="home-social-headline">Product launches from Cueport, behind-the-scenes notes, and DJ conversations <span class="social-arrow" aria-hidden="true">→</span></span></a>
-          <p class="home-social-also">Also on{% for item in site.social %}{% if item.icon != "substack" %} <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ item.ariaLabel }}">{{ item.label }} <span aria-hidden="true">↗</span></a>{% endif %}{% endfor %}</p>
+    <div class="home-spread-bars">{% include "partials/local-waveform.njk" %}</div>
+    <div class="home-tail-bars">{% include "partials/workflow-waveform.njk" %}</div>
+    <div class="container home-hero-inner home-hero-inner--single home-front">
+      <div class="home-front-col home-front-main">
+        <div class="home-copy home-copy--lede">
+          <h1 class="home-title"><span class="home-title-line">A portable</span><span class="home-title-line">workstation</span><span class="home-title-line">for DJs.</span></h1>
+          <p class="home-intro home-sub">{{ site.homeDescription }}</p>
         </div>
-      </div>
-    </div>
-  </section>
+      <section class="home-section home-section--local" aria-labelledby="local-title">
+        {% include "partials/local-waveform.njk" %}
+        <div class="container home-section-grid">
+          <div class="section-head">
+            <p class="home-eyebrow home-eyebrow--badge">LOCAL-FIRST SOFTWARE</p>
+            <h2 id="local-title">Bring your library anywhere you go.</h2>
+            <p>Cueport is for people who own their music and want it available beyond one laptop. Tracks, cues, crates, and notes move between your devices, so listening, prep, and playback can happen wherever you are.</p>
+          </div>
+          <ul class="benefit-grid">
+            <li class="benefit">
+              <span class="benefit-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" stroke-linejoin="miter"><path d="M4 9h4l6-5v16l-6-5H4z"/><path d="M18 8c1.4 1.1 2 2.4 2 4s-.6 2.9-2 4"/></svg>
+              </span>
+              <div>
+                <h3>Original files, original sound</h3>
+                <p>Cueport plays your actual files, not a compressed stream. What you hear on iPhone is what you hear on your Mac.</p>
+              </div>
+            </li>
+            <li class="benefit">
+              <span class="benefit-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13a10 10 0 0 1 14 0"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><path d="M12 20h.01"/><path d="M3 4l18 18"/></svg>
+              </span>
+              <div>
+                <h3>Plays without the internet</h3>
+                <p>Synced collections keep playing at a basement club, on a flight, or anywhere the signal drops.</p>
+              </div>
+            </li>
+            <li class="benefit">
+              <span class="benefit-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" stroke-linejoin="miter"><rect x="4" y="5" width="6" height="14"/><rect x="14" y="7" width="6" height="10"/><path d="M10 12h4"/></svg>
+              </span>
+              <div>
+                <h3>Syncs over your network</h3>
+                <p>Cueport sends tracks over the local connection that's most convenient: private <span class="nowrap">Wi-Fi</span>, Mac Internet Sharing, or iPhone Personal Hotspot.</p>
+              </div>
+            </li>
+            <li class="benefit">
+              <span class="benefit-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 3l7 3v5c0 4.6-2.8 8-7 10-4.2-2-7-5.4-7-10V6l7-3z"/><path d="M9 12l2 2 4-5"/></svg>
+              </span>
+              <div>
+                <h3>Private by default</h3>
+                <p>Your library syncs directly between your devices over your local network. Cueport does not upload it to an external server.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
 
-  <section class="home-section home-section--local" aria-labelledby="local-title">
-    {% include "partials/local-waveform.njk" %}
-    <div class="container home-section-grid">
-      <div class="section-head">
-        <p class="home-eyebrow home-eyebrow--badge">LOCAL-FIRST SOFTWARE</p>
-        <h2 id="local-title">Bring your library anywhere you go.</h2>
-        <p>Cueport is for people who own their music and want it available beyond one laptop. Tracks, cues, crates, and notes move between your devices, so listening, prep, and playback can happen wherever you are.</p>
       </div>
-      <ul class="benefit-grid">
-        <li class="benefit">
-          <span class="benefit-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" stroke-linejoin="miter"><path d="M4 9h4l6-5v16l-6-5H4z"/><path d="M18 8c1.4 1.1 2 2.4 2 4s-.6 2.9-2 4"/></svg>
-          </span>
-          <div>
-            <h3>Original files, original sound</h3>
-            <p>Cueport plays your actual files, not a compressed stream. What you hear on iPhone is what you hear on your Mac.</p>
+      <div class="home-front-col home-front-side">
+        <div class="home-actions home-actions--social" aria-label="Social links">
+          <div class="home-social">
+            <div class="radio-ad">
+              <p class="radio-ad-title">Product launches from Cueport, <span class="nowrap">behind-the-scenes</span> notes, and DJ conversations</p>
+              <p class="radio-ad-links">{% for item in site.social %}<a href="{{ item.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ item.ariaLabel }}">{{ item.label }} <span aria-hidden="true">↗</span></a>{% endfor %}</p>
+            </div>
           </div>
-        </li>
-        <li class="benefit">
-          <span class="benefit-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13a10 10 0 0 1 14 0"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><path d="M12 20h.01"/><path d="M3 4l18 18"/></svg>
-          </span>
-          <div>
-            <h3>Plays without the internet</h3>
-            <p>Synced collections keep playing at a basement club, on a flight, or anywhere the signal drops.</p>
+        </div>
+      <section class="home-section home-section--workflow" aria-labelledby="workflow-title">
+        {% include "partials/workflow-waveform.njk" %}
+        <div class="container home-section-grid">
+          <div class="section-head">
+            <h2 id="workflow-title">Set it all up in three steps.</h2>
+            <p>Prep on any device. Cueport keeps your library in sync.</p>
           </div>
-        </li>
-        <li class="benefit">
-          <span class="benefit-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" stroke-linejoin="miter"><rect x="4" y="5" width="6" height="14"/><rect x="14" y="7" width="6" height="10"/><path d="M10 12h4"/></svg>
-          </span>
-          <div>
-            <h3>Syncs over your network</h3>
-            <p>Cueport sends tracks over the local connection that's most convenient: private Wi-Fi, Mac Internet Sharing, or iPhone Personal Hotspot.</p>
-          </div>
-        </li>
-        <li class="benefit">
-          <span class="benefit-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 3l7 3v5c0 4.6-2.8 8-7 10-4.2-2-7-5.4-7-10V6l7-3z"/><path d="M9 12l2 2 4-5"/></svg>
-          </span>
-          <div>
-            <h3>Private by default</h3>
-            <p>Your library syncs directly between your devices over your local network. Cueport does not upload it to an external server.</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="home-section home-section--workflow" aria-labelledby="workflow-title">
-    {% include "partials/workflow-waveform.njk" %}
-    <div class="container home-section-grid">
-      <div class="section-head">
-        <h2 id="workflow-title">Set it all up in three steps.</h2>
-        <p>Use Cueport for Mac to send selected or all collections to your iPhone.</p>
+          {% include "partials/setup-diagram.njk" %}
+        </div>
+      </section>
       </div>
-      {% include "partials/setup-diagram.njk" %}
     </div>
+    {% include "partials/folio.njk" %}
   </section>
 
 </div>

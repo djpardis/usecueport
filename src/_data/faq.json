@@ -1,0 +1,50 @@
+[
+  {
+    "question": "What is local-first software?",
+    "answer": "Local-first is a set of software design principles that combines local ownership with the convenience people expect from networked apps. Cueport works with the library on the user's own devices, supports offline prep and local playback, syncs over your local network, and lets the user decide when to publish changes. Cueport does not upload music files, cues, crates, notes, or analysis to a cloud service."
+  },
+  {
+    "question": "Can I use the iPhone app on its own?",
+    "answer": "The iPhone app needs to pair to the Mac first so it can receive collections, cached music files, and cues over your local network. Once paired, it plays everything on the go and away from your computer."
+  },
+  {
+    "question": "Will Cueport change my Serato library?",
+    "answer": "Cueport changes your Serato library only when you choose to publish. Your edits sit in Cueport's local database as <span class=\"mono\">modified</span> until you review them and write them back to the Serato library you linked. Before every push, Cueport takes a restore point so that you can roll the change back, and after you first link the folder it keeps an automatic safety copy of <code>_Serato_</code> inside Application Support."
+  },
+  {
+    "question": "Can I use Cueport without Serato?",
+    "answer": "Yes. Add music files with Cueport Direct instead of linking a Serato library. Cueport keeps the audio in place. It uses <a class=\"trailmix-link\" href=\"https://trailmix.tools\" target=\"_blank\" rel=\"noopener noreferrer\">trail mix <span aria-hidden=\"true\">↗</span></a> for local BPM, key, and waveform analysis. Cueport writes cues, notes, colors, collections, restore points, and analysis to a local database on your computer."
+  },
+  {
+    "question": "Will Cueport support Rekordbox, Traktor, Mixxx, or other DJ apps?",
+    "answer": "Yes. Cueport intends to support other DJ applications one by one. Let us know which one you'd like to be added next: <a href=\"mailto:hello@usecueport.com\">hello@usecueport.com</a>."
+  },
+  {
+    "question": "Which folder do I select in Cueport?",
+    "answer": "For Serato mode, open the folder that contains your <code>_Serato_</code> folder, such as your <code>Music</code> folder or a drive root. For Cueport Direct, add the music files or folder you want Cueport to reference. Cueport stores those file references in its own database and does not move the audio."
+  },
+  {
+    "question": "How are hot cues read?",
+    "answer": "In Serato mode, Cueport reads hot cues from the <code>GEOB</code> frames that Serato writes into each MP3's ID3 tags. If those payloads are missing on a file, Cueport does not show a cue strip for that track. In Cueport Direct, cue points are stored in Cueport's own database."
+  },
+  {
+    "question": "Can I add notes to tracks?",
+    "answer": "You can edit a per-track note. In Serato mode, Cueport stores the edit locally as <span class=\"mono\">modified</span> until you publish, at which point it writes the note into the Serato Comment field on the MP3. In Cueport Direct, the note remains in Cueport's own database."
+  },
+  {
+    "question": "Does Cueport collect any of my data?",
+    "answer": "No. Cueport does not collect or upload music, metadata, listening history, or analytics. No data leaves your devices except for syncing between your Mac and iPhone that happens over your local network."
+  },
+  {
+    "question": "What if pairing doesn't work on public Wi-Fi?",
+    "answer": "Hotel, cafe, and venue Wi-Fi often uses client isolation, which lets each device reach the internet but blocks pairing between your Mac and iPhone. Cueport uses private Wi-Fi by default, with Mac Internet Sharing and iPhone Personal Hotspot as backup options."
+  },
+  {
+    "question": "What do the waveform colors mean?",
+    "answer": "The waveform strip colors are relative to the track you are playing, not an absolute frequency scale. Serato mode reads Serato's embedded overview data. Cueport Direct reads <a class=\"trailmix-link\" href=\"https://trailmix.tools\" target=\"_blank\" rel=\"noopener noreferrer\">trail mix <span aria-hidden=\"true\">↗</span></a> waveform columns from Cueport's database. Sections where the track's low-frequency content is higher than its own average appear orange or red. Sections near the track's midrange average appear green. Sections where high-frequency content is relatively stronger appear blue or cyan. The faint full-height lines mark bars when beatgrid markers are available. Hold on the waveform for a moment to see a quick legend."
+  },
+  {
+    "question": "What is not in scope?",
+    "answer": "Cueport does not handle mixing two decks or beatgrid editing."
+  }
+]

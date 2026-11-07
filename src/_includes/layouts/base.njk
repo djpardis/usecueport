@@ -18,16 +18,54 @@
     <meta name="twitter:title" content="{{ title or site.name }}" />
     <meta name="twitter:description" content="{{ description or site.description }}" />
 
+    {%- set platforms = [] %}
+    {%- set downloads = [] %}
+    {%- for key, app in product.apps %}
+      {%- if app.available %}{% set platforms = (platforms.push(app.platform), platforms) %}{% endif %}
+      {%- if app.downloadUrl %}{% set downloads = (downloads.push(app.downloadUrl), downloads) %}{% endif %}
+    {%- endfor %}
+    {%- set socialUrls = [] %}
+    {%- for item in site.social %}{% set socialUrls = (socialUrls.push(item.url), socialUrls) %}{% endfor %}
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "{{ site.name }}",
-        "applicationCategory": "MultimediaApplication",
-        "operatingSystem": "macOS, iOS, Windows, Android",
-        "description": "{{ description or site.description }}",
-        "url": "{{ site.url }}",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": {{ (site.url + "/#organization") | dump | safe }},
+            "name": {{ site.name | dump | safe }},
+            "url": {{ site.url | dump | safe }},
+            "logo": {{ (site.url + "/assets/img/logo-social.png") | dump | safe }},
+            "email": {{ site.email | dump | safe }},
+            "sameAs": {{ socialUrls | dump | safe }}
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": {{ site.name | dump | safe }},
+            "applicationCategory": {{ product.applicationCategory | dump | safe }},
+            "operatingSystem": {{ platforms | join(", ") | dump | safe }},
+            "description": {{ site.description | dump | safe }},
+            "url": {{ site.url | dump | safe }},
+            {%- if downloads.length %}
+            "downloadUrl": {{ downloads | dump | safe }},
+            {%- endif %}
+            "publisher": { "@id": {{ (site.url + "/#organization") | dump | safe }} }
+          }
+          {%- if page.url == "/support/" %},
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {%- for item in faq %}
+              {
+                "@type": "Question",
+                "name": {{ item.question | dump | safe }},
+                "acceptedAnswer": { "@type": "Answer", "text": {{ item.answer | stripHtml | dump | safe }} }
+              }{% if not loop.last %},{% endif %}
+              {%- endfor %}
+            ]
+          }
+          {%- endif %}
+        ]
       }
     </script>
 
@@ -36,13 +74,14 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/assets/css/style.css?v={{ site.assetVersion or site.version }}" />
   </head>
   <body>
     {% include "partials/header.njk" %}
     <main id="main"{% if homeMain %} class="home-main"{% elif viewportMain %} class="viewport-main"{% endif %}>
       {{ content | safe }}
+      {% if not homeMain %}{% include "partials/folio.njk" %}{% endif %}
     </main>
     {% include "partials/footer.njk" %}
   </body>

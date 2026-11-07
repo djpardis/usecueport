@@ -1,0 +1,7 @@
+{
+  "pages": [
+    { "folio": "A1", "label": "Front page", "href": "/" },
+    { "folio": "A2", "label": "How it works", "href": "/how-it-works/" },
+    { "folio": "A3", "label": "Support", "href": "/support/" }
+  ]
+}

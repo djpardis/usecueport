@@ -11,54 +11,12 @@ viewportMain: true
     <h1>Support.</h1>
     <p class="lede">Browse common questions about Cueport. Send feature requests and bug reports to <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
   </div>
-  <div class="faq">
-    <details open>
-      <summary>What is local-first software?</summary>
-      <p>Local-first is a set of software design principles that combines local ownership with the convenience people expect from networked apps. Cueport works with the library on the user's own devices, supports offline prep and local playback, syncs over your local network, and lets the user decide when to publish changes. Cueport does not upload music files, cues, crates, notes, or analysis to a cloud service.</p>
-    </details>
-    <details>
-      <summary>Can I use the iPhone app on its own?</summary>
-      <p>The iPhone app needs to pair to the Mac first so it can receive collections, cached music files, and cues over your local network. Once paired, it plays everything on the go and away from your computer.</p>
-    </details>
-    <details>
-      <summary>Will Cueport change my Serato library?</summary>
-      <p>Cueport changes your Serato library only when you choose to publish. Your edits sit in Cueport's local database as <span class="mono">modified</span> until you review them and write them back to the Serato library you linked. Before every push, Cueport takes a restore point so that you can roll the change back, and after you first link the folder it keeps an automatic safety copy of <code>_Serato_</code> inside Application Support.</p>
-    </details>
-    <details>
-      <summary>Can I use Cueport without Serato?</summary>
-      <p>Yes. Add music files with Cueport Direct instead of linking a Serato library. Cueport keeps the audio in place. It uses <a href="https://trailmix.tools">trail mix</a> for local BPM, key, and waveform analysis. Cueport writes cues, notes, colors, collections, restore points, and analysis to a local database on your computer.</p>
-    </details>
-    <details>
-      <summary>Will Cueport support Rekordbox, Traktor, Mixxx, or other DJ apps?</summary>
-      <p>Yes. Cueport intends to support other DJ applications one by one. Let us know which one you'd like to be added next: <a href="mailto:hello@usecueport.com">hello@usecueport.com</a>.</p>
-    </details>
-    <details>
-      <summary>Which folder do I select in Cueport?</summary>
-      <p>For Serato mode, open the folder that contains your <code>_Serato_</code> folder, such as your <code>Music</code> folder or a drive root. For Cueport Direct, add the music files or folder you want Cueport to reference. Cueport stores those file references in its own database and does not move the audio.</p>
-    </details>
-    <details>
-      <summary>How are hot cues read?</summary>
-      <p>In Serato mode, Cueport reads hot cues from the <code>GEOB</code> frames that Serato writes into each MP3's ID3 tags. If those payloads are missing on a file, Cueport does not show a cue strip for that track. In Cueport Direct, cue points are stored in Cueport's own database.</p>
-    </details>
-    <details>
-      <summary>Can I add notes to tracks?</summary>
-      <p>You can edit a per-track note. In Serato mode, Cueport stores the edit locally as <span class="mono">modified</span> until you publish, at which point it writes the note into the Serato Comment field on the MP3. In Cueport Direct, the note remains in Cueport's own database.</p>
-    </details>
-    <details>
-      <summary>Does Cueport collect any of my data?</summary>
-      <p>No. Cueport does not collect or upload music, metadata, listening history, or analytics. No data leaves your devices except for syncing between your Mac and iPhone that happens over your local network.</p>
-    </details>
-    <details>
-      <summary>What if pairing doesn't work on public Wi-Fi?</summary>
-      <p>Hotel, cafe, and venue Wi-Fi often uses client isolation, which lets each device reach the internet but blocks pairing between your Mac and iPhone. Cueport uses private Wi-Fi by default, with Mac Internet Sharing and iPhone Personal Hotspot as backup options.</p>
-    </details>
-    <details>
-      <summary>What do the waveform colors mean?</summary>
-      <p>The waveform strip colors are relative to the track you are playing, not an absolute frequency scale. Serato mode reads Serato's embedded overview data. Cueport Direct reads <a href="https://trailmix.tools">trail mix</a> waveform columns from Cueport's database. Sections where the track's low-frequency content is higher than its own average appear orange or red. Sections near the track's midrange average appear green. Sections where high-frequency content is relatively stronger appear blue or cyan. The faint full-height lines mark bars when beatgrid markers are available. Hold on the waveform for a moment to see a quick legend.</p>
-    </details>
-    <details>
-      <summary>What is not in scope?</summary>
-      <p>Cueport does not handle mixing two decks or beatgrid editing.</p>
-    </details>
+  <div class="paper-qa">
+    {%- for item in faq %}
+    <article class="paper-qa-item">
+      <h2 class="paper-q"><span class="paper-q-mark" aria-hidden="true">Q.</span> {{ item.question | escape | replace("Wi-Fi", '<span class="nowrap">Wi-Fi</span>') | safe }}</h2>
+      <p>{{ item.answer | replace("Wi-Fi", '<span class="nowrap">Wi-Fi</span>') | safe }}</p>
+    </article>
+    {%- endfor %}
   </div>
 </div>

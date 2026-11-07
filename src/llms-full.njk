@@ -1,0 +1,33 @@
+---
+permalink: /llms-full.txt
+eleventyExcludeFromCollections: true
+layout: null
+---
+# {{ site.name | safe }}
+
+> {{ site.description | safe }}
+
+## Apps
+{% for key, app in product.apps %}{% if app.available %}
+- {% if app.downloadUrl %}[{{ app.name | safe }}]({{ app.downloadUrl | safe }}){% else %}{{ app.name | safe }}{% endif %}: {{ app.platform | safe }}
+{%- endif %}{% endfor %}
+
+## How it works
+{% for step in howItWorks %}
+### {{ loop.index | safe }}. {{ step.title | safe }}
+
+{{ step.summary | safe }}
+{% for item in step.items %}
+- **{{ item.title | safe }}** {{ item.text | markdown | safe }}
+{%- endfor %}
+{% endfor %}
+## Support
+{% for item in faq %}
+### {{ item.question | safe }}
+
+{{ item.answer | markdown | safe }}
+{% endfor %}
+## Contact
+
+- Email: {{ site.email | safe }}
+- Website: {{ site.url | safe }}

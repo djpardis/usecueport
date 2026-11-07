@@ -1,0 +1,25 @@
+---
+permalink: /llms.txt
+eleventyExcludeFromCollections: true
+layout: null
+---
+# {{ site.name | safe }}
+
+> {{ site.description | safe }}
+
+## Apps
+{% for key, app in product.apps %}{% if app.available %}
+- {% if app.downloadUrl %}[{{ app.name | safe }}]({{ app.downloadUrl | safe }}){% else %}{{ app.name | safe }}{% endif %}: {{ app.platform | safe }}
+{%- endif %}{% endfor %}
+
+## Docs
+{% for p in collections.all | sort(attribute="url") %}{% if p.url != "/" and p.data.title %}
+- [{{ p.data.title | safe }}]({{ site.url | safe }}{{ p.url | safe }}): {{ p.data.description | safe }}
+{%- endif %}{% endfor %}
+- [Full text]({{ site.url | safe }}/llms-full.txt): How it works and Support in one Markdown file.
+
+## Optional
+{% for item in site.social %}
+- [{{ item.label | safe }}]({{ item.url | safe }}): {{ item.ariaLabel | safe }}.
+{%- endfor %}
+- [Email](mailto:{{ site.email | safe }}): Feature requests and bug reports.

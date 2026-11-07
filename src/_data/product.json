@@ -1,0 +1,17 @@
+{
+  "applicationCategory": "MultimediaApplication",
+  "apps": {
+    "mac": {
+      "name": "Cueport for Mac",
+      "platform": "macOS",
+      "available": true,
+      "downloadUrl": ""
+    },
+    "ios": {
+      "name": "Cueport for iPhone",
+      "platform": "iOS",
+      "available": true,
+      "downloadUrl": ""
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{%- set pages = edition.pages %}
+{%- set current = pages | pageIndex(page.url) %}
+{%- if current >= 0 %}
+{%- set here = pages[current] %}
+<nav class="folio" aria-label="Pages">
+  <div class="container folio-inner">
+    <p class="folio-mark"><span class="folio-num">{{ here.folio }}</span> {{ here.label }}</p>
+    <p class="folio-jumps">
+      {%- if current > 0 %}{% set prev = pages[current - 1] %}
+      <a class="folio-jump" href="{{ prev.href }}" rel="prev"><span aria-hidden="true">&larr;</span> <span class="folio-ref">{{ prev.folio }} </span>{{ prev.label }}</a>
+      {%- endif %}
+      {%- if current < pages.length - 1 %}{% set next = pages[current + 1] %}
+      <a class="folio-jump folio-jump--next" href="{{ next.href }}" rel="next">Continued on <span class="folio-ref">{{ next.folio }}: </span>{{ next.label }} <span aria-hidden="true">&rarr;</span></a>
+      {%- endif %}
+    </p>
+  </div>
+</nav>
+{%- endif %}
