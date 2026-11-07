@@ -1,34 +1,11 @@
 <footer class="site-footer">
   <div class="container footer-grid">
-    <div class="footer-social-list" aria-label="Social links">
-      <span class="footer-radio-copy">
-        <span class="footer-tune-in">Behind-the-scenes notes, DJ conversations, and updates from Cueport <span class="footer-tune-arrow" aria-hidden="true">&rarr;</span></span>
-      </span>
-      <span class="footer-social-icons">
-        {% for item in site.social %}
-          <a class="footer-social" href="{{ item.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ item.ariaLabel }}">
-            {% if item.icon == "instagram" %}
-              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="4" y="4" width="16" height="16" rx="4.5"/>
-                <circle cx="12" cy="12" r="4"/>
-                <circle cx="17" cy="7" r="0.8" fill="currentColor" stroke="none"/>
-              </svg>
-            {% elif item.icon == "youtube" %}
-              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M2.5 17a24.1 24.1 0 0 1 0-10 3 3 0 0 1 2.1-2.1 49.6 49.6 0 0 1 14.8 0A3 3 0 0 1 21.5 7a24.1 24.1 0 0 1 0 10 3 3 0 0 1-2.1 2.1 49.6 49.6 0 0 1-14.8 0A3 3 0 0 1 2.5 17z"/>
-                <path d="m10 15 5-3-5-3z"/>
-              </svg>
-            {% elif item.icon == "substack" %}
-              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 5h14"/>
-                <path d="M5 9h14"/>
-                <path d="M5 13h14v7l-7-4-7 4z"/>
-              </svg>
-            {% endif %}
-          </a>
-        {% endfor %}
-      </span>
-    </div>
+    <p class="footer-social-list">
+      <span class="footer-tune-in">Follow us <span class="footer-tune-arrow" aria-hidden="true">&rarr;</span></span>
+      {% for item in site.social %}
+        <a class="footer-social" href="{{ item.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ item.ariaLabel }}">{{ item.label }} <span aria-hidden="true">↗</span></a>
+      {% endfor %}
+    </p>
     <div class="footer-meta">
       <p class="footer-copyright">
         <span class="footer-copyright-full">© {{ "" | year }} {{ site.name }}. All rights reserved.</span>
