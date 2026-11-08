@@ -1,39 +1,20 @@
-<figure class="setup-graphic" aria-labelledby="workflow-title">
-  <ol class="setup-steps">
-    <li class="setup-step">
-      <span class="setup-step-num" aria-hidden="true">1</span>
-      <div class="setup-step-body">
-        <h3>Get Cueport for Mac</h3>
-        <p>Install the app on your Mac.</p>
-        {%- if product.apps.mac.downloadUrl %}
-        <a class="setup-download setup-download--live" href="{{ product.apps.mac.downloadUrl }}">Download for Mac</a>
-        {%- else %}
-        <span class="setup-download" role="button" aria-disabled="true"><span>Download for Mac</span><span class="setup-download-soon">Coming soon</span></span>
-        {%- endif %}
-      </div>
+<figure class="setup-howto" aria-labelledby="workflow-title">
+  <ol class="howto-steps">
+    <li class="howto-step">
+      <p><span class="howto-num" aria-hidden="true">1</span><strong>Get Cueport for Mac.</strong> Install the app on your Mac.</p>
+      {%- if product.apps.mac.downloadUrl %}
+      <a class="setup-download setup-download--live" href="{{ product.apps.mac.downloadUrl }}">Download for Mac</a>
+      {%- else %}
+      <span class="setup-download" role="button" aria-disabled="true"><span>Download for Mac</span><span class="setup-download-soon">Coming soon</span></span>
+      {%- endif %}
     </li>
-    <li class="setup-step">
-      <span class="setup-step-num" aria-hidden="true">2</span>
-      <div class="setup-step-body">
-        <h3>Choose a library</h3>
-        <div class="setup-choices">
-          <div class="setup-choice">
-            <h4><span class="setup-choice-tag" aria-hidden="true">A</span>Serato library</h4>
-            <p>Use your <code>_Serato_</code> folder to build your library.</p>
-          </div>
-          <div class="setup-choice">
-            <h4><span class="setup-choice-tag" aria-hidden="true">B</span>Cueport Direct</h4>
-            <p>Build your library directly from your music files. <a class="trailmix-link" href="https://trailmix.tools" target="_blank" rel="noopener noreferrer">trail mix <span aria-hidden="true">↗</span></a> analyzes locally.</p>
-          </div>
-        </div>
-      </div>
+    <li class="howto-step">
+      <p><span class="howto-num" aria-hidden="true">2</span><strong>Choose a library.</strong></p>
+      <p class="howto-choice"><span class="howto-tag" aria-hidden="true">A</span><strong>Serato library.</strong> Use your <code>_Serato_</code> folder to build your library.</p>
+      <p class="howto-choice"><span class="howto-tag" aria-hidden="true">B</span><strong>Cueport Direct.</strong> Build your library directly from your music files. <a class="trailmix-link" href="https://trailmix.tools" target="_blank" rel="noopener noreferrer">trail mix <span aria-hidden="true">↗</span></a> analyzes locally.</p>
     </li>
-    <li class="setup-step">
-      <span class="setup-step-num" aria-hidden="true">3</span>
-      <div class="setup-step-body">
-        <h3>Get the Cueport app</h3>
-        <p>Sync selected or all collections to your phone.</p>
-      </div>
+    <li class="howto-step">
+      <p><span class="howto-num" aria-hidden="true">3</span><strong>Get the Cueport app.</strong> Sync selected or all collections to your phone.</p>
     </li>
   </ol>
   <figcaption class="setup-caption">The iPhone app will be available through the App Store.</figcaption>

@@ -4565,13 +4565,15 @@ body:has(main.viewport-main) .site-header {
 .paper-q-mark {
   color: var(--accent);
 }
-@media (max-width: 767px) {
-  .paper-col + .paper-col {
-    padding-top: 24px;
-    border-top: var(--col-rule, 1px solid rgba(24, 24, 27, 0.14));
-  }
+.paper-cols {
+  display: block;
+}
+.paper-col {
+  break-inside: avoid;
+  padding-bottom: 28px;
 }
 @media (min-width: 768px) {
+  .paper-cols,
   .paper-qa {
     column-count: 2;
     column-gap: 64px;
@@ -4579,22 +4581,7 @@ body:has(main.viewport-main) .site-header {
   }
 }
 @media (min-width: 1024px) {
-  .paper-cols {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0;
-  }
-  .paper-col {
-    padding: 0 32px;
-  }
-  .paper-col:first-child {
-    padding-left: 0;
-  }
-  .paper-col:last-child {
-    padding-right: 0;
-  }
-  .paper-col + .paper-col {
-    border-left: 1px solid rgba(24, 24, 27, 0.14);
-  }
+  .paper-cols,
   .paper-qa {
     column-count: 3;
   }
@@ -4865,6 +4852,96 @@ body:has(main.viewport-main) .site-header {
   height: 1px;
   background: var(--accent);
 }
+/* Setup as a newspaper how-to sidebar: run-in steps separated by hairlines */
+.setup-howto {
+  margin: 0;
+  color: var(--text);
+  font-size: var(--type-body);
+  line-height: 1.5;
+}
+.howto-steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.howto-step {
+  padding: 14px 0;
+}
+.howto-step:first-child {
+  padding-top: 0;
+}
+.howto-step + .howto-step {
+  border-top: 1px solid rgba(24, 24, 27, 0.14);
+}
+.howto-step p {
+  margin: 0;
+  color: #2e2e33;
+  text-wrap: pretty;
+}
+.howto-step p + p {
+  margin-top: 6px;
+}
+.howto-step strong {
+  color: var(--text);
+  font-weight: 700;
+}
+.howto-num,
+.howto-tag {
+  margin-right: 0.5em;
+  color: var(--accent);
+  font-weight: 700;
+}
+.home-front .home-section--workflow .section-head {
+  padding-bottom: 0;
+}
+/* Download as a clip-out coupon */
+.howto-step .setup-download {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  margin: 16px 0 4px;
+  padding: 14px 16px 12px;
+  border: 1.5px dashed var(--text);
+  background: #ffffff;
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: var(--type-body);
+  font-weight: 700;
+  letter-spacing: 0;
+  text-align: center;
+  text-transform: none;
+  opacity: 1;
+}
+.howto-step .setup-download::before {
+  content: "\2702";
+  position: absolute;
+  top: -0.75em;
+  left: 12px;
+  padding: 0 4px;
+  background: #ffffff;
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+.howto-step .setup-download .setup-download-soon {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: var(--type-label);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.howto-step .setup-download--live:hover {
+  background: var(--text);
+  color: #ffffff;
+}
+.setup-howto .setup-caption {
+  margin-top: 14px;
+}
 body a[target="_blank"]:not(.nav-radio) {
   color: var(--radio-blue-hover);
   font-weight: 700;
@@ -4909,4 +4986,15 @@ body:has(main.home-main) .site-header {
   bottom: var(--bars-off);
   z-index: 0;
   height: var(--bars-amp);
+}
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
 }
