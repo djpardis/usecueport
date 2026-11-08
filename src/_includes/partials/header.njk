@@ -11,17 +11,6 @@
       </svg>
       <span class="brand-title">{{ site.name }}</span>
     </a>
-    <p class="header-dateline"><time class="header-date-long" data-dateline="long"></time><time class="header-date-short" data-dateline="short"></time></p>
-    <script>
-      document.querySelectorAll("[data-dateline]").forEach(function (el) {
-        var now = new Date();
-        var long = el.dataset.dateline === "long";
-        el.dateTime = now.toLocaleDateString("en-CA");
-        el.textContent = now.toLocaleDateString("en-US", long
-          ? { weekday: "long", month: "long", day: "numeric", year: "numeric" }
-          : { month: "short", day: "numeric", year: "numeric" });
-      });
-    </script>
     <nav class="site-nav" aria-label="Primary">
       <ul>
         {% for item in site.nav %}
