@@ -4894,6 +4894,17 @@ body:has(main.viewport-main) .site-header {
 .home-front .home-section--workflow .section-head {
   padding-bottom: 0;
 }
+@media (max-width: 1023px) {
+  .home-page .home-front {
+    grid-template-areas: "copy" "social" "workflow" "local";
+  }
+  .home-front .home-section--workflow {
+    grid-area: workflow;
+  }
+  .home-front .home-section--local {
+    grid-area: local;
+  }
+}
 /* Download as a clip-out coupon */
 .howto-step .setup-download {
   position: relative;
