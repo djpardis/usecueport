@@ -1,9 +1,9 @@
-<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-  <rect width="32" height="32" fill="#c2410c"/>
-  <rect x="0" y="19" width="5" height="13" fill="#ffffff" opacity="0.72"/>
-  <rect x="12" y="5" width="5" height="27" fill="#ffffff" opacity="0.72"/>
-  <rect x="19" y="13" width="5" height="19" fill="#ffffff" opacity="0.72"/>
-  <rect x="26.5" y="8" width="5" height="24" fill="#ffffff" opacity="0.72"/>
-  <rect x="5.2" y="0" width="5.6" height="5.6" fill="#ffffff"/>
-  <rect x="7" y="5.4" width="2" height="26.6" fill="#ffffff"/>
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1024" height="1024" fill="#c2410c"/>
+  <rect x="128" y="584" width="120" height="440" fill="#ffffff" opacity="0.72"/>
+  <rect x="416" y="248" width="120" height="776" fill="#ffffff" opacity="0.72"/>
+  <rect x="584" y="440" width="120" height="584" fill="#ffffff" opacity="0.72"/>
+  <rect x="764" y="320" width="120" height="704" fill="#ffffff" opacity="0.72"/>
+  <rect x="252" y="128" width="136" height="136" fill="#ffffff"/>
+  <rect x="296" y="264" width="48" height="760" fill="#ffffff"/>
 </svg>
