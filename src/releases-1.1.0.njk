@@ -1,0 +1,131 @@
+---
+layout: layouts/base.njk
+title: "Release notes"
+description: "Cueport release notes for desktop and mobile versions."
+permalink: /releases/
+---
+
+<div class="container page-head">
+  <p class="eyebrow">Changelog</p>
+  <h1>Cueport releases</h1>
+  <p class="lede">Play, cue, and organize your DJ library across devices.</p>
+</div>
+
+<section class="container release-notes" data-release-tabs>
+  <div class="release-tablist" role="tablist" aria-label="Cueport release notes">
+    <button class="release-tab is-active" id="release-tab-desktop" type="button" role="tab" aria-selected="true" aria-controls="desktop">
+      <span>Desktop</span>
+      <span class="release-tab-meta">macOS 1.1.0</span>
+    </button>
+    <button class="release-tab" id="release-tab-mobile" type="button" role="tab" aria-selected="false" aria-controls="mobile" tabindex="-1">
+      <span>Mobile</span>
+      <span class="release-tab-meta">iPhone 1.1.0 (124)</span>
+    </button>
+  </div>
+
+  <article class="release-panel is-active" id="desktop" role="tabpanel" aria-labelledby="release-tab-desktop" tabindex="0">
+    <div class="release-panel-head">
+      <p class="release-platform">Desktop</p>
+      <h2>Cueport 1.1.0 for macOS</h2>
+    </div>
+    <div class="release-panel-grid">
+      <div>
+        <h3>What changed</h3>
+        <ul>
+          <li>Read Serato crates, subcrates, tracks, cues, BPM, key, color, comments, and beatgrid markers from your local library.</li>
+          <li>Try Cueport Direct as an experimental local library built from music folders, with local BPM, key, waveform, and color analysis from trail mix.</li>
+          <li>Play tracks on desktop with waveform context, cue markers, skip controls, and continuous playback.</li>
+          <li>Create, rename, delete, add tracks to, and manually reorder collections before publishing changes back.</li>
+          <li>Use automatic restore points before Serato write-back and Cueport Direct changes.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Build details</h3>
+        <dl class="release-facts">
+          <div>
+            <dt>Analysis engine</dt>
+            <dd><a href="https://github.com/djpardis/trailmix/commit/ea86514c70e678148969533704768b9ae43b6b56">trail mix paper-preview 2026-11-07 (ea86514c)</a></dd>
+          </div>
+          <div>
+            <dt>Cueport Direct</dt>
+            <dd>Experimental in this release.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </article>
+
+  <article class="release-panel" id="mobile" role="tabpanel" aria-labelledby="release-tab-mobile" tabindex="0" hidden>
+    <div class="release-panel-head">
+      <p class="release-platform">Mobile</p>
+      <h2>Cueport 1.1.0 for iPhone, build 124</h2>
+    </div>
+    <div class="release-panel-grid">
+      <div>
+        <h3>What changed</h3>
+        <ul>
+          <li>Sync selected libraries from desktop to iPhone for cached playback and prep.</li>
+          <li>Use lock-screen playback controls, waveform context, cue markers, and offline audio.</li>
+          <li>Queue cue, note, color, and collection edits locally before desktop review.</li>
+          <li>Pair with desktop over local Wi-Fi, Bonjour rediscovery, or Connect directly to Mac for public Wi-Fi environments.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Build details</h3>
+        <dl class="release-facts">
+          <div>
+            <dt>Status</dt>
+            <dd>Current iPhone build for Cueport 1.1.0.</dd>
+          </div>
+          <div>
+            <dt>Sync model</dt>
+            <dd>Local cache with queued edits reviewed on desktop.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </article>
+</section>
+
+<script>
+  (() => {
+    const root = document.querySelector("[data-release-tabs]");
+    if (!root) return;
+    const tabs = Array.from(root.querySelectorAll("[role='tab']"));
+    const panels = Array.from(root.querySelectorAll("[role='tabpanel']"));
+
+    function activate(nextTab, updateHash = true) {
+      tabs.forEach((tab) => {
+        const selected = tab === nextTab;
+        tab.classList.toggle("is-active", selected);
+        tab.setAttribute("aria-selected", selected ? "true" : "false");
+        tab.tabIndex = selected ? 0 : -1;
+      });
+      panels.forEach((panel) => {
+        const selected = panel.id === nextTab.getAttribute("aria-controls");
+        panel.classList.toggle("is-active", selected);
+        panel.hidden = !selected;
+      });
+      if (updateHash) history.replaceState(null, "", `#${nextTab.getAttribute("aria-controls")}`);
+    }
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => activate(tab));
+      tab.addEventListener("keydown", (event) => {
+        const keys = ["ArrowLeft", "ArrowRight", "Home", "End"];
+        if (!keys.includes(event.key)) return;
+        event.preventDefault();
+        let nextIndex = index;
+        if (event.key === "ArrowLeft") nextIndex = (index - 1 + tabs.length) % tabs.length;
+        if (event.key === "ArrowRight") nextIndex = (index + 1) % tabs.length;
+        if (event.key === "Home") nextIndex = 0;
+        if (event.key === "End") nextIndex = tabs.length - 1;
+        tabs[nextIndex].focus();
+        activate(tabs[nextIndex]);
+      });
+    });
+
+    const initial = tabs.find((tab) => `#${tab.getAttribute("aria-controls")}` === window.location.hash);
+    if (initial) activate(initial, false);
+  })();
+</script>
