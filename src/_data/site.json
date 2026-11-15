@@ -3,12 +3,13 @@
   "domain": "usecueport.com",
   "url": "https://usecueport.com",
   "radioUrl": "https://usecueport.substack.com/",
-  "subtitle": "Prep, play, and sync your DJ library across devices.",
-  "description": "Prep, play, and sync your DJ library across devices. Cueport keeps your music on your devices while syncing prep, playback, and library organization.",
-  "homeDescription": "Cueport keeps your music on your devices while syncing prep, playback, and library organization.",
+  "subtitle": "Music prep and playback on every device.",
+  "description": "Music prep and playback on every device. Cueport is for people who own their music. Tracks, cues, crates, and notes move between your devices, so prep and playback can happen beyond your laptop.",
+  "homeDescription": "Cueport is for people who own their music. Tracks, cues, crates, and notes move between your devices, so prep and playback can happen beyond your laptop.",
   "email": "hello@usecueport.com",
   "version": "1.1.0",
-  "assetVersion": "20261108-mobile-order",
+  "releaseAnchor": "v1-1-0",
+  "assetVersion": "20261113-brand-release-9",
   "dmgFilename": "Cueport_1.1.0_aarch64.dmg",
   "social": [
     {
@@ -48,6 +49,11 @@
       "label": "Support",
       "href": "/support/",
       "icon": "support"
+    },
+    {
+      "label": "Changelog",
+      "href": "/changelog/",
+      "icon": "changelog"
     },
     {
       "label": "Cueport Radio",

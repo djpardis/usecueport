@@ -81,7 +81,6 @@
     {% include "partials/header.njk" %}
     <main id="main"{% if homeMain %} class="home-main"{% elif viewportMain %} class="viewport-main"{% endif %}>
       {{ content | safe }}
-      {% if not homeMain %}{% include "partials/folio.njk" %}{% endif %}
     </main>
     {% include "partials/footer.njk" %}
   </body>

@@ -119,7 +119,7 @@ const html = `<!DOCTYPE html>
   <div class="left">
     <div class="logo">${logoSvg}</div>
     <div class="wordmark">Cueport</div>
-    <div class="subtitle">Prep, play, and sync your DJ library across devices</div>
+    <div class="subtitle">Music prep and playback on every device</div>
   </div>
   <div class="right">
     <img class="desktop" src="data:image/png;base64,${desktopB64}" alt="">

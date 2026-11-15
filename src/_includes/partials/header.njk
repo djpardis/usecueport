@@ -1,16 +1,19 @@
 <header class="site-header">
   <div class="container header-inner">
-    <a class="logo-lockup" href="/" aria-label="{{ site.name }}">
-      <svg class="logo-mark" viewBox="0 0 1024 1024" aria-hidden="true" focusable="false">
-        <rect x="128" y="584" width="120" height="440" fill="currentColor" opacity="0.55"/>
-        <rect x="416" y="248" width="120" height="776" fill="currentColor" opacity="0.55"/>
-        <rect x="584" y="440" width="120" height="584" fill="currentColor" opacity="0.55"/>
-        <rect x="764" y="320" width="120" height="704" fill="currentColor" opacity="0.55"/>
-        <rect x="252" y="128" width="136" height="136" fill="currentColor"/>
-        <rect x="296" y="264" width="48" height="760" fill="currentColor"/>
-      </svg>
-      <span class="brand-title">{{ site.name }}</span>
-    </a>
+    <div class="brand-lockup">
+      <a class="logo-lockup" href="/" aria-label="{{ site.name }}">
+        <svg class="logo-mark" viewBox="0 0 1024 1024" aria-hidden="true" focusable="false">
+          <rect x="128" y="584" width="120" height="440" fill="currentColor" opacity="0.55"/>
+          <rect x="416" y="248" width="120" height="776" fill="currentColor" opacity="0.55"/>
+          <rect x="584" y="440" width="120" height="584" fill="currentColor" opacity="0.55"/>
+          <rect x="764" y="320" width="120" height="704" fill="currentColor" opacity="0.55"/>
+          <rect x="252" y="128" width="136" height="136" fill="currentColor"/>
+          <rect x="296" y="264" width="48" height="760" fill="currentColor"/>
+        </svg>
+        <span class="brand-title">{{ site.name }}</span>
+      </a>
+      <a class="version-tag" href="/changelog/#{{ site.releaseAnchor }}" aria-label="Cueport {{ site.version }} changelog">v{{ site.version }}</a>
+    </div>
     <nav class="site-nav" aria-label="Primary">
       <ul>
         {% for item in site.nav %}
@@ -18,7 +21,9 @@
             <a href="{{ item.href }}"{% if item.icon == "radio" %} class="nav-radio"{% endif %} aria-label="{{ item.label }}" title="{{ item.label }}"{% if item.external %} target="_blank" rel="noopener noreferrer"{% endif %}{% if page.url == item.href %} aria-current="page"{% endif %}>
               <span class="nav-icon" aria-hidden="true">
                 {% if item.icon == "features" %}
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="square" stroke-linejoin="miter"><rect x="4" y="4" width="6" height="6"/><rect x="14" y="4" width="6" height="6"/><rect x="9" y="14" width="6" height="6"/><path d="M10 7h4"/><path d="M12 10v4"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="square" stroke-linejoin="miter"><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="6.5" r="2.5"/><circle cx="12" cy="17.5" r="2.5"/><path d="M8.8 7.6 11 14.8"/><path d="M15.2 7.6 13 14.8"/></svg>
+                {% elif item.icon == "changelog" %}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="square" stroke-linejoin="miter"><path d="M6 4h8l4 4v12H6z"/><path d="M14 4v4h4"/><path d="M9 13h6"/><path d="M9 17h4"/></svg>
                 {% elif item.icon == "signup" %}
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
                 {% elif item.icon == "download" %}
@@ -29,7 +34,7 @@
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="square" stroke-linejoin="miter"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 5 0c0 1.6-2.5 2-2.5 4"/><path d="M12 17h.01"/></svg>
                 {% endif %}
               </span>
-              <span class="nav-label">{% for p in edition.pages %}{% if p.href == item.href %}<span class="nav-folio">{{ p.folio }}</span>{% endif %}{% endfor %}{{ item.label }}</span>
+              <span class="nav-label">{{ item.label }}</span>
               {% if item.icon == "radio" %}
                 <span class="nav-short" aria-hidden="true">Radio</span>
               {% endif %}

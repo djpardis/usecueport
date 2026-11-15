@@ -1,0 +1,70 @@
+{
+  "currentAnchor": "v1-1-0",
+  "streams": [
+    {
+      "id": "desktop",
+      "label": "Desktop",
+      "title": "Desktop releases",
+      "summary": "macOS changes for library management, playback, Serato write-back, Cueport Direct, and local analysis.",
+      "entries": [
+        {
+          "id": "desktop-1-1-0",
+          "linkLabel": "v1.1.0",
+          "platformLabel": "macOS",
+          "version": "1.1.0",
+          "title": "Cueport 1.1.0 for macOS.",
+          "summary": "This release reads local Serato libraries, adds experimental Cueport Direct libraries from music folders, and plays tracks with waveform context, cue markers, skip controls, and continuous playback.",
+          "items": [
+            {
+              "title": "Library work.",
+              "text": "Create, rename, delete, add tracks to, and manually reorder collections before publishing changes back."
+            },
+            {
+              "title": "Review before write-back.",
+              "text": "Edit cue points, comments, and colors in a local working layer, then review changes before publishing to Serato."
+            },
+            {
+              "title": "Cueport Direct.",
+              "text": "Experimental in this release. <a href=\"https://github.com/djpardis/trailmix/releases/tag/v0.1.0-alpha.2\" target=\"_blank\" rel=\"noopener noreferrer\">trail mix 0.1.0-alpha.2</a> analyzes BPM, key, waveform height, and color hints locally from selected music folders."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mobile",
+      "label": "Mobile",
+      "title": "Mobile releases",
+      "summary": "iPhone changes for sync, cached playback, pairing, and queued edits.",
+      "entries": [
+        {
+          "id": "mobile-1-1-0",
+          "linkLabel": "v1.1.0",
+          "platformLabel": "iPhone",
+          "version": "1.1.0",
+          "build": "124",
+          "title": "Cueport 1.1.0 for iPhone.",
+          "summary": "This release syncs selected libraries from desktop to iPhone for cached playback and prep.",
+          "items": [
+            {
+              "title": "Playback.",
+              "text": "Use lock-screen playback controls, waveform context, cue markers, and offline audio."
+            },
+            {
+              "title": "Queued edits.",
+              "text": "Queue cue, note, color, and collection edits locally before desktop review."
+            },
+            {
+              "title": "Pairing.",
+              "text": "Pair with desktop over local Wi-Fi, Bonjour rediscovery, or Connect directly to Mac for public Wi-Fi environments."
+            },
+            {
+              "title": "Sync model.",
+              "text": "The phone keeps a local cache with queued edits reviewed on desktop."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

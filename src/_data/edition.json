@@ -1,7 +1,8 @@
 {
   "pages": [
-    { "folio": "A1", "label": "Front page", "href": "/" },
-    { "folio": "A2", "label": "How it works", "href": "/how-it-works/" },
-    { "folio": "A3", "label": "Support", "href": "/support/" }
+    { "label": "Front page", "href": "/" },
+    { "label": "How it works", "href": "/how-it-works/" },
+    { "label": "Support", "href": "/support/" },
+    { "label": "Changelog", "href": "/changelog/" }
   ]
 }

@@ -13,15 +13,13 @@ homeMain: true
     <div class="container home-hero-inner home-hero-inner--single home-front">
       <div class="home-front-col home-front-main">
         <div class="home-copy home-copy--lede">
-          <h1 class="home-title" aria-label="{{ site.subtitle }}"><span class="home-title-line" aria-hidden="true">Prep, play, and sync</span><span class="home-title-line" aria-hidden="true">your DJ library</span><span class="home-title-line" aria-hidden="true">across devices.</span></h1>
-          <p class="home-intro home-sub">{{ site.homeDescription }}</p>
+          <p class="home-intro home-sub" role="heading" aria-level="1"><strong>Music prep and playback on every device.</strong> {{ site.homeDescription }}</p>
         </div>
       <section class="home-section home-section--local" aria-labelledby="local-title">
         {% include "partials/local-waveform.njk" %}
         <div class="container home-section-grid">
           <div class="section-head">
             <p class="home-eyebrow home-eyebrow--badge" id="local-title">LOCAL-FIRST SOFTWARE</p>
-            <p>Cueport is for people who own their music and want it available beyond one laptop. Tracks, cues, crates, and notes move between your devices, so listening, prep, and playback can happen anywhere.</p>
           </div>
           <ul class="benefit-grid">
             <li class="benefit">
@@ -70,7 +68,7 @@ homeMain: true
           <div class="home-social">
             <div class="radio-ad">
               <p class="radio-ad-title">Product launch news from Cueport, <span class="nowrap">behind-the-scenes</span> notes, and DJ conversations</p>
-              <p class="radio-ad-links">{% for item in site.social %}<a href="{{ item.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ item.ariaLabel }}">{{ item.label }} <span aria-hidden="true">↗</span></a>{% endfor %}</p>
+              <p class="radio-ad-links">{% for item in site.social %}<a href="{{ item.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ item.ariaLabel }}">{{ item.label }}</a>{% endfor %}</p>
             </div>
           </div>
         </div>
@@ -85,7 +83,6 @@ homeMain: true
       </section>
       </div>
     </div>
-    {% include "partials/folio.njk" %}
   </section>
 
 </div>
