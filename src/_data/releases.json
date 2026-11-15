@@ -12,6 +12,7 @@
           "linkLabel": "v1.1.0",
           "platformLabel": "macOS",
           "version": "1.1.0",
+          "releaseType": "feature",
           "title": "Cueport 1.1.0 for macOS.",
           "summary": "This release reads local Serato libraries, adds experimental Cueport Direct libraries from music folders, and plays tracks with waveform context, cue markers, skip controls, and continuous playback.",
           "items": [
@@ -43,6 +44,7 @@
           "platformLabel": "iPhone",
           "version": "1.1.0",
           "build": "124",
+          "releaseType": "feature",
           "title": "Cueport 1.1.0 for iPhone.",
           "summary": "This release syncs selected libraries from desktop to iPhone for cached playback and prep.",
           "items": [

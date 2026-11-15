@@ -40,6 +40,21 @@ Output goes to `_site/`.
   Markdown summaries for AI agents generated from the same data files.
 - `src/assets/css/style.css`: styles.
 
+## Download and licensing worker
+
+`workers/downloads/src/index.ts` serves signed DMG downloads from R2. It also
+contains disabled-by-default Lemon Squeezy entitlement endpoints for future
+desktop licensing work:
+
+- `POST /license/activate`
+- `POST /license/validate`
+- `POST /webhooks/lemon-squeezy`
+
+These endpoints return `licensing_not_configured` until private deployment
+configuration binds D1 and secrets. Keep real D1 database ids, Lemon Squeezy
+secrets, webhook secrets, and operator-specific config out of this public repo.
+The starter D1 schema is in `workers/downloads/entitlements.sql`.
+
 ## Deploy
 
 Any static host works. The `_site` folder is the build output. Suggested options are Netlify, Cloudflare Pages, or GitHub Pages.
