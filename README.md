@@ -51,9 +51,19 @@ desktop licensing work:
 - `POST /webhooks/lemon-squeezy`
 
 These endpoints return `licensing_not_configured` until private deployment
-configuration binds D1 and secrets. Keep real D1 database ids, Lemon Squeezy
-secrets, webhook secrets, and operator-specific config out of this public repo.
-The starter D1 schema is in `workers/downloads/entitlements.sql`.
+configuration binds D1 and Lemon Squeezy settings:
+
+- `LICENSE_ENTITLEMENTS`: D1 binding.
+- `LEMON_SQUEEZY_STORE_ID`: expected store id.
+- `LEMON_SQUEEZY_PRODUCT_ID`: expected Cueport desktop product id.
+- `LEMON_SQUEEZY_BETA_VARIANT_IDS`: comma-separated private beta variant ids.
+- `LEMON_SQUEEZY_WEBHOOK_SECRET`: webhook signing secret.
+- `CUEPORT_PAID_LAUNCH_DATE`: public paid launch date for comped founder update
+  windows.
+
+Keep real D1 database ids, Lemon Squeezy ids, webhook secrets, and
+operator-specific config out of this public repo. The starter D1 schema is in
+`workers/downloads/entitlements.sql`.
 
 ## Deploy
 
