@@ -4,12 +4,12 @@
   "url": "https://usecueport.com",
   "radioUrl": "https://usecueport.substack.com/",
   "subtitle": "Music prep and playback on every device.",
-  "description": "Music prep and playback on every device. Cueport is for people who own their music. Tracks, cues, crates, and notes move between your devices, so prep and playback can happen beyond your laptop.",
-  "homeDescription": "Cueport is for people who own their music. Tracks, cues, crates, and notes move between your devices, so prep and playback can happen beyond your laptop.",
+  "description": "Music prep and playback on every device. Cueport is for people who own their music. Tracks, cues, crates, and notes move between devices, so prep and playback can happen beyond the laptop.",
+  "homeDescription": "Cueport is for people who own their music. Tracks, cues, crates, and notes move between devices, so prep and playback can happen beyond the laptop.",
   "email": "hello@usecueport.com",
   "version": "1.1.0",
   "releaseAnchor": "v1-1-0",
-  "assetVersion": "20261113-brand-release-9",
+  "assetVersion": "20261113-brand-release-17",
   "dmgFilename": "Cueport_1.1.0_aarch64.dmg",
   "social": [
     {
@@ -58,7 +58,7 @@
     {
       "label": "Cueport Radio",
       "href": "https://usecueport.substack.com/",
-      "icon": "radio",
+      "icon": "substack",
       "external": true
     }
   ]

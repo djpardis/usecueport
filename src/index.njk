@@ -68,7 +68,22 @@ homeMain: true
           <div class="home-social">
             <div class="radio-ad">
               <p class="radio-ad-title">Product launch news from Cueport, <span class="nowrap">behind-the-scenes</span> notes, and DJ conversations</p>
-              <p class="radio-ad-links">{% for item in site.social %}<a href="{{ item.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ item.ariaLabel }}">{{ item.label }}</a>{% endfor %}</p>
+              <p class="radio-ad-links">
+                {% for item in site.social %}
+                  <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ item.ariaLabel }}">
+                    <span class="radio-ad-link-label">{{ item.label }}</span>
+                    <span class="radio-ad-link-icon" aria-hidden="true">
+                      {% if item.icon == "substack" %}
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 4h14v2.5H5z"/><path d="M5 8.25h14v2.5H5z"/><path d="M5 12.5h14V21l-7-4-7 4z"/></svg>
+                      {% elif item.icon == "youtube" %}
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="square" stroke-linejoin="miter"><path d="M4 7h16v10H4z"/><path d="m10 9 5 3-5 3z"/></svg>
+                      {% elif item.icon == "instagram" %}
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="square" stroke-linejoin="miter"><rect x="5" y="5" width="14" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M16.5 7.5h.01"/></svg>
+                      {% endif %}
+                    </span>
+                  </a>
+                {% endfor %}
+              </p>
             </div>
           </div>
         </div>
