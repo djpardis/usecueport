@@ -5728,6 +5728,68 @@ body:has(main.home-main) .site-header {
   }
 }
 
+/* Flyposter structure pass: denser rules, hard labels, and print-like rhythm. */
+body:has(main.viewport-main) .site-header {
+  border-bottom: 2px solid var(--text);
+}
+.viewport-main > .container,
+.viewport-main > .release-page,
+.viewport-main > .download-page {
+  padding-top: clamp(16px, 2.2vw, 28px);
+}
+.viewport-main .page-head {
+  margin-bottom: clamp(18px, 2.4vw, 26px);
+  padding-bottom: clamp(14px, 1.8vw, 20px);
+  border-bottom: 2px solid var(--text);
+}
+.paper-cols,
+.paper-qa,
+.release-streams {
+  margin-top: 0;
+  padding-top: clamp(16px, 2vw, 22px);
+  border-top: 0;
+}
+.paper-cols,
+.paper-qa {
+  line-height: 1.48;
+}
+.paper-col,
+.paper-qa-item {
+  padding-bottom: clamp(20px, 2.4vw, 28px);
+}
+.paper-head,
+.paper-q,
+.release-note-title {
+  letter-spacing: -0.025em;
+}
+.paper-num {
+  border-radius: 0;
+  background: var(--text);
+  color: var(--surface);
+}
+.paper-kicker,
+.purchase-kicker,
+.release-note-platform,
+.license-copy-grid h3 {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: var(--type-label);
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.release-version-list a {
+  border: 1.5px solid var(--text);
+  background: transparent;
+  color: var(--text);
+}
+.release-version-list a:hover,
+.release-version-list a:focus-visible {
+  background: var(--accent);
+  color: var(--text);
+  text-decoration: none;
+}
+
 /* Shared Buy button states. Keep every purchase entry point visually identical. */
 .site-nav a.nav-buy,
 .site-nav a.nav-buy[aria-current="page"],
