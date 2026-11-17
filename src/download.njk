@@ -17,6 +17,20 @@ eleventyExcludeFromCollections: true
           playback.</p>
       </div>
 
+      <aside class="purchase-card" aria-labelledby="purchase-title">
+        <div class="purchase-main">
+          <p class="purchase-kicker">{{ site.commerce.macPriceLabel }}</p>
+          <h2 id="purchase-title">{{ site.commerce.macPrice }}</h2>
+          <p class="purchase-summary">One-time license for personal use, with
+            one year of feature updates.</p>
+        </div>
+        {%- if site.commerce.macCheckoutUrl %}
+          <a class="purchase-button" href="{{ site.commerce.macCheckoutUrl }}" target="_blank" rel="noopener noreferrer">Buy license</a>
+        {%- else %}
+          <a class="purchase-button" href="#">Buy license</a>
+        {%- endif %}
+      </aside>
+
       <section class="download-license-copy" aria-labelledby="license-title">
         <p class="paper-kicker">License details</p>
         <h2 id="license-title">A one-time personal license for Cueport for Mac.</h2>
@@ -56,25 +70,14 @@ eleventyExcludeFromCollections: true
           </section>
           <section>
             <h3>Support</h3>
-            <p>For activation, download, or refund questions, email
+            <p>Read the <a href="/license/">license terms</a>,
+              <a href="/refunds/">refund policy</a>, and
+              <a href="/privacy/">privacy policy</a>. For activation or
+              download questions, email
               <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
           </section>
         </div>
       </section>
     </div>
-
-    <aside class="purchase-card" aria-labelledby="purchase-title">
-      <div class="purchase-main">
-        <p class="purchase-kicker">{{ site.commerce.macPriceLabel }}</p>
-        <h2 id="purchase-title">{{ site.commerce.macPrice }}</h2>
-        <p class="purchase-summary">One-time license for personal use, with one
-          year of feature updates.</p>
-      </div>
-      {%- if site.commerce.macCheckoutUrl %}
-        <a class="purchase-button" href="{{ site.commerce.macCheckoutUrl }}" target="_blank" rel="noopener noreferrer">Buy license</a>
-      {%- else %}
-        <a class="purchase-button" href="#">Buy license</a>
-      {%- endif %}
-    </aside>
   </section>
 </div>

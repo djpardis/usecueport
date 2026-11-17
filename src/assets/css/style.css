@@ -479,6 +479,24 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   white-space: nowrap;
   align-self: center;
 }
+.footer-legal {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: 0;
+  color: currentColor;
+}
+.footer-legal a {
+  color: currentColor;
+  text-decoration-color: rgba(82, 82, 91, 0.45);
+  text-underline-offset: 2px;
+}
+.footer-legal a:hover,
+.footer-legal a:focus-visible {
+  color: var(--text);
+  text-decoration-color: currentColor;
+}
 .footer-copyright-short { display: none; }
 @media (max-width: 640px) {
   .footer-copyright-full { display: none; }
@@ -608,6 +626,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
     justify-self: start;
   }
   .footer-meta {
+    flex-wrap: wrap;
     justify-self: start;
     justify-content: flex-start;
     gap: 10px;
@@ -1330,10 +1349,7 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   margin-bottom: 6px;
 }
 .download-sheet {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(278px, 330px);
-  gap: clamp(24px, 4vw, 56px);
-  align-items: start;
+  display: block;
 }
 .download-main {
   min-width: 0;
@@ -1365,22 +1381,28 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
 .purchase-card {
   position: relative;
   min-width: 0;
-  align-self: start;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 14px;
-  padding: 0 0 0 clamp(16px, 2.4vw, 28px);
-  border-left: 2px solid var(--text);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.4fr);
+  align-items: center;
+  gap: clamp(18px, 3vw, 42px);
+  margin: clamp(18px, 2.6vw, 32px) 0 clamp(22px, 3vw, 36px);
+  padding: clamp(14px, 1.8vw, 20px) 0;
+  border-top: 2px solid var(--text);
+  border-bottom: 2px solid var(--text);
   background: transparent;
   color: var(--text);
   box-shadow: none;
 }
 .purchase-main {
   min-width: 0;
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  align-items: center;
+  gap: 8px clamp(18px, 3vw, 34px);
 }
 .purchase-kicker {
-  margin: 0 0 8px;
+  grid-column: 1 / -1;
+  margin: 0;
   color: var(--accent);
   font-family: var(--font-mono);
   font-size: var(--type-label);
@@ -1390,9 +1412,9 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   text-transform: uppercase;
 }
 .purchase-card h2 {
-  margin: 0 0 8px;
+  margin: 0;
   color: var(--text);
-  font-size: clamp(2rem, 3.3vw, 3rem);
+  font-size: clamp(2.5rem, 5vw, 4.35rem);
   line-height: 1.12;
   letter-spacing: -0.035em;
 }
@@ -1402,19 +1424,21 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
   color: var(--text);
   font-size: var(--type-body);
   line-height: 1.45;
+  max-width: 32rem;
 }
 .purchase-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 50px;
+  min-height: 58px;
+  width: 100%;
   margin: 0;
   padding: 0 22px;
   border: 1.5px dotted #ffffff;
   background: var(--text);
   color: #ffffff;
   font-family: var(--font-sans);
-  font-size: var(--type-body);
+  font-size: var(--type-lead);
   font-weight: 700;
   text-align: center;
   text-decoration: none;
@@ -1822,12 +1846,6 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
     padding-top: 24px;
     padding-bottom: 44px;
   }
-  .download-sheet {
-    grid-template-columns: 1fr;
-  }
-  .download-sheet {
-    gap: 18px;
-  }
   .download-copy {
     margin-bottom: 18px;
   }
@@ -1836,7 +1854,12 @@ p { margin: 0 0 12px; color: var(--text-secondary); font-size: var(--type-body);
     font-size: clamp(2rem, 3.3vw, 3rem);
   }
   .purchase-card {
-    padding: 22px;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 16px 0;
+  }
+  .purchase-main {
+    grid-template-columns: 1fr;
   }
   .download-landing {
     grid-template-columns: 1fr;
@@ -5703,4 +5726,53 @@ body:has(main.home-main) .site-header {
   .home-section--local .benefit h3::after {
     content: ". ";
   }
+}
+
+/* Shared Buy button states. Keep every purchase entry point visually identical. */
+.site-nav a.nav-buy,
+.site-nav a.nav-buy[aria-current="page"],
+.purchase-button,
+.howto-step .setup-download--request {
+  border: 2px solid var(--text);
+  border-radius: 0;
+  background: var(--accent);
+  box-shadow: none;
+  color: var(--text);
+  text-decoration: none;
+  text-decoration-color: transparent;
+  transition: background 0.12s ease, border-color 0.12s ease, transform 0.12s ease;
+}
+.site-nav a.nav-buy:hover,
+.site-nav a.nav-buy:focus-visible,
+.purchase-button:hover,
+.purchase-button:focus-visible,
+.howto-step .setup-download--request:hover,
+.howto-step .setup-download--request:focus-visible {
+  border-color: var(--text);
+  background: #d45517;
+  color: var(--text);
+  text-decoration: none;
+  text-decoration-color: transparent;
+}
+.site-nav a.nav-buy:focus-visible,
+.purchase-button:focus-visible,
+.howto-step .setup-download--request:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+}
+.site-nav a.nav-buy:active,
+.purchase-button:active,
+.howto-step .setup-download--request:active {
+  border-color: var(--text);
+  background: #9a3412;
+  color: var(--text);
+  transform: none;
+}
+.site-nav a.nav-buy .nav-icon,
+.site-nav a.nav-buy .nav-label,
+.howto-step .setup-download--request span:last-child {
+  color: var(--text);
+}
+.howto-step .setup-download--request .setup-download-soon {
+  color: var(--text);
 }
