@@ -31,7 +31,11 @@ viewportMain: true
             <h3 class="release-note-title"><a class="paper-anchor" href="#{{ entry.id }}">{{ entry.linkLabel }}</a></h3>
             <p class="paper-dek"><strong>{{ entry.title }}</strong> {{ entry.summary }}</p>
             {% for item in entry.items %}
-              <p class="paper-item"><strong>{{ item.title }}</strong> {{ item.text | safe }}</p>
+              {% if item.trailMixAnalysis %}
+                <p class="paper-item"><strong>{{ item.title }}{% if item.badge %} <span class="status-tag">{{ item.badge }}</span>.{% endif %}</strong> {{ item.textBeforeTrailMix }} <a href="{{ site.trailMix.url }}" target="_blank" rel="noopener noreferrer">trail mix {{ site.trailMix.version }}</a>{{ item.textAfterTrailMix }}</p>
+              {% else %}
+                <p class="paper-item"><strong>{{ item.title }}{% if item.badge %} <span class="status-tag">{{ item.badge }}</span>.{% endif %}</strong> {{ item.text | safe }}</p>
+              {% endif %}
             {% endfor %}
           </article>
         {% endfor %}

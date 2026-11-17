@@ -8,7 +8,8 @@
         "text": "Read crates, subcrates, tracks, hot cues, BPM, key, colors, comments, and beatgrid markers from your local <code>_Serato_</code> folder."
       },
       {
-        "title": "Cueport Direct.",
+        "title": "Cueport Direct",
+        "badge": "beta",
         "text": "Add music files instead of linking Serato. Cueport keeps the audio in place and stores collections, cues, notes, colors, restore points, and analysis in its own database."
       },
       {

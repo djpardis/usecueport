@@ -9,12 +9,47 @@ homeMain: true
   <section class="home-hero">
     {% include "partials/hero-waveform.njk" %}
     <div class="home-spread-bars">{% include "partials/local-waveform.njk" %}</div>
-    <div class="home-tail-bars">{% include "partials/workflow-waveform.njk" %}</div>
+    <div class="home-tail-bars">{% include "partials/hero-waveform.njk" %}</div>
     <div class="container home-hero-inner home-hero-inner--single home-front">
       <div class="home-front-col home-front-main">
         <div class="home-copy home-copy--lede">
-          <p class="home-intro home-sub" role="heading" aria-level="1"><strong>Music prep and playback on every device.</strong> {{ site.homeDescription }}</p>
+          <p class="home-intro home-sub" role="heading" aria-level="1"><strong>{{ site.subtitle }}</strong> {{ site.homeDescription }}</p>
         </div>
+      </div>
+      <div class="home-front-col home-front-side">
+        <div class="home-actions home-actions--social" aria-label="Social links">
+          <div class="home-social">
+            <div class="radio-ad">
+              <p class="radio-ad-title">Product launch news from Cueport, <span class="nowrap">behind-the-scenes</span> notes, and DJ conversations</p>
+              <p class="radio-ad-links">
+                {% for item in site.social %}
+                  <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ item.ariaLabel }}">
+                    <span class="radio-ad-link-label">{{ item.label }}</span>
+                    <span class="radio-ad-link-icon" aria-hidden="true">
+                      {% if item.icon == "substack" %}
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 4h14v2.5H5z"/><path d="M5 8.25h14v2.5H5z"/><path d="M5 12.5h14V21l-7-4-7 4z"/></svg>
+                      {% elif item.icon == "youtube" %}
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="square" stroke-linejoin="miter"><path d="M4 7h16v10H4z"/><path d="m10 9 5 3-5 3z"/></svg>
+                      {% elif item.icon == "instagram" %}
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="square" stroke-linejoin="miter"><rect x="5" y="5" width="14" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M16.5 7.5h.01"/></svg>
+                      {% endif %}
+                    </span>
+                  </a>
+                {% endfor %}
+              </p>
+            </div>
+          </div>
+        </div>
+      <section class="home-section home-section--workflow" aria-labelledby="workflow-title">
+        {% include "partials/workflow-waveform.njk" %}
+        <div class="container home-section-grid">
+          <div class="section-head">
+            <p class="home-eyebrow home-eyebrow--badge" id="workflow-title">SETUP GUIDE</p>
+          </div>
+          {% include "partials/setup-diagram.njk" %}
+        </div>
+      </section>
+      </div>
       <section class="home-section home-section--local" aria-labelledby="local-title">
         {% include "partials/local-waveform.njk" %}
         <div class="container home-section-grid">
@@ -61,42 +96,6 @@ homeMain: true
           </ul>
         </div>
       </section>
-
-      </div>
-      <div class="home-front-col home-front-side">
-        <div class="home-actions home-actions--social" aria-label="Social links">
-          <div class="home-social">
-            <div class="radio-ad">
-              <p class="radio-ad-title">Product launch news from Cueport, <span class="nowrap">behind-the-scenes</span> notes, and DJ conversations</p>
-              <p class="radio-ad-links">
-                {% for item in site.social %}
-                  <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ item.ariaLabel }}">
-                    <span class="radio-ad-link-label">{{ item.label }}</span>
-                    <span class="radio-ad-link-icon" aria-hidden="true">
-                      {% if item.icon == "substack" %}
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 4h14v2.5H5z"/><path d="M5 8.25h14v2.5H5z"/><path d="M5 12.5h14V21l-7-4-7 4z"/></svg>
-                      {% elif item.icon == "youtube" %}
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="square" stroke-linejoin="miter"><path d="M4 7h16v10H4z"/><path d="m10 9 5 3-5 3z"/></svg>
-                      {% elif item.icon == "instagram" %}
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="square" stroke-linejoin="miter"><rect x="5" y="5" width="14" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M16.5 7.5h.01"/></svg>
-                      {% endif %}
-                    </span>
-                  </a>
-                {% endfor %}
-              </p>
-            </div>
-          </div>
-        </div>
-      <section class="home-section home-section--workflow" aria-labelledby="workflow-title">
-        {% include "partials/workflow-waveform.njk" %}
-        <div class="container home-section-grid">
-          <div class="section-head">
-            <p class="home-eyebrow home-eyebrow--badge" id="workflow-title">SETUP GUIDE</p>
-          </div>
-          {% include "partials/setup-diagram.njk" %}
-        </div>
-      </section>
-      </div>
     </div>
   </section>
 

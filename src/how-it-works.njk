@@ -17,7 +17,7 @@ viewportMain: true
       <h2 class="paper-head"><span class="paper-num" aria-hidden="true">{{ loop.index }}</span>{{ step.title }}</h2>
       <p class="paper-dek">{{ step.summary }}</p>
       {%- for item in step.items %}
-      <p class="paper-item"><strong>{{ item.title }}</strong> {{ item.text | safe }}</p>
+      <p class="paper-item"><strong>{{ item.title }}{% if item.badge %} <span class="status-tag">{{ item.badge }}</span>.{% endif %}</strong> {{ item.text | safe }}</p>
       {%- endfor %}
     </article>
     {%- endfor %}

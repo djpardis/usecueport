@@ -1,4 +1,6 @@
 const product = require("./src/_data/product.json");
+const releases = require("./src/_data/releases.json");
+const site = require("./src/_data/site.json");
 
 const decodeEntities = (s) =>
   s
@@ -49,6 +51,7 @@ module.exports = function (eleventyConfig) {
         );
       }
     }
+    assertTrailMixReleaseNotesUseSiteData();
   });
 
   return {
@@ -63,3 +66,24 @@ module.exports = function (eleventyConfig) {
     markdownTemplateEngine: "njk",
   };
 };
+
+function assertTrailMixReleaseNotesUseSiteData() {
+  let trailMixItemCount = 0;
+  for (const stream of releases.streams || []) {
+    for (const entry of stream.entries || []) {
+      for (const item of entry.items || []) {
+        if (item.trailMixAnalysis) {
+          trailMixItemCount += 1;
+        }
+        if (typeof item.text === "string" && item.text.includes("github.com/djpardis/trailmix/releases")) {
+          throw new Error(
+            "[releases] Trail mix release links must render from site.trailMix, not hardcoded release note text."
+          );
+        }
+      }
+    }
+  }
+  if (trailMixItemCount > 0 && (!site.trailMix?.version || !site.trailMix?.url)) {
+    throw new Error("[releases] site.trailMix.version and site.trailMix.url are required for release notes.");
+  }
+}

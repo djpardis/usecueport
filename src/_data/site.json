@@ -3,14 +3,18 @@
   "domain": "usecueport.com",
   "url": "https://usecueport.com",
   "radioUrl": "https://usecueport.substack.com/",
-  "subtitle": "Music prep and playback on every device.",
-  "description": "Music prep and playback on every device. Cueport is for people who own their music. Tracks, cues, crates, and notes move between devices, so prep and playback can happen beyond the laptop.",
-  "homeDescription": "Cueport is for people who own their music. Tracks, cues, crates, and notes move between devices, so prep and playback can happen beyond the laptop.",
+  "subtitle": "Local-first music prep and playback.",
+  "description": "Local-first music prep and playback. Cueport is for people who own their music. Tracks, cues, crates, and notes move between your phone and laptop, so prep and playback can happen on every device.",
+  "homeDescription": "Cueport is for people who own their music. Tracks, cues, crates, and notes move between your phone and laptop, so prep and playback can happen on every device.",
   "email": "hello@usecueport.com",
   "version": "1.1.0",
   "releaseAnchor": "v1-1-0",
   "assetVersion": "20261113-brand-release-17",
   "dmgFilename": "Cueport_1.1.0_aarch64.dmg",
+  "trailMix": {
+    "version": "0.1.0-alpha.2",
+    "url": "https://github.com/djpardis/trailmix/releases/tag/v0.1.0-alpha.2"
+  },
   "social": [
     {
       "label": "Substack",
@@ -39,6 +43,11 @@
       "action": "https://form.usecueport.com/submit/mailing-list"
     }
   },
+  "commerce": {
+    "macPrice": "$49",
+    "macPriceLabel": "Founding license",
+    "macCheckoutUrl": ""
+  },
   "nav": [
     {
       "label": "How it works",
@@ -54,6 +63,11 @@
       "label": "Changelog",
       "href": "/changelog/",
       "icon": "changelog"
+    },
+    {
+      "label": "Buy",
+      "href": "/download/",
+      "icon": "buy"
     },
     {
       "label": "Cueport Radio",

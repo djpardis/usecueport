@@ -18,7 +18,7 @@
       <ul>
         {% for item in site.nav %}
           <li>
-            <a href="{{ item.href }}"{% if item.icon == "radio" or item.icon == "substack" %} class="nav-radio"{% endif %} aria-label="{{ item.label }}" title="{{ item.label }}"{% if item.external %} target="_blank" rel="noopener noreferrer"{% endif %}{% if page.url == item.href %} aria-current="page"{% endif %}>
+            <a href="{{ item.href }}"{% if item.icon == "radio" or item.icon == "substack" %} class="nav-radio"{% elif item.icon == "buy" %} class="nav-buy"{% endif %} aria-label="{{ item.label }}" title="{{ item.label }}"{% if item.external %} target="_blank" rel="noopener noreferrer"{% endif %}{% if page.url == item.href %} aria-current="page"{% endif %}>
               <span class="nav-icon" aria-hidden="true">
                 {% if item.icon == "features" %}
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="square" stroke-linejoin="miter"><path d="M7 4v16"/><path d="M17 4v16"/><path d="M4 9h6"/><path d="M14 15h6"/><path d="M6 7h2v4H6z"/><path d="M16 13h2v4h-2z"/></svg>
@@ -28,6 +28,8 @@
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
                 {% elif item.icon == "download" %}
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+                {% elif item.icon == "buy" %}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="square" stroke-linejoin="miter"><path d="M6 7h12v13H6z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
                 {% elif item.icon == "radio" %}
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="square" stroke-linejoin="miter"><path d="M4 9h17v11H4z"/><path d="M7 9l10-6"/><path d="M7 13h5"/><path d="M7 16h5"/><circle cx="16.5" cy="14.5" r="2.75"/></svg>
                 {% elif item.icon == "substack" %}
