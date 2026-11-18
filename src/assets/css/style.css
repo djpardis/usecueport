@@ -6085,16 +6085,7 @@ body:has(main.viewport-main) .site-header {
   grid-template-columns: minmax(0, 1fr) auto;
 }
 .product-demo-collection.is-nested {
-  position: relative;
   padding-left: 12px;
-}
-.product-demo-collection.is-nested::before {
-  content: "";
-  position: absolute;
-  left: 4px;
-  top: 0;
-  bottom: 0;
-  border-left: 1px solid rgba(24, 24, 27, 0.22);
 }
 .product-demo-collection.is-selected {
   background: var(--accent);

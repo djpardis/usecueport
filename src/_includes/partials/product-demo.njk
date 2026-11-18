@@ -93,8 +93,8 @@
           </div>
 
           <div class="product-demo-mac-body">
-            <aside class="product-demo-sidebar" aria-label="Serato crates">
-              <p>Crates</p>
+            <aside class="product-demo-sidebar" aria-label="Serato collections">
+              <p>Collections</p>
               {%- for collection in productDemo.collections %}
                 <span class="product-demo-collection is-{{ collection.status }}{% if collection.level %} is-nested{% endif %}">
                   <strong>{{ collection.name }}</strong>
@@ -147,7 +147,7 @@
                     <strong>Serato Library</strong>
                     <em>Active</em>
                   </span>
-                  <p>Import crates, playlists, cues, and metadata from an existing Serato library.</p>
+                  <p>Import collections, playlists, cues, and metadata from an existing Serato library.</p>
                   <code>{{ productDemo.sourcePath }}</code>
                   <button type="button">Update folder</button>
                 </div>

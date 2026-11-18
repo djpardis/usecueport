@@ -74,6 +74,16 @@
       "status": "selected"
     },
     {
+      "name": "Basement club",
+      "count": 12,
+      "status": "clean"
+    },
+    {
+      "name": "Radio bag",
+      "count": 9,
+      "status": "clean"
+    },
+    {
       "name": "Afterhours",
       "count": 10,
       "status": "clean"
