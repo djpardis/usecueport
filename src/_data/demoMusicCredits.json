@@ -1,0 +1,134 @@
+{
+  "lastChecked": "November 15, 2026",
+  "audioLicense": {
+    "name": "Pixabay Content License",
+    "url": "https://pixabay.com/service/license-summary/"
+  },
+  "artworkLicense": {
+    "name": "Pexels License",
+    "url": "https://www.pexels.com/license/"
+  },
+  "note": "Cueport uses these tracks and images as integrated demo content in website, screenshot, and review materials. They are not offered as a standalone music pack or stock asset collection.",
+  "tracks": [
+    {
+      "title": "DJ Dance",
+      "artist": "Play House",
+      "audioSource": "Pixabay",
+      "audioUrl": "https://pixabay.com/music/206162/",
+      "artworkSource": "Pexels 6906392 by Daniel Goosen",
+      "artworkUrl": "https://www.pexels.com/photo/6906392/"
+    },
+    {
+      "title": "Abstract EDM",
+      "artist": "Euro Sound",
+      "audioSource": "Pixabay",
+      "audioUrl": "https://pixabay.com/music/123988/",
+      "artworkSource": "Pexels 8771754 by Steve",
+      "artworkUrl": "https://www.pexels.com/photo/8771754/"
+    },
+    {
+      "title": "Feel the Groove",
+      "artist": "Justin Callaghan",
+      "audioSource": "Pixabay",
+      "audioUrl": "https://pixabay.com/music/430800/",
+      "artworkSource": "Pexels 10066411 by Alexey Demidov",
+      "artworkUrl": "https://www.pexels.com/photo/10066411/"
+    },
+    {
+      "title": "Drift",
+      "artist": "Vibe Depot",
+      "audioSource": "Pixabay",
+      "audioUrl": "https://pixabay.com/music/372300/",
+      "artworkSource": "Pexels 5990739 by Murvl",
+      "artworkUrl": "https://www.pexels.com/photo/5990739/"
+    },
+    {
+      "title": "Random Drop",
+      "artist": "Play House",
+      "audioSource": "Pixabay",
+      "audioUrl": "https://pixabay.com/music/206930/",
+      "artworkSource": "Pexels 18510997 by Daniel Martins",
+      "artworkUrl": "https://www.pexels.com/photo/18510997/"
+    },
+    {
+      "title": "Electro Phoenix",
+      "artist": "Play House",
+      "audioSource": "Pixabay",
+      "audioUrl": "https://pixabay.com/music/198453/",
+      "artworkSource": "Pexels 18069240 by Google DeepMind",
+      "artworkUrl": "https://www.pexels.com/photo/18069240/"
+    },
+    {
+      "title": "Fashion",
+      "artist": "Pretty John",
+      "audioSource": "Pixabay",
+      "audioUrl": "https://pixabay.com/music/507165/",
+      "artworkSource": "Pexels 10764904 by Vlado Paunovic",
+      "artworkUrl": "https://www.pexels.com/photo/10764904/"
+    },
+    {
+      "title": "Reality",
+      "artist": "Justin Callaghan",
+      "audioSource": "Pixabay",
+      "audioUrl": "https://pixabay.com/music/438500/",
+      "artworkSource": "Pexels 9293220 by Hoang Nguyen Xuan",
+      "artworkUrl": "https://www.pexels.com/photo/9293220/"
+    },
+    {
+      "title": "The Sounds of Tubong",
+      "artist": "Kawaii Work",
+      "audioSource": "Pixabay",
+      "audioUrl": "https://pixabay.com/music/292117/",
+      "artworkSource": "Pexels 11593576 by Alina Autumn",
+      "artworkUrl": "https://www.pexels.com/photo/11593576/"
+    },
+    {
+      "title": "G Wagon",
+      "artist": "Kontraa",
+      "audioSource": "Pixabay",
+      "audioUrl": "https://pixabay.com/music/320979/",
+      "artworkSource": "Pexels 10517038 by Ali Gabr",
+      "artworkUrl": "https://www.pexels.com/photo/10517038/"
+    },
+    {
+      "title": "No Pressure",
+      "artist": "Kontraa",
+      "audioSource": "Pixabay",
+      "audioUrl": "https://pixabay.com/music/120822/",
+      "artworkSource": "Pexels 12431908 by Serge Cyneat",
+      "artworkUrl": "https://www.pexels.com/photo/12431908/"
+    },
+    {
+      "title": "Smooth",
+      "artist": "Loksii",
+      "audioSource": "Pixabay",
+      "audioUrl": "https://pixabay.com/music/230013/",
+      "artworkSource": "Pexels 5990738 by Murvl",
+      "artworkUrl": "https://www.pexels.com/photo/5990738/"
+    },
+    {
+      "title": "Cityscape",
+      "artist": "Pineapple Music",
+      "audioSource": "Pixabay",
+      "audioUrl": "https://pixabay.com/music/210079/",
+      "artworkSource": "Pexels 8452150 by Vladimir Loginov",
+      "artworkUrl": "https://www.pexels.com/photo/8452150/"
+    },
+    {
+      "title": "New Bloggers in the House",
+      "artist": "Pineapple Music",
+      "audioSource": "Pixabay",
+      "audioUrl": "https://pixabay.com/music/170991/",
+      "artworkSource": "Pexels 8295524 by Toni Clavel",
+      "artworkUrl": "https://www.pexels.com/photo/8295524/"
+    },
+    {
+      "title": "Party Beach",
+      "artist": "Human Studio Ed",
+      "audioSource": "Pixabay",
+      "audioUrl": "https://pixabay.com/music/516964/",
+      "artworkSource": "Pexels 9000379 by Teo Badini",
+      "artworkUrl": "https://www.pexels.com/photo/9000379/"
+    }
+  ]
+}

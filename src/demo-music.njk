@@ -1,0 +1,47 @@
+---
+layout: layouts/base.njk
+title: "Demo music credits"
+description: "Music and artwork credits for the Cueport product demo."
+permalink: /demo-music/
+viewportMain: true
+eleventyExcludeFromCollections: true
+---
+
+<div class="container">
+  <div class="page-head">
+    <p class="paper-kicker">Demo music credits</p>
+    <h1>Music and artwork used in the Cueport demo.</h1>
+    <p class="lede">The homepage product demo uses rights-cleared music from
+      Pixabay and artwork from Pexels. The tracks and images are used as
+      integrated Cueport demo content, not as a standalone music pack or stock
+      asset collection.</p>
+  </div>
+
+  <section class="music-credit-summary" aria-labelledby="license-basis">
+    <h2 id="license-basis" class="paper-head">License basis</h2>
+    <p class="paper-item">Audio is listed under the
+      <a href="{{ demoMusicCredits.audioLicense.url }}" target="_blank" rel="noopener noreferrer">{{ demoMusicCredits.audioLicense.name }}</a>.
+      Artwork is listed under the
+      <a href="{{ demoMusicCredits.artworkLicense.url }}" target="_blank" rel="noopener noreferrer">{{ demoMusicCredits.artworkLicense.name }}</a>.
+      Both sources allow commercial use and do not require attribution. License
+      text and source records were last checked {{ demoMusicCredits.lastChecked }}.</p>
+    <p class="paper-item">{{ demoMusicCredits.note }}</p>
+  </section>
+
+  <section class="music-credit-sheet" aria-labelledby="track-credits">
+    <h2 id="track-credits" class="paper-head">Track credits</h2>
+    <div class="music-credit-list">
+      {%- for track in demoMusicCredits.tracks %}
+        <article class="music-credit-row">
+          <div class="music-credit-title">
+            <p class="music-credit-num">{{ loop.index }}</p>
+            <h3>{{ track.title }}</h3>
+            <p>{{ track.artist }}</p>
+          </div>
+          <p><strong>Audio</strong> <a href="{{ track.audioUrl }}" target="_blank" rel="noopener noreferrer">{{ track.audioSource }}</a></p>
+          <p><strong>Artwork</strong> <a href="{{ track.artworkUrl }}" target="_blank" rel="noopener noreferrer">{{ track.artworkSource }}</a></p>
+        </article>
+      {%- endfor %}
+    </div>
+  </section>
+</div>
