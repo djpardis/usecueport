@@ -596,6 +596,7 @@
       const rect = waveform.getBoundingClientRect();
       const ratio = Math.max(0, Math.min(1, (event.clientX - rect.left) / rect.width));
       const targetTime = ratio * duration;
+      const shouldKeepPlaying = !audio.paused && !audio.ended;
       const applySeek = () => {
         audio.currentTime = targetTime;
         updateClock();
@@ -607,8 +608,8 @@
         audio.load();
       }
       waveform.style.setProperty("--progress", `${ratio * 100}%`);
-      setPlayButtonState(true);
-      void audio.play().catch(() => setPlayButtonState(false));
+      setPlayButtonState(shouldKeepPlaying);
+      if (shouldKeepPlaying) void audio.play().catch(() => setPlayButtonState(false));
     }
 
     waveform.addEventListener("pointerdown", (event) => {
