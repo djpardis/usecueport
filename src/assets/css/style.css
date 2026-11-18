@@ -6129,6 +6129,8 @@ body:has(main.viewport-main) .site-header {
   line-height: 1.25;
 }
 .product-demo-main {
+  display: flex;
+  flex-direction: column;
   min-width: 0;
   min-height: 0;
   overflow: hidden;
@@ -6340,8 +6342,11 @@ body:has(main.viewport-main) .site-header {
   color: var(--accent);
 }
 .product-demo-table {
+  flex: 1 1 auto;
   min-width: 0;
+  min-height: 0;
   max-height: 100%;
+  overscroll-behavior: contain;
   overflow-y: scroll;
   overflow-x: hidden;
   padding: 5px 7px;
@@ -6829,6 +6834,9 @@ body:has(main.viewport-main) .site-header {
   }
   .product-demo-player {
     grid-template-columns: 1fr;
+  }
+  .product-demo-table-head {
+    display: none;
   }
   .product-demo-table-head,
   .product-demo-track {
