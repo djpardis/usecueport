@@ -6783,6 +6783,9 @@ body:has(main.viewport-main) .site-header {
   .product-demo {
     margin-top: 18px;
   }
+  .product-demo-stage {
+    padding-top: 3px;
+  }
   .product-demo-titlebar {
     display: grid;
     grid-template-columns: auto minmax(0, 1fr);
@@ -6793,10 +6796,12 @@ body:has(main.viewport-main) .site-header {
   .product-demo-titlebar-brand {
     grid-column: 1;
     grid-row: 1;
+    align-self: center;
   }
   .product-demo-titlebar-path {
     grid-column: 2;
     grid-row: 1;
+    align-self: center;
     max-width: 100%;
     font-size: 0.55rem;
     line-height: 1.1;
@@ -6806,17 +6811,26 @@ body:has(main.viewport-main) .site-header {
     grid-row: 2;
     grid-column-end: -1;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     justify-items: stretch;
     width: 100%;
     margin-left: 0;
-    gap: 3px;
+    gap: 4px;
+  }
+  .product-demo-action--source,
+  .product-demo-action--rescan {
+    grid-column: span 3;
+  }
+  .product-demo-action--review,
+  .product-demo-action--restore,
+  .product-demo-action--pair {
+    grid-column: span 2;
   }
   .product-demo-app-button {
-    min-height: 16px;
-    padding: 1px 4px;
+    min-height: 24px;
+    padding: 3px 6px;
     border-width: 1px;
-    font-size: 0.48rem;
+    font-size: 0.56rem;
   }
   .product-demo-mac-body {
     grid-template-columns: 1fr;
