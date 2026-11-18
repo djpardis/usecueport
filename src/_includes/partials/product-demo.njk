@@ -507,7 +507,7 @@
       });
       row.addEventListener("keydown", (event) => {
         if (event.target instanceof HTMLElement && event.target.closest("input")) return;
-        if (event.key !== "Enter" && event.key !== " ") return;
+        if (event.key !== "Enter") return;
         event.preventDefault();
         selectTrack(Number(row.dataset.trackIndex || 0));
       });
