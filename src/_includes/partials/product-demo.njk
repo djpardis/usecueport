@@ -1,0 +1,607 @@
+<section class="product-demo" aria-labelledby="product-demo-title">
+  <div class="product-demo-copy">
+    <p class="paper-kicker">{{ productDemo.kicker }}</p>
+    <h2 id="product-demo-title">{{ productDemo.title }}</h2>
+    <p>{{ productDemo.summary }}</p>
+  </div>
+
+  <div class="product-demo-switcher" aria-label="Cueport desktop demo">
+    {%- for action in productDemo.actions %}
+      <input
+        class="product-demo-radio product-demo-radio--{{ action.id }}"
+        type="radio"
+        name="product-demo-state"
+        id="product-demo-{{ action.id }}"
+      >
+    {%- endfor %}
+      <input
+        class="product-demo-radio product-demo-radio--closed"
+        type="radio"
+        name="product-demo-state"
+        id="product-demo-closed"
+        aria-label="Close demo overlay"
+        checked
+      >
+
+    <div class="product-demo-stage">
+      <div class="product-demo-desktop" aria-label="Cueport for Mac Serato workflow">
+        <div class="product-demo-window">
+          <div class="product-demo-titlebar">
+            <svg class="product-demo-logo" viewBox="0 0 1024 1024" aria-hidden="true" focusable="false">
+              <rect x="128" y="584" width="120" height="440" fill="currentColor" opacity="0.55"/>
+              <rect x="416" y="248" width="120" height="776" fill="currentColor" opacity="0.55"/>
+              <rect x="584" y="440" width="120" height="584" fill="currentColor" opacity="0.55"/>
+              <rect x="764" y="320" width="120" height="704" fill="currentColor" opacity="0.55"/>
+              <rect x="252" y="128" width="136" height="136" fill="currentColor"/>
+              <rect x="296" y="264" width="48" height="760" fill="currentColor"/>
+            </svg>
+            <strong>Cueport</strong>
+            <span class="product-demo-version-tag">v{{ site.version }}</span>
+          </div>
+
+          <div class="product-demo-toolbar">
+            <div class="product-demo-toolbar-source">
+              <code>{{ productDemo.toolbar.path }}</code>
+              <label class="product-demo-app-button product-demo-action--source" for="product-demo-source">{{ productDemo.toolbar.source }}</label>
+              <label class="product-demo-app-button product-demo-app-button--accent product-demo-action--rescan" for="product-demo-rescan">{{ productDemo.toolbar.rescan }}</label>
+            </div>
+            <div class="product-demo-toolbar-actions">
+              <label class="product-demo-app-button product-demo-action--review" for="product-demo-review">
+                {{ productDemo.toolbar.review }}
+                <span>{{ productDemo.reviewItems.length }}</span>
+              </label>
+              <label class="product-demo-app-button product-demo-action--restore" for="product-demo-restore">{{ productDemo.toolbar.restore }}</label>
+              <label class="product-demo-app-button product-demo-app-button--accent product-demo-action--pair" for="product-demo-pair">{{ productDemo.toolbar.pair }}</label>
+            </div>
+          </div>
+
+          <div class="product-demo-player">
+            <div class="product-demo-player-head">
+              <span class="product-demo-player-label">Now playing</span>
+              <span class="product-demo-player-time">0:00 / --:--</span>
+              <span class="product-demo-player-title" title="{{ productDemo.tracks[0].title }}">{{ productDemo.tracks[0].title }}</span>
+              <div class="product-demo-player-controls" aria-label="Playback controls">
+                <button type="button" class="product-demo-transport product-demo-play" aria-label="Play {{ productDemo.tracks[0].title }}">
+                  <svg class="product-demo-icon-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M8 5v14l11-7z" fill="currentColor"/>
+                  </svg>
+                  <svg class="product-demo-icon-pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" fill="currentColor"/>
+                  </svg>
+                </button>
+                <button type="button" class="product-demo-transport product-demo-loop" aria-label="Loop off" aria-pressed="false">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z" fill="currentColor"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="product-demo-waveform" aria-label="Playback waveform">
+              <span class="product-demo-waveform-progress" aria-hidden="true"></span>
+              {%- for bar in productDemo.tracks[0].waveform %}
+                <b style="--scale: {{ bar.h }}; --wave-color: hsl({{ 10 + (bar.f * 200) | round }}, {{ 95 - (bar.f * 15) | round }}%, {{ 52 + (bar.f * 10) | round }}%)"></b>
+              {%- endfor %}
+              {%- for marker in productDemo.tracks[0].beatgrid %}
+                <span class="product-demo-beat" style="--x: {{ ((marker.positionSec / productDemo.tracks[0].durationSec) * 100) | round(2) }}%"></span>
+              {%- endfor %}
+            </div>
+            <div class="product-demo-cue-row" aria-label="Cue points">
+              <button type="button" class="product-demo-cue-button" aria-label="Add cue at playhead">+</button>
+            </div>
+            <audio class="product-demo-audio" preload="metadata" src="{{ productDemo.tracks[0].audio }}"></audio>
+          </div>
+
+          <div class="product-demo-mac-body">
+            <aside class="product-demo-sidebar" aria-label="Serato crates">
+              <p>Crates</p>
+              {%- for collection in productDemo.collections %}
+                <span class="product-demo-collection is-{{ collection.status }}">
+                  <strong>{{ collection.name }}</strong>
+                  <em>{{ collection.count }}</em>
+                </span>
+              {%- endfor %}
+            </aside>
+
+            <div class="product-demo-main">
+              <div class="product-demo-table" aria-label="Serato track table">
+                <div class="product-demo-table-head">
+                  <span>#</span><span></span><span>Title</span><span>Artist</span><span>BPM</span><span>Key</span><span>Comment</span><span>Color</span>
+                </div>
+                {%- for track in productDemo.tracks %}
+                  <div role="button" tabindex="0" class="product-demo-track is-{{ track.status }}{% if loop.first %} is-active{% endif %}" data-track-index="{{ loop.index0 }}" aria-label="Load {{ track.title }}">
+                    <span>{{ loop.index }}</span>
+                    <img
+                      class="product-demo-track-art"
+                      src="{{ track.artwork }}"
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                    >
+                    <strong>
+                      {{ track.title }}
+                    </strong>
+                    <span>{{ track.artist }}</span>
+                    <span>{{ track.bpm }}</span>
+                    <span>{{ track.key }}</span>
+                    <span class="product-demo-track-note{% if not track.note %} is-empty{% endif %}" title="Edit comment">{% if track.note %}{{ track.note }}{% else %}Add note{% endif %}</span>
+                    <span class="product-demo-track-color" style="--track-color: {{ track.color }}"></span>
+                  </div>
+                {%- endfor %}
+              </div>
+            </div>
+          </div>
+
+          <div class="product-demo-overlay product-demo-overlay--source" aria-label="Source">
+            <div class="product-demo-overlay-panel product-demo-source-panel">
+              <div class="product-demo-overlay-head">
+                <div>
+                  <h3>Source</h3>
+                  <p>Manage where Cueport gets your music.</p>
+                </div>
+                <label class="product-demo-close" for="product-demo-closed" aria-label="Close">×</label>
+              </div>
+              <div class="product-demo-source-list">
+                <div class="product-demo-source-item is-active">
+                  <span>
+                    <strong>Serato Library</strong>
+                    <em>Active</em>
+                  </span>
+                  <p>Import crates, playlists, cues, and metadata from an existing Serato library.</p>
+                  <code>{{ productDemo.sourcePath }}</code>
+                  <button type="button">Update folder</button>
+                </div>
+                <div class="product-demo-source-item">
+                  <span>
+                    <strong>Cueport Direct <em>beta</em></strong>
+                  </span>
+                  <p>Build a Cueport-native library directly from your music files. Direct is beta in this release.</p>
+                  <button type="button">Switch to Direct</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-demo-overlay product-demo-overlay--rescan" aria-label="Rescan">
+            <div class="product-demo-overlay-panel product-demo-rescan-panel">
+              <div class="product-demo-overlay-head">
+                <div>
+                  <h3>Rescan</h3>
+                  <p>Pick up new tracks, metadata changes, and crate edits made in Serato since the last scan.</p>
+                </div>
+                <label class="product-demo-close" for="product-demo-closed" aria-label="Close">×</label>
+              </div>
+              <p class="product-demo-rescan-status">Importing to Cueport DB…</p>
+            </div>
+          </div>
+
+          <div class="product-demo-overlay product-demo-overlay--pair" aria-label="Pair">
+            <div class="product-demo-overlay-panel product-demo-pair-panel">
+              <div class="product-demo-overlay-head">
+                <div>
+                  <h3>{{ productDemo.pairing.title }}</h3>
+                  <p>{{ productDemo.pairing.summary }}</p>
+                </div>
+                <label class="product-demo-close" for="product-demo-closed" aria-label="Close">×</label>
+              </div>
+              <div class="product-demo-pair-body">
+                <div class="product-demo-qr" aria-hidden="true">
+                  <span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span>
+                </div>
+                <div class="product-demo-pair-fields">
+                  <p>{{ productDemo.pairing.caption }}</p>
+                  <strong class="product-demo-pair-summary">Manual setup</strong>
+                  <p>Only needed if the QR scan does not connect.</p>
+                  <span><strong>Desktop URL</strong><code>{{ productDemo.pairing.desktopUrl }}</code></span>
+                  <span><strong>Other URLs to try</strong><code>{{ productDemo.pairing.alternateUrl }}</code></span>
+                  <span><strong>Token</strong><code>{{ productDemo.pairing.token }}</code></span>
+                  <span><strong>Desktop ID</strong><code>{{ productDemo.pairing.desktopId }}</code></span>
+                  <span><strong>Paired source</strong><code>{{ productDemo.source }}</code></span>
+                  <span><strong>Source path</strong><code>{{ productDemo.sourcePath }}</code></span>
+                  <span><strong>Protocol</strong><code>{{ productDemo.pairing.protocol }}</code></span>
+                </div>
+              </div>
+              <label class="product-demo-done" for="product-demo-closed">Done</label>
+            </div>
+          </div>
+
+          <div class="product-demo-overlay product-demo-overlay--review" aria-label="Review">
+            <div class="product-demo-overlay-panel product-demo-review-panel">
+              <div class="product-demo-overlay-head">
+                <div>
+                  <h3>Review</h3>
+                  <p>Publish selected edits to Serato. A restore point is saved first.</p>
+                </div>
+                <label class="product-demo-close" for="product-demo-closed" aria-label="Close">×</label>
+              </div>
+              <div class="product-demo-review-list">
+                <label>
+                  <span class="product-demo-check" aria-hidden="true"></span>
+                  <strong>Select all</strong>
+                  <em>{{ productDemo.reviewItems.length }} of {{ productDemo.reviewItems.length }} selected</em>
+                </label>
+                {%- for item in productDemo.reviewItems | reverse %}
+                  <label>
+                    <span class="product-demo-check" aria-hidden="true"></span>
+                    <strong>{{ item.label }}</strong>
+                    <em>{{ item.detail }}</em>
+                  </label>
+                {%- endfor %}
+              </div>
+              <div class="product-demo-review-actions">
+                <button type="button">Discard</button>
+                <button type="button">Publish to Serato</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-demo-overlay product-demo-overlay--restore" aria-label="Restore">
+            <div class="product-demo-overlay-panel product-demo-restore-panel">
+              <div class="product-demo-overlay-head">
+                <div>
+                  <h3>Serato restore points</h3>
+                  <p>These restore the linked Serato library files and then resync the Serato database view. Each publish saves a restore point.</p>
+                </div>
+                <label class="product-demo-close" for="product-demo-closed" aria-label="Close">×</label>
+              </div>
+              <div class="product-demo-restore-list">
+                {%- for point in productDemo.restorePoints %}
+                  <div>
+                    <span class="product-demo-restore-copy" title="{{ point.label }} · {{ point.detail }} · {{ point.date }}">
+                      <strong>{{ point.label }}</strong>
+                      <em>·</em>
+                      <span>{{ point.detail }}</span>
+                      <em>·</em>
+                      <span>{{ point.date }}</span>
+                    </span>
+                    <button type="button">Restore</button>
+                  </div>
+                {%- endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  (() => {
+    const demo = document.currentScript.previousElementSibling;
+    if (!demo) return;
+    const tracks = {{ productDemo.tracks | dump | safe }};
+    const audio = demo.querySelector(".product-demo-audio");
+    const play = demo.querySelector(".product-demo-play");
+    const addCue = demo.querySelector(".product-demo-cue-button");
+    const loop = demo.querySelector(".product-demo-loop");
+    const waveform = demo.querySelector(".product-demo-waveform");
+    const cueRow = demo.querySelector(".product-demo-cue-row");
+    const reviewList = demo.querySelector(".product-demo-review-list");
+    const reviewCount = demo.querySelector(".product-demo-action--review span");
+    const reviewSelected = demo.querySelector(".product-demo-review-list label:first-child em");
+    const nowPlayingTitle = demo.querySelector(".product-demo-player-title");
+    const nowPlayingTime = demo.querySelector(".product-demo-player-time");
+    const rows = [...demo.querySelectorAll(".product-demo-track")];
+    if (!audio || !play || !waveform || !cueRow) return;
+
+    const baseReviewCount = {{ productDemo.reviewItems.length }};
+    const cueState = tracks.map((track) => [...(track.cuePoints || [])]);
+    const noteState = tracks.map((track) => track.note || "");
+    const pendingReviews = [];
+    let selectedTrackIndex = 0;
+    let nextCueReviewId = 1;
+
+    const waveColor = (f) => {
+      const hue = Math.round(10 + f * 200);
+      const sat = Math.round(95 - f * 15);
+      const lit = Math.round(52 + f * 10);
+      return `hsl(${hue} ${sat}% ${lit}%)`;
+    };
+    const formatClock = (seconds) => {
+      if (!Number.isFinite(seconds) || seconds <= 0) return "0:00";
+      const minutes = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${minutes}:${String(secs).padStart(2, "0")}`;
+    };
+    const updateClock = () => {
+      const duration = Number.isFinite(audio.duration) && audio.duration > 0
+        ? audio.duration
+        : tracks[selectedTrackIndex]?.durationSec;
+      if (nowPlayingTime) nowPlayingTime.textContent = `${formatClock(audio.currentTime)} / ${formatClock(duration)}`;
+    };
+
+    const renderWaveform = (track) => {
+      const progress = document.createElement("span");
+      progress.className = "product-demo-waveform-progress";
+      progress.setAttribute("aria-hidden", "true");
+      const bars = (track.waveform || []).map((column) => {
+        const bar = document.createElement("b");
+        bar.style.setProperty("--scale", String(Math.max(0.08, column.h)));
+        bar.style.setProperty("--wave-color", waveColor(column.f));
+        return bar;
+      });
+      const beats = (track.beatgrid || []).map((marker) => {
+        const line = document.createElement("span");
+        line.className = "product-demo-beat";
+        line.style.setProperty("--x", `${Math.max(0, Math.min(100, (marker.positionSec / track.durationSec) * 100))}%`);
+        line.setAttribute("aria-hidden", "true");
+        return line;
+      });
+      const cues = cueState[selectedTrackIndex].map((cue, i) => {
+        const marker = document.createElement("i");
+        marker.className = "product-demo-cue";
+        marker.style.setProperty("--x", `${Math.max(0, Math.min(100, (cue.timeSec / track.durationSec) * 100))}%`);
+        marker.title = `Cue ${i + 1} at ${Math.round(cue.timeSec)}s`;
+        marker.addEventListener("contextmenu", (event) => {
+          event.preventDefault();
+          deleteCueAtIndex(i);
+        });
+        return marker;
+      });
+      waveform.replaceChildren(progress, ...beats, ...bars, ...cues);
+      waveform.style.setProperty("--progress", "0%");
+    };
+    const renderReviewState = () => {
+      const total = baseReviewCount + pendingReviews.length;
+      if (reviewCount) reviewCount.textContent = String(total);
+      if (reviewSelected) reviewSelected.textContent = `${total} of ${total} selected`;
+      if (!reviewList) return;
+      reviewList.querySelectorAll(".product-demo-review-item--dynamic").forEach((row) => row.remove());
+      let insertAfter = reviewList.querySelector("label:first-child");
+      pendingReviews.forEach((item) => {
+        const row = document.createElement("label");
+        row.className = "product-demo-review-item--dynamic";
+        row.dataset.reviewId = item.id;
+        row.setAttribute("aria-label", `${item.label}, ${item.detail}`);
+        const check = document.createElement("span");
+        check.className = "product-demo-check";
+        check.setAttribute("aria-hidden", "true");
+        const label = document.createElement("strong");
+        label.textContent = item.label;
+        const detail = document.createElement("em");
+        detail.textContent = item.detail;
+        row.append(check, label, detail);
+        if (insertAfter) {
+          insertAfter.after(row);
+          insertAfter = row;
+        } else {
+          reviewList.prepend(row);
+        }
+      });
+    };
+    const setTrackPending = (index, pending) => {
+      rows[index]?.classList.toggle("is-pending", pending);
+    };
+    const renderTrackNote = (index) => {
+      const note = rows[index]?.querySelector(".product-demo-track-note");
+      if (!note) return;
+      const value = noteState[index] || "";
+      note.textContent = value || "Add note";
+      note.classList.toggle("is-empty", !value);
+    };
+    const commitTrackNote = (index, value) => {
+      const track = tracks[index];
+      if (!track) return;
+      const trimmed = value.trim();
+      if ((noteState[index] || "") === trimmed) {
+        renderTrackNote(index);
+        return;
+      }
+      noteState[index] = trimmed;
+      renderTrackNote(index);
+      const existingIndex = pendingReviews.findIndex((item) => item.kind === "note" && item.trackIndex === index);
+      const nextItem = {
+        id: `note-${index}`,
+        kind: "note",
+        trackIndex: index,
+        label: "Comment updated",
+        detail: `${track.title}${trimmed ? `, ${trimmed}` : ""}`,
+      };
+      if (existingIndex !== -1) pendingReviews.splice(existingIndex, 1);
+      pendingReviews.unshift(nextItem);
+      setTrackPending(index, true);
+      renderReviewState();
+    };
+    const beginTrackNoteEdit = (index) => {
+      const cell = rows[index]?.querySelector(".product-demo-track-note");
+      if (!cell) return;
+      const input = document.createElement("input");
+      input.type = "text";
+      input.className = "product-demo-track-note-input";
+      input.value = noteState[index] || "";
+      input.setAttribute("aria-label", "Edit comment");
+      input.addEventListener("click", (event) => event.stopPropagation());
+      input.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          commitTrackNote(index, input.value);
+        } else if (event.key === "Escape") {
+          event.preventDefault();
+          renderTrackNote(index);
+        }
+      });
+      input.addEventListener("blur", () => commitTrackNote(index, input.value));
+      cell.replaceChildren(input);
+      cell.classList.remove("is-empty");
+      input.focus();
+      input.select();
+    };
+    const renderCuePads = () => {
+      const add = document.createElement("button");
+      add.type = "button";
+      add.className = "product-demo-cue-button";
+      add.setAttribute("aria-label", "Add cue at playhead");
+      add.textContent = "+";
+      add.addEventListener("click", addCueAtPlayhead);
+      const pads = cueState[selectedTrackIndex].map((cue, i) => {
+        const wrap = document.createElement("span");
+        wrap.className = "product-demo-cue-pad-wrap";
+        const pad = document.createElement("button");
+        pad.type = "button";
+        pad.className = "product-demo-cue-pad";
+        pad.textContent = String(i + 1);
+        pad.title = `Jump to cue ${i + 1} (${Math.round(cue.timeSec)}s)`;
+        pad.addEventListener("click", () => {
+          audio.currentTime = cue.timeSec;
+        });
+        const del = document.createElement("button");
+        del.type = "button";
+        del.className = "product-demo-cue-pad-x";
+        del.textContent = "×";
+        del.title = `Delete cue ${i + 1}`;
+        del.setAttribute("aria-label", `Delete cue ${i + 1}`);
+        del.addEventListener("click", (event) => {
+          event.stopPropagation();
+          deleteCueAtIndex(i);
+        });
+        wrap.append(pad, del);
+        return wrap;
+      });
+      cueRow.replaceChildren(add, ...pads);
+    };
+
+    const setPlayButtonState = (playing) => {
+      const track = tracks[selectedTrackIndex];
+      play.classList.toggle("is-playing", playing);
+      play.setAttribute("aria-label", playing ? `Pause ${track.title}` : `Play ${track.title}`);
+    };
+    const updatePlaybackLabel = () => setPlayButtonState(!audio.paused);
+
+    const selectTrack = (index, resume = false) => {
+      const track = tracks[index];
+      if (!track) return;
+      selectedTrackIndex = index;
+      audio.pause();
+      audio.src = track.audio;
+      audio.currentTime = 0;
+      if (nowPlayingTitle) {
+        nowPlayingTitle.textContent = track.title;
+        nowPlayingTitle.setAttribute("title", `${track.title} · ${track.artist || ""}`.trim());
+      }
+      rows.forEach((row, rowIndex) => {
+        row.classList.toggle("is-active", rowIndex === index);
+        row.classList.toggle("is-playing", rowIndex === index);
+      });
+      renderWaveform(track);
+      renderCuePads();
+      updateClock();
+      updatePlaybackLabel();
+      if (resume) void audio.play();
+    };
+
+    const setPlaying = (playing) => setPlayButtonState(playing);
+
+    rows.forEach((row) => {
+      row.addEventListener("click", (event) => {
+        const index = Number(row.dataset.trackIndex || 0);
+        if (event.target instanceof HTMLElement && event.target.closest(".product-demo-track-note")) {
+          event.stopPropagation();
+          beginTrackNoteEdit(index);
+          return;
+        }
+        selectTrack(index);
+      });
+      row.addEventListener("keydown", (event) => {
+        if (event.target instanceof HTMLElement && event.target.closest("input")) return;
+        if (event.key !== "Enter" && event.key !== " ") return;
+        event.preventDefault();
+        selectTrack(Number(row.dataset.trackIndex || 0));
+      });
+    });
+    loop?.addEventListener("click", () => {
+      audio.loop = !audio.loop;
+      loop.classList.toggle("is-on", audio.loop);
+      loop.setAttribute("aria-pressed", String(audio.loop));
+      loop.setAttribute("aria-label", audio.loop ? "Loop on" : "Loop off");
+    });
+
+    const togglePlayback = () => {
+      if (audio.paused) {
+        setPlayButtonState(true);
+        void audio.play().catch(() => setPlayButtonState(false));
+      } else {
+        setPlayButtonState(false);
+        audio.pause();
+      }
+    };
+
+    play.addEventListener("click", togglePlayback);
+    document.addEventListener("keydown", (event) => {
+      if (event.code !== "Space" && event.key !== " ") return;
+      const target = event.target;
+      if (
+        target instanceof HTMLElement &&
+        (target.closest("input, textarea, select") || target.isContentEditable)
+      ) {
+        return;
+      }
+      const rect = demo.getBoundingClientRect();
+      const inView = rect.top < window.innerHeight && rect.bottom > 0;
+      if (!inView) return;
+      event.preventDefault();
+      togglePlayback();
+    });
+
+    audio.addEventListener("play", () => setPlaying(true));
+    audio.addEventListener("pause", () => setPlaying(false));
+    audio.addEventListener("ended", () => {
+      setPlaying(false);
+      waveform.style.setProperty("--progress", "0%");
+      updateClock();
+    });
+    audio.addEventListener("loadedmetadata", updateClock);
+    audio.addEventListener("timeupdate", () => {
+      if (!Number.isFinite(audio.duration) || audio.duration <= 0) return;
+      waveform.style.setProperty("--progress", `${(audio.currentTime / audio.duration) * 100}%`);
+      updateClock();
+    });
+
+    function addCueAtPlayhead() {
+      const track = tracks[selectedTrackIndex];
+      const duration = Number.isFinite(audio.duration) && audio.duration > 0 ? audio.duration : track?.durationSec;
+      if (!track || !Number.isFinite(duration) || duration <= 0) return;
+      const id = `cue-${nextCueReviewId++}`;
+      cueState[selectedTrackIndex].push({ timeSec: audio.currentTime, pendingReviewId: id });
+      pendingReviews.unshift({
+        id,
+        kind: "cue",
+        trackIndex: selectedTrackIndex,
+        label: `Cue ${cueState[selectedTrackIndex].length} added`,
+        detail: `${track.title}, ${formatClock(audio.currentTime)}`,
+      });
+      renderWaveform(track);
+      renderCuePads();
+      renderReviewState();
+      waveform.style.setProperty("--progress", `${(audio.currentTime / duration) * 100}%`);
+    }
+    function deleteCueAtIndex(index) {
+      const track = tracks[selectedTrackIndex];
+      if (!track) return;
+      const [cue] = cueState[selectedTrackIndex].splice(index, 1);
+      if (cue?.pendingReviewId) {
+        const reviewIndex = pendingReviews.findIndex((item) => item.id === cue.pendingReviewId);
+        if (reviewIndex !== -1) pendingReviews.splice(reviewIndex, 1);
+      }
+      renderWaveform(track);
+      renderCuePads();
+      renderReviewState();
+    }
+    addCue?.addEventListener("click", addCueAtPlayhead);
+
+    waveform.addEventListener("click", (event) => {
+      if (!Number.isFinite(audio.duration) || audio.duration <= 0) return;
+      if (event.target.closest(".product-demo-cue")) return;
+      const rect = waveform.getBoundingClientRect();
+      const ratio = Math.max(0, Math.min(1, (event.clientX - rect.left) / rect.width));
+      audio.currentTime = ratio * audio.duration;
+    });
+
+    renderWaveform(tracks[0]);
+    renderCuePads();
+    renderReviewState();
+    updateClock();
+  })();
+</script>
