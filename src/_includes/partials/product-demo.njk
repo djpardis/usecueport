@@ -39,20 +39,16 @@
               <strong>Cueport</strong>
               <span class="product-demo-version-tag">v{{ site.version }}</span>
             </div>
+            <code class="product-demo-titlebar-path">{{ productDemo.toolbar.path }}</code>
             <div class="product-demo-toolbar">
-              <div class="product-demo-toolbar-source">
-                <code>{{ productDemo.toolbar.path }}</code>
-                <label class="product-demo-app-button product-demo-action--source" for="product-demo-source">{{ productDemo.toolbar.source }}</label>
-                <label class="product-demo-app-button product-demo-app-button--accent product-demo-action--rescan" for="product-demo-rescan">{{ productDemo.toolbar.rescan }}</label>
-              </div>
-              <div class="product-demo-toolbar-actions">
-                <label class="product-demo-app-button product-demo-action--review" for="product-demo-review">
-                  {{ productDemo.toolbar.review }}
-                  <span>{{ productDemo.reviewItems.length }}</span>
-                </label>
-                <label class="product-demo-app-button product-demo-action--restore" for="product-demo-restore">{{ productDemo.toolbar.restore }}</label>
-                <label class="product-demo-app-button product-demo-app-button--accent product-demo-action--pair" for="product-demo-pair">{{ productDemo.toolbar.pair }}</label>
-              </div>
+              <label class="product-demo-app-button product-demo-action--source" for="product-demo-source">{{ productDemo.toolbar.source }}</label>
+              <label class="product-demo-app-button product-demo-app-button--accent product-demo-action--rescan" for="product-demo-rescan">{{ productDemo.toolbar.rescan }}</label>
+              <label class="product-demo-app-button product-demo-action--review" for="product-demo-review">
+                {{ productDemo.toolbar.review }}
+                <span>{{ productDemo.reviewItems.length }}</span>
+              </label>
+              <label class="product-demo-app-button product-demo-action--restore" for="product-demo-restore">{{ productDemo.toolbar.restore }}</label>
+              <label class="product-demo-app-button product-demo-app-button--accent product-demo-action--pair" for="product-demo-pair">{{ productDemo.toolbar.pair }}</label>
             </div>
           </div>
 

@@ -5934,9 +5934,9 @@ body:has(main.viewport-main) .site-header {
 .product-demo-titlebar {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
-  gap: 3px;
+  gap: 3px 8px;
   padding: 6px 8px;
   border-bottom: 1.5px solid var(--text);
   background: #ffffff;
@@ -5976,58 +5976,58 @@ body:has(main.viewport-main) .site-header {
 .product-demo-logo {
   display: none;
 }
-.product-demo-toolbar {
-  display: grid;
-  gap: 3px;
-  align-items: center;
+.product-demo-titlebar-path {
+  justify-self: end;
   min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  padding: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-.product-demo-toolbar-source,
-.product-demo-toolbar-actions {
+.product-demo-toolbar {
+  grid-column: 1 / -1;
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
   gap: 3px;
+  align-items: center;
   justify-content: start;
   min-width: 0;
 }
-.product-demo-toolbar code,
+.product-demo-titlebar-path,
 .product-demo-pair-fields code {
   min-width: 0;
   overflow: hidden;
   background: transparent;
   color: var(--text-secondary);
   font-family: var(--font-mono);
-  font-size: 0.72rem;
   padding: 0;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.product-demo-toolbar-source > code {
-  flex: 1 1 100%;
-  max-width: 100%;
+.product-demo-pair-fields code {
+  font-size: 0.72rem;
 }
 @container (min-width: 720px) {
   .product-demo-titlebar {
-    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-columns: auto minmax(0, 1fr) auto;
     align-items: center;
     gap: 10px;
     padding: 8px 10px;
   }
+  .product-demo-titlebar-path {
+    grid-column: 2;
+    max-width: 8.5rem;
+  }
   .product-demo-toolbar {
-    display: flex;
+    grid-column: 3;
+    flex-wrap: nowrap;
     justify-content: flex-end;
     margin-left: auto;
-  }
-  .product-demo-toolbar-source,
-  .product-demo-toolbar-actions {
-    flex-wrap: nowrap;
-    gap: 6px;
-    justify-content: end;
-  }
-  .product-demo-toolbar-source > code {
-    flex: 0 1 auto;
-    max-width: 8.5rem;
   }
 }
 .product-demo-app-button {
@@ -6785,7 +6785,7 @@ body:has(main.viewport-main) .site-header {
   }
   .product-demo-titlebar {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: auto minmax(0, 1fr);
     align-items: start;
     gap: 3px;
     padding: 5px 6px;
@@ -6794,28 +6794,23 @@ body:has(main.viewport-main) .site-header {
     grid-column: 1;
     grid-row: 1;
   }
+  .product-demo-titlebar-path {
+    grid-column: 2;
+    grid-row: 1;
+    max-width: 100%;
+    font-size: 0.55rem;
+    line-height: 1.1;
+  }
   .product-demo-toolbar {
     grid-column: 1;
     grid-row: 2;
+    grid-column-end: -1;
     display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     justify-items: stretch;
     width: 100%;
     margin-left: 0;
     gap: 3px;
-  }
-  .product-demo-toolbar-source,
-  .product-demo-toolbar-actions {
-    flex-wrap: wrap;
-    justify-content: start;
-    gap: 3px;
-  }
-  .product-demo-toolbar-source > code {
-    flex-basis: 100%;
-    max-width: 100%;
-  }
-  .product-demo-toolbar code {
-    font-size: 0.55rem;
-    line-height: 1.1;
   }
   .product-demo-app-button {
     min-height: 16px;
