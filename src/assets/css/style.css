@@ -5973,14 +5973,7 @@ body:has(main.viewport-main) .site-header {
   transform: translateY(0.03rem);
 }
 .product-demo-logo {
-  display: block;
-  width: 18px;
-  height: 18px;
-  color: var(--text);
-  flex-shrink: 0;
-  opacity: 0;
-  transform: scale(0.55);
-  transform-origin: center;
+  display: none;
 }
 .product-demo-toolbar {
   display: flex;
