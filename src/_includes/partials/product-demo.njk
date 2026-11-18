@@ -27,31 +27,32 @@
       <div class="product-demo-desktop" aria-label="Cueport for Mac Serato workflow">
         <div class="product-demo-window">
           <div class="product-demo-titlebar">
-            <svg class="product-demo-logo" viewBox="0 0 1024 1024" aria-hidden="true" focusable="false">
-              <rect x="128" y="584" width="120" height="440" fill="currentColor" opacity="0.55"/>
-              <rect x="416" y="248" width="120" height="776" fill="currentColor" opacity="0.55"/>
-              <rect x="584" y="440" width="120" height="584" fill="currentColor" opacity="0.55"/>
-              <rect x="764" y="320" width="120" height="704" fill="currentColor" opacity="0.55"/>
-              <rect x="252" y="128" width="136" height="136" fill="currentColor"/>
-              <rect x="296" y="264" width="48" height="760" fill="currentColor"/>
-            </svg>
-            <strong>Cueport</strong>
-            <span class="product-demo-version-tag">v{{ site.version }}</span>
-          </div>
-
-          <div class="product-demo-toolbar">
-            <div class="product-demo-toolbar-source">
-              <code>{{ productDemo.toolbar.path }}</code>
-              <label class="product-demo-app-button product-demo-action--source" for="product-demo-source">{{ productDemo.toolbar.source }}</label>
-              <label class="product-demo-app-button product-demo-app-button--accent product-demo-action--rescan" for="product-demo-rescan">{{ productDemo.toolbar.rescan }}</label>
+            <div class="product-demo-titlebar-brand">
+              <svg class="product-demo-logo" viewBox="0 0 1024 1024" aria-hidden="true" focusable="false">
+                <rect x="128" y="584" width="120" height="440" fill="currentColor" opacity="0.55"/>
+                <rect x="416" y="248" width="120" height="776" fill="currentColor" opacity="0.55"/>
+                <rect x="584" y="440" width="120" height="584" fill="currentColor" opacity="0.55"/>
+                <rect x="764" y="320" width="120" height="704" fill="currentColor" opacity="0.55"/>
+                <rect x="252" y="128" width="136" height="136" fill="currentColor"/>
+                <rect x="296" y="264" width="48" height="760" fill="currentColor"/>
+              </svg>
+              <strong>Cueport</strong>
+              <span class="product-demo-version-tag">v{{ site.version }}</span>
             </div>
-            <div class="product-demo-toolbar-actions">
-              <label class="product-demo-app-button product-demo-action--review" for="product-demo-review">
-                {{ productDemo.toolbar.review }}
-                <span>{{ productDemo.reviewItems.length }}</span>
-              </label>
-              <label class="product-demo-app-button product-demo-action--restore" for="product-demo-restore">{{ productDemo.toolbar.restore }}</label>
-              <label class="product-demo-app-button product-demo-app-button--accent product-demo-action--pair" for="product-demo-pair">{{ productDemo.toolbar.pair }}</label>
+            <div class="product-demo-toolbar">
+              <div class="product-demo-toolbar-source">
+                <code>{{ productDemo.toolbar.path }}</code>
+                <label class="product-demo-app-button product-demo-action--source" for="product-demo-source">{{ productDemo.toolbar.source }}</label>
+                <label class="product-demo-app-button product-demo-app-button--accent product-demo-action--rescan" for="product-demo-rescan">{{ productDemo.toolbar.rescan }}</label>
+              </div>
+              <div class="product-demo-toolbar-actions">
+                <label class="product-demo-app-button product-demo-action--review" for="product-demo-review">
+                  {{ productDemo.toolbar.review }}
+                  <span>{{ productDemo.reviewItems.length }}</span>
+                </label>
+                <label class="product-demo-app-button product-demo-action--restore" for="product-demo-restore">{{ productDemo.toolbar.restore }}</label>
+                <label class="product-demo-app-button product-demo-app-button--accent product-demo-action--pair" for="product-demo-pair">{{ productDemo.toolbar.pair }}</label>
+              </div>
             </div>
           </div>
 

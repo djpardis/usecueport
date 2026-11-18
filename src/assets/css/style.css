@@ -5934,10 +5934,18 @@ body:has(main.viewport-main) .site-header {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 0.275rem;
+  justify-content: space-between;
+  gap: 10px;
   padding: 8px 10px;
   border-bottom: 1.5px solid var(--text);
   background: #ffffff;
+}
+.product-demo-titlebar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.275rem;
+  flex: 0 0 auto;
+  min-width: 0;
 }
 .product-demo-titlebar strong {
   margin: 0;
@@ -5965,26 +5973,23 @@ body:has(main.viewport-main) .site-header {
   transform: translateY(0.03rem);
 }
 .product-demo-logo {
-  position: absolute;
-  left: 50%;
-  top: 50%;
   display: block;
   width: 18px;
   height: 18px;
   color: var(--text);
   flex-shrink: 0;
   opacity: 0;
-  transform: translate(-50%, -50%) scale(0.55);
+  transform: scale(0.55);
   transform-origin: center;
 }
 .product-demo-toolbar {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 10px;
+  display: flex;
+  justify-content: flex-end;
+  flex: 0 1 auto;
+  gap: 6px;
   align-items: center;
-  padding: 8px 10px;
-  border-bottom: 1.5px solid rgba(24, 24, 27, 0.22);
-  background: #fffaf3;
+  min-width: 0;
+  margin-left: auto;
 }
 .product-demo-toolbar-source,
 .product-demo-toolbar-actions {
@@ -6009,7 +6014,8 @@ body:has(main.viewport-main) .site-header {
   white-space: nowrap;
 }
 .product-demo-toolbar-source > code {
-  flex: 1 1 auto;
+  flex: 0 1 auto;
+  max-width: 8.5rem;
 }
 .product-demo-app-button {
   display: inline-flex;
