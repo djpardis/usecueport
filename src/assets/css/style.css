@@ -6234,6 +6234,7 @@ body:has(main.viewport-main) .site-header {
   padding: 4px 0;
   border: 1px solid rgba(24, 24, 27, 0.18);
   background: #f4f4f5;
+  cursor: pointer;
   overflow: hidden;
   box-sizing: border-box;
 }

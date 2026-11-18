@@ -588,12 +588,32 @@
     }
     addCue?.addEventListener("click", addCueAtPlayhead);
 
-    waveform.addEventListener("click", (event) => {
-      if (!Number.isFinite(audio.duration) || audio.duration <= 0) return;
-      if (event.target.closest(".product-demo-cue")) return;
+    function seekWaveform(event) {
+      const track = tracks[selectedTrackIndex];
+      const duration = Number.isFinite(audio.duration) && audio.duration > 0 ? audio.duration : track?.durationSec;
+      if (!track || !Number.isFinite(duration) || duration <= 0) return;
+      if (event.target instanceof Element && event.target.closest(".product-demo-cue")) return;
       const rect = waveform.getBoundingClientRect();
       const ratio = Math.max(0, Math.min(1, (event.clientX - rect.left) / rect.width));
-      audio.currentTime = ratio * audio.duration;
+      const targetTime = ratio * duration;
+      const applySeek = () => {
+        audio.currentTime = targetTime;
+        updateClock();
+      };
+      if (audio.readyState >= 1) {
+        applySeek();
+      } else {
+        audio.addEventListener("loadedmetadata", applySeek, { once: true });
+        audio.load();
+      }
+      waveform.style.setProperty("--progress", `${ratio * 100}%`);
+      setPlayButtonState(true);
+      void audio.play().catch(() => setPlayButtonState(false));
+    }
+
+    waveform.addEventListener("pointerdown", (event) => {
+      event.preventDefault();
+      seekWaveform(event);
     });
 
     renderWaveform(tracks[0]);
