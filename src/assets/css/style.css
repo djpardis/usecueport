@@ -5922,6 +5922,7 @@ body:has(main.viewport-main) .site-header {
 }
 .product-demo-window {
   position: relative;
+  container-type: inline-size;
   display: flex;
   flex-direction: column;
   height: clamp(430px, 48vw, 540px);
@@ -5932,11 +5933,11 @@ body:has(main.viewport-main) .site-header {
 }
 .product-demo-titlebar {
   position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;
   align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 8px 10px;
+  gap: 3px;
+  padding: 6px 8px;
   border-bottom: 1.5px solid var(--text);
   background: #ffffff;
 }
@@ -5976,23 +5977,19 @@ body:has(main.viewport-main) .site-header {
   display: none;
 }
 .product-demo-toolbar {
-  display: flex;
-  justify-content: flex-end;
-  flex: 0 1 auto;
-  gap: 6px;
+  display: grid;
+  gap: 3px;
   align-items: center;
   min-width: 0;
-  margin-left: auto;
 }
 .product-demo-toolbar-source,
 .product-demo-toolbar-actions {
   display: flex;
   align-items: center;
-  gap: 6px;
+  flex-wrap: wrap;
+  gap: 3px;
+  justify-content: start;
   min-width: 0;
-}
-.product-demo-toolbar-actions {
-  justify-content: end;
 }
 .product-demo-toolbar code,
 .product-demo-pair-fields code {
@@ -6007,8 +6004,31 @@ body:has(main.viewport-main) .site-header {
   white-space: nowrap;
 }
 .product-demo-toolbar-source > code {
-  flex: 0 1 auto;
-  max-width: 8.5rem;
+  flex: 1 1 100%;
+  max-width: 100%;
+}
+@container (min-width: 720px) {
+  .product-demo-titlebar {
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+  }
+  .product-demo-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+  }
+  .product-demo-toolbar-source,
+  .product-demo-toolbar-actions {
+    flex-wrap: nowrap;
+    gap: 6px;
+    justify-content: end;
+  }
+  .product-demo-toolbar-source > code {
+    flex: 0 1 auto;
+    max-width: 8.5rem;
+  }
 }
 .product-demo-app-button {
   display: inline-flex;
@@ -6760,35 +6780,43 @@ body:has(main.viewport-main) .site-header {
   }
   .product-demo-titlebar {
     display: grid;
-    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-columns: 1fr;
     align-items: start;
-    gap: 6px;
+    gap: 3px;
+    padding: 5px 6px;
   }
   .product-demo-titlebar-brand {
     grid-column: 1;
     grid-row: 1;
-    padding-top: 2px;
   }
   .product-demo-toolbar {
-    grid-column: 2;
-    grid-row: 1;
+    grid-column: 1;
+    grid-row: 2;
     display: grid;
-    justify-items: end;
-    gap: 4px;
+    justify-items: stretch;
+    width: 100%;
+    margin-left: 0;
+    gap: 3px;
   }
   .product-demo-toolbar-source,
   .product-demo-toolbar-actions {
-    flex-wrap: nowrap;
-    justify-content: end;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 3px;
   }
   .product-demo-toolbar-source > code {
-    flex-basis: auto;
-    max-width: 7rem;
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+  .product-demo-toolbar code {
+    font-size: 0.55rem;
+    line-height: 1.1;
   }
   .product-demo-app-button {
-    min-height: 18px;
-    padding: 2px 5px;
-    font-size: 0.5rem;
+    min-height: 16px;
+    padding: 1px 4px;
+    border-width: 1px;
+    font-size: 0.48rem;
   }
   .product-demo-mac-body {
     grid-template-columns: 1fr;
