@@ -53,8 +53,20 @@
   "collections": [
     {
       "name": "Opening hour",
-      "count": 5,
+      "count": 11,
       "status": "clean"
+    },
+    {
+      "name": "House pressure",
+      "count": 8,
+      "status": "clean",
+      "level": 1
+    },
+    {
+      "name": "Warehouse cuts",
+      "count": 7,
+      "status": "clean",
+      "level": 1
     },
     {
       "name": "Peak room",
@@ -63,8 +75,14 @@
     },
     {
       "name": "Afterhours",
-      "count": 8,
+      "count": 10,
       "status": "clean"
+    },
+    {
+      "name": "Closing records",
+      "count": 6,
+      "status": "clean",
+      "level": 1
     }
   ],
   "tracks": [

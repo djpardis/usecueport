@@ -96,7 +96,7 @@
             <aside class="product-demo-sidebar" aria-label="Serato crates">
               <p>Crates</p>
               {%- for collection in productDemo.collections %}
-                <span class="product-demo-collection is-{{ collection.status }}">
+                <span class="product-demo-collection is-{{ collection.status }}{% if collection.level %} is-nested{% endif %}">
                   <strong>{{ collection.name }}</strong>
                   <em>{{ collection.count }}</em>
                 </span>
