@@ -6828,6 +6828,15 @@ body:has(main.viewport-main) .site-header {
     border: 0;
     border-bottom: 1px solid rgba(24, 24, 27, 0.2);
   }
+  .product-demo-sidebar {
+    padding-block: 5px;
+  }
+  .product-demo-sidebar p {
+    margin-bottom: 0;
+  }
+  .product-demo-sidebar .product-demo-collection {
+    display: none;
+  }
   .product-demo-player {
     grid-template-columns: 1fr;
   }
