@@ -6758,16 +6758,37 @@ body:has(main.viewport-main) .site-header {
   .product-demo {
     margin-top: 18px;
   }
+  .product-demo-titlebar {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: start;
+    gap: 6px;
+  }
+  .product-demo-titlebar-brand {
+    grid-column: 1;
+    grid-row: 1;
+    padding-top: 2px;
+  }
   .product-demo-toolbar {
-    grid-template-columns: 1fr;
+    grid-column: 2;
+    grid-row: 1;
+    display: grid;
+    justify-items: end;
+    gap: 4px;
   }
   .product-demo-toolbar-source,
   .product-demo-toolbar-actions {
-    flex-wrap: wrap;
-    justify-content: start;
+    flex-wrap: nowrap;
+    justify-content: end;
   }
   .product-demo-toolbar-source > code {
-    flex-basis: 100%;
+    flex-basis: auto;
+    max-width: 7rem;
+  }
+  .product-demo-app-button {
+    min-height: 18px;
+    padding: 2px 5px;
+    font-size: 0.5rem;
   }
   .product-demo-mac-body {
     grid-template-columns: 1fr;
