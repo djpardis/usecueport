@@ -46,7 +46,7 @@
   "commerce": {
     "macPrice": "$49",
     "macPriceLabel": "Founding license",
-    "macCheckoutUrl": ""
+    "macCheckoutUrl": "https://buy.usecueport.com/"
   },
   "nav": [
     {
