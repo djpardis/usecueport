@@ -1,0 +1,83 @@
+---
+layout: layouts/base.njk
+title: "Buy Cueport for Mac"
+description: "Buy Cueport for Mac and sync the music you own to Cueport for iPhone."
+permalink: /buy/
+viewportMain: true
+eleventyExcludeFromCollections: true
+---
+
+<div class="container download-page">
+  <section class="download-sheet" aria-labelledby="download-title">
+    <div class="download-main">
+      <div class="download-copy">
+        <h1 id="download-title">Buy Cueport for Mac.</h1>
+        <p class="lede">Build a local music library, keep cues and notes with
+          your tracks, and sync selected collections to your phone for offline
+          playback.</p>
+      </div>
+
+      <aside class="purchase-card" aria-labelledby="purchase-title">
+        <div class="purchase-main">
+          <p class="purchase-kicker">{{ site.commerce.macPriceLabel }}</p>
+          <h2 id="purchase-title">{{ site.commerce.macPrice }}</h2>
+          <p class="purchase-summary">One-time license for personal use, with
+            one year of feature updates.</p>
+        </div>
+        {%- if site.commerce.macCheckoutUrl %}
+          <a class="purchase-button" href="{{ site.commerce.macCheckoutUrl }}" target="_blank" rel="noopener noreferrer">Buy license</a>
+        {%- else %}
+          <a class="purchase-button" href="#">Buy license</a>
+        {%- endif %}
+      </aside>
+
+      <section class="download-license-copy" aria-labelledby="license-title">
+        <p class="paper-kicker">License details</p>
+        <h2 id="license-title">A one-time personal license for Cueport for Mac.</h2>
+        <p class="license-lede">Buy once, activate Cueport on up to three Macs
+          you personally use, and keep using the version you have after the
+          included update year ends.</p>
+
+        <div class="license-copy-grid">
+          <section>
+            <h3>What you get</h3>
+            <p>A signed and notarized Mac app with Serato library import,
+              <span class="nowrap">Cueport Direct <span class="status-tag">beta</span></span>, local
+              analysis, cue editing, crates, notes, playback, and local sync.</p>
+          </section>
+          <section>
+            <h3>Personal use</h3>
+            <p>One license covers one person. You can activate Cueport on up to
+              three Macs you personally use. Do not share, resell, or transfer
+              the license key.</p>
+          </section>
+          <section>
+            <h3>Updates</h3>
+            <p>One year of feature updates is included. Your license does not
+              expire, and the app keeps working after that year.</p>
+          </section>
+          <section>
+            <h3>Delivery</h3>
+            <p>Your download link and license key are sent by email after
+              purchase. Taxes, payment method, and final charge are shown at
+              checkout.</p>
+          </section>
+          <section>
+            <h3>Requirements</h3>
+            <p>The current DMG is built for Apple silicon Macs. Cueport for
+              iPhone is installed separately from the App Store and pairs with
+              the licensed Mac app.</p>
+          </section>
+          <section>
+            <h3>Support</h3>
+            <p>Read the <a href="/license/">license terms</a>,
+              <a href="/refunds/">refund policy</a>, and
+              <a href="/privacy/">privacy policy</a>. For activation or
+              download questions, email
+              <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+          </section>
+        </div>
+      </section>
+    </div>
+  </section>
+</div>
