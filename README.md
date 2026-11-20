@@ -40,30 +40,14 @@ Output goes to `_site/`.
   Markdown summaries for AI agents generated from the same data files.
 - `src/assets/css/style.css`: styles.
 
-## Download and licensing worker
+## Download worker
 
-`workers/downloads/src/index.ts` serves signed DMG downloads from R2. It also
-contains disabled-by-default Lemon Squeezy entitlement endpoints for future
-desktop licensing work:
+`workers/downloads/src/index.ts` serves signed DMG downloads from R2.
+License-key issuance, checkout, and customer portal access are handled by the
+commerce provider configured for the paid desktop launch.
 
-- `POST /license/activate`
-- `POST /license/validate`
-- `POST /webhooks/lemon-squeezy`
-
-These endpoints return `licensing_not_configured` until private deployment
-configuration binds D1 and Lemon Squeezy settings:
-
-- `LICENSE_ENTITLEMENTS`: D1 binding.
-- `LEMON_SQUEEZY_STORE_ID`: expected store id.
-- `LEMON_SQUEEZY_PRODUCT_ID`: expected Cueport desktop product id.
-- `LEMON_SQUEEZY_BETA_VARIANT_IDS`: comma-separated private beta variant ids.
-- `LEMON_SQUEEZY_WEBHOOK_SECRET`: webhook signing secret.
-- `CUEPORT_PAID_LAUNCH_DATE`: public paid launch date for comped founder update
-  windows.
-
-Keep real D1 database ids, Lemon Squeezy ids, webhook secrets, and
-operator-specific config out of this public repo. The starter D1 schema is in
-`workers/downloads/entitlements.sql`.
+Keep real provider ids, webhook secrets, and operator-specific config out of
+this public repo.
 
 ## Deploy
 

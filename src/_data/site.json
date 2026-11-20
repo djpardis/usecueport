@@ -9,7 +9,7 @@
   "email": "hello@usecueport.com",
   "version": "1.1.0",
   "releaseAnchor": "v1-1-0",
-  "assetVersion": "20261117-favicon-cache-18",
+  "assetVersion": "20261119-commerce-cleanup-1",
   "dmgFilename": "Cueport_1.1.0_aarch64.dmg",
   "trailMix": {
     "version": "0.1.0-alpha.2",
@@ -46,7 +46,7 @@
   "commerce": {
     "macPrice": "$49",
     "macPriceLabel": "Founding license",
-    "macCheckoutUrl": "https://buy.usecueport.com/"
+    "macCheckoutUrl": ""
   },
   "nav": [
     {
