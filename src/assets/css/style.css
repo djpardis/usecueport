@@ -6105,12 +6105,15 @@ body:has(main.viewport-main) .site-header {
   grid-template-columns: minmax(0, 1fr) auto;
 }
 .product-demo-collection.is-nested {
-  padding-left: 12px;
+  padding-left: 24px;
 }
 .product-demo-collection.is-selected {
   background: var(--accent);
   margin-inline: -6px;
   padding-inline: 6px;
+}
+.product-demo-collection.is-nested.is-selected {
+  padding-left: 30px;
 }
 .product-demo-collection strong,
 .product-demo-review-list strong {

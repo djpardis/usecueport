@@ -52,45 +52,76 @@
   },
   "collections": [
     {
-      "name": "Opening hour",
-      "count": 11,
+      "name": "00_PREP & UTILITY",
+      "count": 615,
       "status": "clean"
     },
     {
-      "name": "House pressure",
+      "name": "A_Inbox",
+      "count": 600,
+      "status": "clean",
+      "level": 1
+    },
+    {
+      "name": "C_App demo",
+      "count": 15,
+      "status": "selected",
+      "level": 1
+    },
+    {
+      "name": "01_ENERGY & VIBE",
+      "count": 8,
+      "status": "clean"
+    },
+    {
+      "name": "C_Peak hour",
       "count": 8,
       "status": "clean",
       "level": 1
     },
     {
-      "name": "Warehouse cuts",
-      "count": 7,
+      "name": "02_GENRE & ERA",
+      "count": 227,
+      "status": "clean"
+    },
+    {
+      "name": "Electronic & House",
+      "count": 94,
       "status": "clean",
       "level": 1
     },
     {
-      "name": "Peak room",
-      "count": 15,
-      "status": "selected"
+      "name": "Hip Hop & R&B",
+      "count": 133,
+      "status": "clean",
+      "level": 1
     },
     {
-      "name": "Basement club",
-      "count": 12,
+      "name": "03_GIG TYPE",
+      "count": 252,
       "status": "clean"
     },
     {
-      "name": "Radio bag",
-      "count": 9,
-      "status": "clean"
+      "name": "A_Club nights",
+      "count": 72,
+      "status": "clean",
+      "level": 1
     },
     {
-      "name": "Afterhours",
-      "count": 10,
-      "status": "clean"
+      "name": "B_Weddings",
+      "count": 64,
+      "status": "clean",
+      "level": 1
     },
     {
-      "name": "Closing records",
-      "count": 6,
+      "name": "C_Pop-ups",
+      "count": 58,
+      "status": "clean",
+      "level": 1
+    },
+    {
+      "name": "D_Bars & lounges",
+      "count": 58,
       "status": "clean",
       "level": 1
     }
