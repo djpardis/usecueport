@@ -43,11 +43,14 @@ Output goes to `_site/`.
 ## Download worker
 
 `workers/downloads/src/index.ts` serves signed DMG downloads from R2.
-License-key issuance, checkout, and customer portal access are handled by the
-commerce provider configured for the paid desktop launch.
+Paddle checkout and Cueport-owned license entitlements are planned in
+`COMMERCE.md`.
 
 Keep real provider ids, webhook secrets, and operator-specific config out of
 this public repo.
+
+The D1 starter schema for Paddle commerce events, Cueport entitlements,
+activations, and download grants is in `workers/downloads/schema.sql`.
 
 ## Deploy
 
