@@ -32,7 +32,7 @@ Create one Paddle product for the launch license:
 - Billing cycle: one-time
 - Quantity: one
 - Description: `Includes perpetual use of this major version and one year of
-  feature updates. Future licenses will be priced higher.`
+  feature updates. The founding price is the lowest planned license price.`
 
 Future prices should be separate Paddle prices rather than edits that obscure
 which cohort a customer purchased from. Cueport records the Paddle price id on
@@ -47,7 +47,7 @@ The buy page and checkout copy must communicate these rules:
 - Perpetual use of the purchased major version.
 - One year of feature updates from purchase date.
 - Maintenance patches remain available for the last eligible feature line.
-- Future licenses will be priced higher.
+- The founding price is the lowest planned license price.
 - First-purchase refund policy is 14 days, subject to the published refund
   policy and legal requirements.
 
@@ -67,6 +67,28 @@ The buy page and checkout copy must communicate these rules:
 The first implementation can record the entitlement and return an operator
 alert before customer email automation is enabled. It must not pretend email
 delivery is complete until the email path is tested.
+
+## Discount and comp codes
+
+Discounted and comped licenses should pass through Paddle Checkout instead of
+using a separate Cueport-only entitlement flow. Paddle allows 100 percent
+discount checkouts without a payment method, emits `transaction.completed`, and
+includes the customer email, so paid purchases, friend discounts, and full comps
+can all use the same webhook, entitlement, delivery, and audit logic.
+
+Operator-issued discounts should use one code per recipient rather than shared
+public codes:
+
+- Each code has a single redemption.
+- Each code expires after a short window, such as 14 or 30 days.
+- Each code is restricted to the live Cueport founding license price.
+- Partial discounts and 100 percent comps both use Paddle discounts.
+- Generic public codes, including public 100 percent codes, should not be used.
+
+An operator script should create these discounts from a recipient name or email,
+discount amount, expiration date, and optional note. It should record the Paddle
+discount id, code, intended recipient, expiration date, and note in an audit
+record so leaked or unused codes can be traced and disabled.
 
 ## Refund and chargeback flow
 
